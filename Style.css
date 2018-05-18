@@ -25,15 +25,10 @@ tr{
 	text-align:center;
 }
 
-header{
+h1{
 	text-align:center;
 	color:#fff;
-	background-color:#0a2e68;
 	font-size: 80px;
-}
-
-h1{
-	position: fixed;
 	display: block;
 	padding-bottom: 10px;
 	background-color: #0a2e68;
@@ -44,6 +39,7 @@ h1{
 	background-color:#0a2e68;
 	color:#fff;
 	font-size: 22px;
+	text-align: center;
 }
 
 body{
