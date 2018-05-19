@@ -1,3 +1,42 @@
+.tableHeader{
+	text-align:center;
+	color:#141817;
+	font-size: 50px;
+	background-color: #fff;
+	border-bottom-style:dashed;
+	border-bottom-color:#0a2e68;
+}
+
+table{
+	height:100px;
+	width:400px;
+	border-style:solid;
+	Border-color:#0a2e68;
+	border-radius: 10px;
+	margin-bottom: 30px
+}
+
+tr{
+	background-color:#b2ccf4
+}
+
+.Moreinfo{
+	background-color:#b2ccf4;
+	text-align:center;
+}
+
+.Title{
+	text-align:center;
+	color:#fff;
+	background-color:#0a2e68;
+	font-size: 80px;
+}
+
 h1{
-	font-family:
+	position: fixed;
+}
+
+.footer{
+	position:fixed;
+	background-color:#0a2e68;
 }
