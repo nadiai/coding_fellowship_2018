@@ -26,4 +26,17 @@ h1{
 	font-size: 50px;
 	background-color: #fcce16;
 	text-align: center;
+	color: #fff;
+	height: 200px;
+}
+
+.main{
+	display: flex;
+	align-items: center;
+	position:fixed;
+	height:
+}
+
+.Bee2{
+	height:200px;
 }
