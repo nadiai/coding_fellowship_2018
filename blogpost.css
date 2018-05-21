@@ -5,7 +5,7 @@ h1{
 			text-align: center;
 }
 
-p{
+.Announcement{
 	font-family: 'Barrio';
 	font-size: 100px;
 	background-color: #fff;
@@ -19,4 +19,11 @@ p{
 	float:center;
 	width:300px;
 	height:200px;
+}
+
+.lyrics{
+	font-family: 'Delius Unicase';
+	font-size: 50px;
+	background-color: #fcce16;
+	text-align: center;
 }
