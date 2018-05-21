@@ -27,16 +27,55 @@ h1{
 	background-color: #fcce16;
 	text-align: center;
 	color: #fff;
-	height: 200px;
+	width: 1000px;
+	height:auto;
+	padding: 5px 5px 5px 5px;
 }
 
 .main{
 	display: flex;
 	align-items: center;
-	position:fixed;
-	height:
+	margin-bottom: auto;
 }
 
 .Bee2{
 	height:200px;
+}
+
+.Quote{
+	margin:auto;
+	font-size: 40px;
+	padding: 20px 20px 20px 20px;
+	width: 300px;
+	text-align: center;
+	background-color: #fff;
+	border: 8px solid #fcce16;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	margin-top: auto;
+	font-family: 'Barrio';
+	position: relative;
+}
+
+.Quote:before{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 30px;
+	top: 100px;
+	border: 25px solid;
+	border-color: #fcce16 transparent transparent #fcce16;
+}
+
+.Quote:after{
+	content: ' ';
+	 position: absolute;
+	 width: 0;
+	 height: 0;
+	 left: 38px;
+	 top: 100px;
+	 border: 15px solid;
+	 border-color: #fff transparent transparent #fff;
 }
