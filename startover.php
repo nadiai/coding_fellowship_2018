@@ -16,6 +16,7 @@
 					<tr>
 						<td class='Moreinfo'>
 							<a href='paboutme.html'> Learn more about me here</a>
+							<a href="Blogpost1.html"> My Interests</a>
 						</td>
 					</tr>
 				</table>

@@ -9,8 +9,9 @@
 		<link href='https://fonts.googleapis.com/css?family=Delius Unicase' rel='stylesheet'>
 
 	</head>
-	<body style='background-image:url(/beyhive.jpg)'>
+	<body class="backdrop">
 		<h1> My Interests</h1>
+		<img class="test" src="/beyhive.jpg" alt="Beyhive">
 		<p class="Announcement"> All Things Queen Bee!</p>
 		<div class="main">
 			<img class="Bee" src='/beyonce.jpg' alt='Beyonce' style='float:left'>

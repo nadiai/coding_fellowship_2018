@@ -1,8 +1,25 @@
+.backdrop{
+	background: black;
+	height: 200px;
+	width: 100%;
+	position: absolute;
+	z-index: 0;
+}
+
+.test{
+	width: 100%;
+	z-index: -1;
+	height:400px;
+	position: absolute;
+}
+
 h1{
 			font-family: 'Barrio';
 			font-size: 80px;
 			color:#fff;
 			text-align: center;
+			position: relative;
+			z-index: 2;
 }
 
 .Announcement{
@@ -44,8 +61,8 @@ h1{
 
 .Quote{
 	margin:auto;
-	font-size: 40px;
-	padding: 20px 20px 20px 20px;
+	font-size: 22px;
+	padding: 20px 20px 32px 20px;
 	width: 300px;
 	text-align: center;
 	background-color: #fff;
