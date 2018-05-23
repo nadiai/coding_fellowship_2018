@@ -6,17 +6,18 @@
 
 	</head>
 		<body>
+			<div id="Container">
 			<h1 class='Title'> Nadia Irvin</h1>
 			<div class="Content">
-				<img class='maincontent' src='/IMG_0601.JPG' alt='Nadia' style='width:300px; height:380px; margin:auto; padding: 0px 10px 30px 100px; float:left; display:inline;'>
-				<table>
+				<img class='maincontent' src='/IMG_0601.JPG' alt='Nadia'>
+				<table style="margin-top: 20px">
 					<tr style='padding-top: 10px'>
 						<td class='tableHeader'> About me</td>
 					</tr>
 					<tr>
 						<td class='Moreinfo'>
-							<a href='paboutme.html'> Learn more about me here</a>
-							<a href="Blogpost1.html"> My Interests</a>
+							<li> <a href='paboutme.php'> Learn more about me here</a> </li>
+							<li> <a href='Blogpost1.php'> May 18th, 2018</a> </li>
 						</td>
 					</tr>
 				</table>
@@ -38,7 +39,7 @@
 						<td class='Moreinfo'>
 							<ul>
 								<li>
-									<a href='Blogpost1.html'> May 11th, 2018</a>
+									<a href='Blogpost1.html'> Summer 2018</a>
 								</li>
 							</ul>
 						</td>
@@ -46,6 +47,7 @@
 				</table>
 			</div>
 			<style="page-break-after:always">
+		</div>
 		</body>
 
 </html>

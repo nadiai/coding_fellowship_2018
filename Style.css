@@ -34,24 +34,18 @@ h1{
 	background-color: #0a2e68;
 }
 
-.footer{
-	position:fixed;
-	background-color:#0a2e68;
-	color:#fff;
-	font-size: 22px;
-	text-align: center;
-}
-
 .Content{
 	background-image:url('/wood.jpg');
-	margin:auto;
-	max-width: 1000px;
+	border-radius: 20px;
+	margin: auto;
+	height: 800px;
 }
 
 .maincontent{
 	width:300px;
-	height:360px;
+	height:385px;
 	margin:auto;
+	padding-top: 20px;
 	padding-left: 80px;
 	padding-right: 20px;
 
@@ -62,4 +56,8 @@ h1{
 	text-align:center;
 	color:#fff;
 	background-color:#0a2e68;
+}
+
+#Container{
+	background-color: #d1b698;
 }

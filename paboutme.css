@@ -1,0 +1,30 @@
+.H1{
+	background-color: #fff;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-align: center;
+	font-family: 'Alegreya SC';
+	border-radius: 20px;
+
+}
+
+.H2{
+	background-color: #337c2f;
+	text-align: center;
+	font-family: 'Alegreya SC';
+}
+
+body{
+	background-image: url('/Backdrop.jpg');
+}
+
+.education{
+	text-align: center;
+}
+
+.youth{
+	background-color: #fff;
+	text-align: center;
+	margin:auto;
+	float:right inline;
+}

@@ -21,13 +21,13 @@
 			echo " $i ";
 		}
 
-		echo "<br/>"
+		echo "<br/>";
 
-		$num = 1;
+		$numbers = 1;
 
-		for ($i=A; $i < G ; $i++) {
-			echo  " $num Item " .$i. "<br/>";
-			$num++;
+		for ($i='A'; $i < 'G' ; $i++) {
+			echo  " $numbers. Item " .$i. "<br/>";
+			$numbers++;
 		}
 
  ?>
