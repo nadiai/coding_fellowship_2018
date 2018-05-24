@@ -17,7 +17,7 @@
 					<tr>
 						<td class='Moreinfo'>
 							<li> <a href='paboutme.php'> Learn more about me here</a> </li>
-							<li> <a href='Blogpost1.php'> May 18th, 2018</a> </li>
+							<li> <a href='Blogpost1.php'> My Interests</a> </li>
 						</td>
 					</tr>
 				</table>
@@ -39,7 +39,7 @@
 						<td class='Moreinfo'>
 							<ul>
 								<li>
-									<a href='Blogpost1.html'> Summer 2018</a>
+									<a href='Projects.php'> Summer 2018</a>
 								</li>
 							</ul>
 						</td>

@@ -3,8 +3,61 @@
 include('config/config.php');
 include('include/db_query.php');
 
-$result = dbQuery("SELECT COUNT(*) FROM inventory")->fetch();
+InsertInventoryItem('Grapefruit', 'I like the red kind', 'Produce');
+InsertInventoryItem('Okra', 'I like like it fried', 'Produce');
+InsertInventoryItem('Oreos', 'I take the cream out', 'Snacks');
 
-var_dump($result);
+function InsertInventoryItem($name, $description, $category){
+	$result = dbQuery("
+		INSERT INTO inventory(name, description, category)
+		VALUES ('$name', '$description', '$category')
+	")->fetch();
+}
+
+function GetAllInventoryItems(){
+	$result = dbQuery("
+		SELECT *
+		FROM inventory
+		")->fetchAll();
+
+		return $result;
+
+}
+
+//$allInventoryItems = GetAllInventoryItems();
+
+echo "<pre>";
+//var_dump($allInventoryItems);
+echo "<pre>";
+
+
+function GetInventoryItem($Inventory_id){
+	$result = dbQuery("
+		SELECT *
+		FROM inventory
+	 	WHERE Inventory_id = $Inventory_id
+	")->fetch();
+
+	return $result;
+
+
+}
+
+$InventoryItem = GetInventoryItem(5);
+
+echo "<pre>";
+var_dump($InventoryItem);
+echo "<pre>";
+
+
+$result = dbQuery("
+	SELECT *
+ 	FROM inventory
+	WHERE Inventory_id =
+")->fetchAll();
+
+echo "<pre>";
+//var_dump($result);
+echo "<pre>";
 
  ?>
