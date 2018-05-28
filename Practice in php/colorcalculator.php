@@ -33,10 +33,10 @@ if(isset($_REQUEST['ColorSelector1']) && $_REQUEST['ColorSelector1']=='Yellow' |
 		echo '
 		<body style="background-color:#f4ff2d">';
 	}
-/*if(isset($_REQUEST['ColorSelector1']) && $_REQUEST['ColorSelector1']=='Red' && isset($_REQUEST['ColorSelector2']) && $_REQUEST['ColorSelector2']=='Blue'){
+if(isset($_REQUEST['ColorSelector1']) && $_REQUEST['ColorSelector1']=='Red' && isset($_REQUEST['ColorSelector2']) && $_REQUEST['ColorSelector2']=='Blue'){
 		echo '
 		<body style="background-color:#710b7a">';
-	}*/
+	}
 
 
  ?>
