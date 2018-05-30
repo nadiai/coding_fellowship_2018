@@ -1,6 +1,6 @@
 <?php
 
-$Blogpost = array(
+$BlogpostID = array(
 	'0' => array(
 		'Title' => 'Time for Change' ,
 	 	'Date' => 'May 28th, 2018' ,
@@ -17,10 +17,13 @@ $Blogpost = array(
 	 'Pic'=> 'Sunflower',
 	 'Text'=> 'Today, nothing would be more satisfying than sticking my toes in the sand, feeling the warmth of the sun blazing under my feet, and feeling the cool caress of ocean waves.'),
 );
-/*echo "<pre>";
-var_dump($BlogpostID);
-echo "</pre>";*/
-/*	if ($_REQUEST['BlogpostID'] == '0') {
+
+die('TEST');
+echo "<pre>";
+var_dump($_REQUEST);
+echo "</pre>";
+
+	if ($_REQUEST['BlogpostID'] == '0') {
 		echo "$BlogpostID['0']['Title']";
 		echo "<br>";
 		echo $BlogpostID['0']['Date'];
@@ -41,9 +44,9 @@ echo "</pre>";*/
 		echo "<br>";
 		echo $BlogpostID['2']['Text'];
 		echo "<br>";
-	}*/
+	}
 
-foreach ($Blogpost as $i => $item) {
+/*foreach ($Blogpost as $i => $item) {
 	echo $Blogpost[$i]['Title'];
 	echo "<br>";
 	echo $Blogpost[$i]['Date'];
@@ -52,7 +55,7 @@ foreach ($Blogpost as $i => $item) {
 	echo "<br>";
 }
 
-/*
+
 for ($i=0; $i = 'Blogpost'; $i++) {
 	echo $Blogpost[$i]['Title'];
 	echo "<br>";

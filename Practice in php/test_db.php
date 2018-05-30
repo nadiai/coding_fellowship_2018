@@ -15,13 +15,15 @@ function InsertInventoryItem($name, $description, $category){
 }
 
 function GetAllInventoryItems(){
+	//make me a function called GetAllInventoryItems
 	$result = dbQuery("
 		SELECT *
 		FROM inventory
 		")->fetchAll();
-
+//* = all
+//from tells us which table to look at
 		return $result;
-
+//like your getAllBlogPosts function
 }
 
 //$allInventoryItems = GetAllInventoryItems();
@@ -32,12 +34,13 @@ echo "<pre>";
 
 
 function GetInventoryItem($Inventory_id){
+//make me a function called GetInventoryItem and expect the argument $Inventory_id
 	$result = dbQuery("
 		SELECT *
 		FROM inventory
 	 	WHERE Inventory_id = $Inventory_id
 	")->fetch();
-
+//WHERE allows you to be more specific about which item you want 
 	return $result;
 
 
