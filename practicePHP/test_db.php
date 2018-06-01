@@ -40,7 +40,7 @@ function GetInventoryItem($Inventory_id){
 		FROM inventory
 	 	WHERE Inventory_id = $Inventory_id
 	")->fetch();
-//WHERE allows you to be more specific about which item you want 
+//WHERE allows you to be more specific about which item you want
 	return $result;
 
 
@@ -53,7 +53,7 @@ var_dump($InventoryItem);
 echo "<pre>";
 
 
-$result = dbQuery("
+//$result = dbQuery("
 	SELECT *
  	FROM inventory
 	WHERE Inventory_id =

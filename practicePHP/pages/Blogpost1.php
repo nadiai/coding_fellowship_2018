@@ -2,7 +2,7 @@
 	<head>
 		<title>May 17th blog</title>
 
-		<link rel='stylesheet' href="blogpost.css">
+		<link rel='stylesheet' href="beyonce.css">
 
 		<link href='https://fonts.googleapis.com/css?family=Barrio' rel='stylesheet'>
 
