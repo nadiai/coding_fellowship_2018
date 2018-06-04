@@ -221,3 +221,104 @@
 .aboutMyEducation{
 	overflow: auto;
 }
+
+/*my interests page*/
+
+.backDrop{
+	background: black;
+	height: 200px;
+	width: 100%;
+	position: absolute;
+	z-index: 0;
+}
+
+.beeBackground{
+	width: 100%;
+	z-index: -1;
+	height:400px;
+	position: absolute;
+}
+
+.myInterests{
+			font-family: 'Barrio';
+			font-size: 80px;
+			color:#fff;
+			text-align: center;
+			position: relative;
+			z-index: 2;
+}
+
+.announcement{
+	font-family: 'Barrio';
+	font-size: 100px;
+	background-color: #fff;
+	color: #fcce16;
+	border-color: #fcce16;
+	text-align: center;
+	border: 5px dashed;
+}
+
+.bee{
+	float:center;
+	width:300px;
+	height:200px;
+}
+
+.lyrics{
+	font-family: 'Delius Unicase';
+	font-size: 50px;
+	background-color: #fcce16;
+	text-align: center;
+	color: #fff;
+	width: 1000px;
+	height:auto;
+	padding: 5px 5px 5px 5px;
+}
+
+.beyBody{
+	display: flex;
+	align-items: center;
+	margin-bottom: auto;
+}
+
+.bee2{
+	height:200px;
+}
+
+.concertAnnounce{
+	margin:auto;
+	font-size: 22px;
+	padding: 20px 20px 32px 20px;
+	width: 300px;
+	text-align: center;
+	background-color: #fff;
+	border: 8px solid #fcce16;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	margin-top: auto;
+	font-family: 'Barrio';
+	position: relative;
+}
+
+.concertAnnounce:before{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 30px;
+	top: 100px;
+	border: 25px solid;
+	border-color: #fcce16 transparent transparent #fcce16;
+}
+
+.concertAnnounce:after{
+	content: ' ';
+	 position: absolute;
+	 width: 0;
+	 height: 0;
+	 left: 38px;
+	 top: 100px;
+	 border: 15px solid;
+	 border-color: #fff transparent transparent #fff;
+}

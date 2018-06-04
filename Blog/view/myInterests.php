@@ -9,20 +9,20 @@
 		<link href='https://fonts.googleapis.com/css?family=Delius Unicase' rel='stylesheet'>
 
 	</head>
-	<body class="backdrop">
+	<body class="backDrop">
 		<h1 class="myInterests"> My Interests</h1>
-		<img class="beebg" src="/images/beyhive.jpg" alt="Beyhive">
-		<p class="Announcement"> All Things Queen Bee!</p>
-		<div class="beybody">
-			<img class="Bee" src='/images/beyonce.jpg' alt='Beyonce' style='float:left'>
+		<img class="beeBackground" src="/images/beyhive.jpg" alt="Beyhive">
+		<p class="announcement"> All Things Queen Bee!</p>
+		<div class="beyBody">
+			<img class="bee" src='/images/beyonce.jpg' alt='Beyonce' style='float:left'>
 			<p class="lyrics">
 				"I'm Bigger than Life,
 			  my name in the lights,
 				I'm the Number One Chick,
 				I don't need no Hype"
 			</p>
-			<img class="Bee2" src='/images/beyonce2.jpg' alt='Beyonce' style='float:right'>
+			<img class="bee2" src='/images/beyonce2.jpg' alt='Beyonce' style='float:right'>
 		</div>
-		<p class="ConcertAnnounce"> "I will be seeing Beyonce in concert on August 23rd!"</p>
+		<p class="concertAnnounce"> "I will be seeing Beyonce in concert on August 23rd!"</p>
 	</body>
 </html>
