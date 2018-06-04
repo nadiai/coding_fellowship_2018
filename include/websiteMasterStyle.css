@@ -1,0 +1,223 @@
+.mainPageContent{
+	background-image:url('/images/wood.jpg');
+	height: 800px;
+	align-content: center;
+	padding-left: 20px;
+	margin-top: 0px;
+}
+
+.picOfNadia{
+	width:300px;
+	height:385px;
+	/*float:left;
+	display:inline;*/
+	border: 5px solid #fff;
+	border-radius: 5px;
+	margin-top: 5%;
+	margin-left: 18%;
+}
+
+.mainPageTitle{
+	text-align:center;
+	color:#fff;
+	background-color:#f5a29d;
+	font-size: 80px;
+	display: block;
+	margin-top: 0;
+	margin-bottom: 0;
+	/*z-index: 1;
+	position: relative;*/
+}
+
+#Container{
+	margin-left: 180px;
+	/*background-image: url('/backdrop2.jpg');*/
+}
+.mainPageBackground{
+	width: 100%;
+	height: 200px;
+	/*z-index: 0;
+	position: absolute;*/
+}
+.mainPageSidenav {
+	height: 100%;
+	width: 180px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #052455;
+	overflow-x: hidden;
+	padding-top: 30px;
+}
+
+.mainPageSidenav a {
+	padding: 6px 8px 6px 16px;
+	font-size: 25px;
+	color: #fff;
+}
+
+.mainPageSidenav a:hover{
+	color: #d0d879;
+}
+	/* blogposts style*/
+.background{
+	width: 100%;
+	height: 200px;
+}
+
+/*.mainpg{
+	text-align: center;
+	background-color: #084d8a;
+	font-size: 50px;
+	color: #fff;
+	margin-top: 0;
+}*/
+
+.searchenginepg{
+	font-size: 50px;
+	color: #fff;
+	background-color: #052455;
+	text-align: center;
+	margin-top: 0;
+}
+
+.blogDate{
+	text-align: center;
+}
+
+.pic{
+	height: auto;
+	width:50%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+
+}
+
+.blogText{
+	font-size: 20px;
+	text-align: center;
+}
+
+.blogTitle{
+	font-size: 50px;
+	color: #fff;
+	background-color: #052455;
+	text-align: center;
+	margin-top: 0;
+}
+
+/*Resume style*/
+
+.resumeHeader{
+	text-align:center;
+	color:#fff;
+	font-size: 22px;
+	background-color: #0a2e68;
+}
+
+.resumeBody{
+	background-color: #fff
+}
+
+.resumeUl{
+	text-align: center;
+	list-style-position: inside;
+}
+
+.resumeTitle{
+	text-align:center;
+	background-color:#82a6e0;
+	color:#fff;
+	font-size: 40px;
+}
+
+.resumeTable{
+	background-color:#eee;
+	align:center;
+	margin:auto;
+	border: 1px solid;
+	border-radius: 5px;
+}
+
+/* projects page style*/
+
+.projectsBody{
+	background-color: #0a2e68
+}
+
+.projectsTitle{
+	text-align: center;
+	color: #fff;
+}
+
+.projectsDate{
+	color: #fff;
+	text-align: center;
+}
+
+.projectsText{
+	background-color: #fff;
+	font-size: 60px;
+	text-align: center;
+	border-radius: 40px;
+}
+
+/*about me page style*/
+
+.aboutMeTitle{
+	background-color: #fff;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-align: center;
+	font-family: 'Alegreya SC';
+	border-radius: 20px;
+
+}
+
+.aboutMeDate{
+	background-color: #337c2f;
+	text-align: center;
+	font-family: 'Alegreya SC';
+}
+
+.aboutMeBody{
+	background-image: url('/images/Backdrop.jpg');
+}
+
+.education{
+	text-align: center;
+	font-size: 40px;
+	background-color: #fff;
+	float: left;
+	display: inline;
+	border-radius: 20px;
+	width: 50%;
+	font-family: 'Alegreya Sans';
+}
+
+.youth{
+	background-color: #fff;
+	text-align: center;
+	margin:auto;
+	float:right;
+	display: inline;
+	width: 50%;
+	font-size: 40px;
+	border-radius: 20px;
+	font-family: 'Alegreya Sans';
+}
+
+.aboutMeGrowingUp{
+	margin:auto;
+	border-style: groove;
+	border: 5px;
+	border-color: #774710;
+	border-radius: 50px;
+	overflow: auto;
+}
+
+.aboutMyEducation{
+	overflow: auto;
+}

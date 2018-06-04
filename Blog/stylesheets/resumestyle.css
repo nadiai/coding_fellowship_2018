@@ -1,30 +1,27 @@
-.header{
+.resumeHeader{
 	text-align:center;
 	color:#fff;
-	font-size: 22px
-}
-
-body{
-	background-color: #fff
-}
-
-th{
+	font-size: 22px;
 	background-color: #0a2e68;
 }
 
-ul{
+.resumeBody{
+	background-color: #fff
+}
+
+.resumeUl{
 	text-align: center;
 	list-style-position: inside;
 }
 
-h1{
+.resumeTitle{
 	text-align:center;
 	background-color:#82a6e0;
 	color:#fff;
 	font-size: 40px;
 }
 
-table{
+.resumeTable{
 	background-color:#eee;
 	align:center;
 	margin:auto;

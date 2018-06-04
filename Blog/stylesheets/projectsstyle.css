@@ -1,18 +1,18 @@
-body{
+.projectsBody{
 	background-color: #0a2e68
 }
 
-h1{
+.projestsTitle{
 	text-align: center;
 	color: #fff;
 }
 
-h2{
+.projectsDate{
 	color: #fff;
 	text-align: center;
 }
 
-p{
+.projectsText{
 	background-color: #fff;
 	font-size: 60px;
 	text-align: center;
