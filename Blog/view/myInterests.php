@@ -4,9 +4,9 @@
 
 		<link rel='stylesheet' href="/include/websiteMasterStyle.css">
 
-		<link href='https://fonts.googleapis.com/css?family=Barrio' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Barrio'
+		href='https://fonts.googleapis.com/css?family=Delius Unicase'rel='stylesheet'>
 
-		<link href='https://fonts.googleapis.com/css?family=Delius Unicase' rel='stylesheet'>
 
 	</head>
 	<body class="backDrop">

@@ -108,10 +108,18 @@
 	margin-top: 0;
 }
 
-/*Resume style*/
+/*Resume style
 
-.resumeHeader{
-	text-align:center;
+
+
+
+
+
+*/
+
+
+.resumeTable th{
+	/*text-align:center;*/
 	color:#fff;
 	font-size: 22px;
 	background-color: #0a2e68;
@@ -121,7 +129,7 @@
 	background-color: #fff
 }
 
-.resumeUl{
+.resumeTable li{
 	text-align: center;
 	list-style-position: inside;
 }
@@ -293,8 +301,6 @@
 	text-align: center;
 	background-color: #fff;
 	border: 8px solid #fcce16;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
 	border-radius: 30px;
 	margin-top: auto;
 	font-family: 'Barrio';
