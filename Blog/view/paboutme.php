@@ -16,13 +16,9 @@
 				<img src="/images/Memphis.jpg" alt="Memphis" style='float: left; display: inline; height:auto; width:25%; margin-left: 100px;'>
 				<p class='youth'> I was born and raised in Memphis, Tn. The town that most outsiders recognize as the home of Elvis, while most residents have never been.</p>
 			</div>
-	<!--		<br>
-			<br>-->
 			<div class="aboutMyEducation">
 				<img src="/images/freshman.jpg" alt="FreshmanPhoto" style='float:right; display: inline; height:400px; width:25%; margin-right: 100px; margin-top: 30px; align: center;'>
 				<p class='education'> I am a rising  Junior at Washington University in St. Louis studying Organization and Strategic Management.</p>
-				<!-- I know these aren't feasibly spaced i will have to look up more effiecient ways
-				-->
 			</div>
 		</body>
 </html>

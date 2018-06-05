@@ -248,12 +248,12 @@
 }
 
 .myInterests{
-			font-family: 'Barrio';
-			font-size: 80px;
-			color:#fff;
-			text-align: center;
-			position: relative;
-			z-index: 2;
+	font-family: 'Barrio';
+	font-size: 80px;
+	color:#fff;
+	text-align: center;
+	position: relative;
+	z-index: 2;
 }
 
 .announcement{
