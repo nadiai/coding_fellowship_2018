@@ -39,6 +39,8 @@ echo "
 	<br>
 	<h2> $post[Date] </h2>
 	<br>
+	<img src='$post[Image]'/>
+	<br>
 	<p> $post[Text]</p>
 
 ";

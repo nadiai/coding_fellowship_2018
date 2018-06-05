@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title> Nadia's Blog post</title>
-		<link rel='stylesheet' href="blogstyle.css"
+		<link rel='stylesheet' href="/include/websiteMasterStyle.css">
 	</head>
 </html>
 <?php
@@ -40,7 +40,7 @@ echo "
 	<h1 style='text-align:center; background-color:#052455;font-size: 50px;color: #fff;'> $Blogpost[Title] </h1>
 	<h2 style='text-align: center;'> $Blogpost[Author]</h2>
 	<h2 style='text-align: center;'> $Blogpost[Date]</h2>
-	<img> $Blogpost[Image] </img>
+	<img src='$Blogpost[images]' </img>
 	<p style='font-size: 20px;text-align: center;'> $Blogpost[Text]</p>
 
 ";
