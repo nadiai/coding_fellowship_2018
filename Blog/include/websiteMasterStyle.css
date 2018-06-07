@@ -1,9 +1,10 @@
 .mainPageContent{
 	background-image:url('/images/wood.jpg');
 	height: 800px;
-	align-content: center;
-	padding-left: 20px;
+	padding-left: auto;
+	/*padding-right: 25%;*/
 	margin-top: 0px;
+	padding-top: 10px;
 }
 
 .picOfNadia{
@@ -13,35 +14,35 @@
 	display:inline;*/
 	border: 5px solid #fff;
 	border-radius: 5px;
-	margin-top: 5%;
-	margin-left: 18%;
+	margin: auto;
+	display: block;
 }
 
 .mainPageTitle{
 	text-align:center;
 	color:#fff;
-	background-color:#f5a29d;
+	background-color:#a1c1f4;
 	font-size: 80px;
 	display: block;
 	margin-top: 0;
 	margin-bottom: 0;
+	font-family: 'Ribeye';
+	/*font-family: 'Pattaya';*/
+	/*font-family: 'Galada';*/
 	/*z-index: 1;
 	position: relative;*/
 }
 
 #Container{
-	margin-left: 180px;
-	/*background-image: url('/backdrop2.jpg');*/
+	margin-left: 200px;
 }
 .mainPageBackground{
 	width: 100%;
 	height: 200px;
-	/*z-index: 0;
-	position: absolute;*/
 }
 .mainPageSidenav {
 	height: 100%;
-	width: 180px;
+	width: 200px;
 	position: fixed;
 	z-index: 1;
 	top: 0;
@@ -49,12 +50,15 @@
 	background-color: #052455;
 	overflow-x: hidden;
 	padding-top: 30px;
+	font-family: 'Raleway Dots';
+	padding-left: 5px;
 }
 
 .mainPageSidenav a {
-	padding: 6px 8px 6px 16px;
+	padding: 0px 8px 6px 0px;
 	font-size: 25px;
 	color: #fff;
+	border: 2px solid white;
 }
 
 .mainPageSidenav a:hover{
@@ -66,6 +70,31 @@
 	height: 200px;
 }
 
+.blogTitleMainPg{
+	text-align: center;
+}
+
+.blogTitleMainPg a{
+	color: #fff;
+	font-family: 'Raleway Dots';
+	font-size: 30px;
+	font-weight: bolder;
+}
+
+.blogTitleMainPg a:hover{
+	color: #052455;
+}
+
+.mainPageContent li{
+	display: inline-block;
+	margin:auto;
+}
+
+.mainPageContent li + li{
+	border-left: 2px solid white;
+	margin-top: 10px;
+}
+
 /*.mainpg{
 	text-align: center;
 	background-color: #084d8a;
@@ -75,7 +104,7 @@
 }*/
 
 .searchenginepg{
-	font-size: 50px;
+	font-size: 70px;
 	color: #fff;
 	background-color: #052455;
 	text-align: center;
@@ -103,11 +132,10 @@
 .blogTitle{
 	font-size: 50px;
 	color: #fff;
-	background-color: #052455;
+	background-color: #f5a29d;
 	text-align: center;
 	margin-top: 0;
 }
-
 /*Resume style
 
 

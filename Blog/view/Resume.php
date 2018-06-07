@@ -2,7 +2,7 @@
 	<head>
 		<title> Resume </title>
 
-		<link rel='stylesheet' href="/include/websiteMasterStyle.css">
+		<link rel='stylesheet' href="/Blog/include/websiteMasterStyle.css">
 
 	</head>
 		<Body class="resumeBody" style='background-image:url(/images/wheat.jpg)'>

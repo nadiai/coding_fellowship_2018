@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title> About Me</title>
-		<link rel='stylesheet' href="/include/websiteMasterStyle.css">
+		<link rel='stylesheet' href="/Blog/include/websiteMasterStyle.css">
 		<link href='https://fonts.googleapis.com/css?family=Alegreya SC' rel='stylesheet'>
 		<link href='https://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet'>
 	</head>

@@ -1,8 +1,13 @@
+<?php
+
+//include('/Blog/include/includeAll.php');
+
+ ?>
 <html>
 	<head>
 		<title>May 17th blog</title>
 
-		<link rel='stylesheet' href="/include/websiteMasterStyle.css">
+		<link rel='stylesheet' href="/Blog/include/websiteMasterStyle.css">
 
 		<link href='https://fonts.googleapis.com/css?family=Barrio'
 		href='https://fonts.googleapis.com/css?family=Delius Unicase'rel='stylesheet'>
