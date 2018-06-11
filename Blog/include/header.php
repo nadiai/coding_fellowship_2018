@@ -1,4 +1,7 @@
-<html>
+<?php
+$print = printHeader();
+ ?>
+
 	<head>
 
 		<title> Nadia's Website</title>

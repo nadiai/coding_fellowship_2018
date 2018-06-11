@@ -85,7 +85,7 @@
 	color: #052455;
 }
 
-.mainPageContent li{
+.Container li{
 	display: inline-block;
 	margin:auto;
 }
@@ -94,6 +94,7 @@
 	border-left: 2px solid white;
 	margin-top: 10px;
 }
+
 
 /*.mainpg{
 	text-align: center;

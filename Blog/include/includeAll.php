@@ -2,5 +2,10 @@
 
 include('Blog/include/functions.php');
 //include('Blog/include/websiteMasterStyle.css')
-echo "<link href='Blog/include/websiteMasterStyle.css' rel='stylesheet'>";
  ?>
+
+ <style type="text/css">
+ <?php
+	include('Blog/include/websiteMasterStyle.css');
+	?>
+ </style>

@@ -4,6 +4,7 @@
 
 	include('Blog/include/header.php');
 
+
 //$posts = GetAllBlogPosts();
 
  //foreach($posts as $index => $post){

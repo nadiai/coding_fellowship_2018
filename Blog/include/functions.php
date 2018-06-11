@@ -14,7 +14,6 @@ function GetAllBlogPosts(){
 
 }
 
-$allBlogPosts = GetAllBlogPosts();
 
 function GetBlogPost($blogPostID){
 	$result= dbQuery("
@@ -37,7 +36,6 @@ function getAllComments(){
 	return $result;
 }
 
-$allComments = getAllComments();
 
 function getComments($blogPostID){ //colon is a security prevention
 	$result = dbQuery("
@@ -52,26 +50,10 @@ function getComments($blogPostID){ //colon is a security prevention
 
 }
 
+function printHeader(){
+		echo "<html>";
+};
 
-//$postComments = getComments($_REQUEST['blogPostID'])
-
-//function getComment(){
-	//$result = dbQuery("
-	//	SELECT *
-		//FROM Commments
-		//WHERE commentID = $commentID
-	//")-> fetch();
-
-	//return $result;
-//}
-
-//$comment = getComment($_REQUEST['commentID']);
-
-/*var_dump($_REQUEST);*/
-
-/*echo "
-	$comment[Comment]
-";*/
 
 
 ?>
