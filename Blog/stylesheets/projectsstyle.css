@@ -1,0 +1,20 @@
+.projectsBody{
+	background-color: #0a2e68
+}
+
+.projestsTitle{
+	text-align: center;
+	color: #fff;
+}
+
+.projectsDate{
+	color: #fff;
+	text-align: center;
+}
+
+.projectsText{
+	background-color: #fff;
+	font-size: 60px;
+	text-align: center;
+	border-radius: 40px;
+}

@@ -1,0 +1,30 @@
+.resumeTable th{
+	text-align:center;
+	color:#fff;
+	font-size: 22px;
+	background-color: #0a2e68;
+}
+
+.resumeBody{
+	background-color: #fff
+}
+
+.resumeTable li{
+	text-align: center;
+	list-style-position: inside;
+}
+
+.resumeTitle{
+	text-align:center;
+	background-color:#82a6e0;
+	color:#fff;
+	font-size: 40px;
+}
+
+.resumeTable{
+	background-color:#eee;
+	align:center;
+	margin:auto;
+	border: 1px solid;
+	border-radius: 5px;
+}
