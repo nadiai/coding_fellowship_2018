@@ -48,9 +48,8 @@ if (sizeof($Errors) > 0) {
 //potential challenge printformfield
 echo "
 <form action='' method='post'>
-	".Textfield("Name")."
         Name:
-        <input type='text' name='Name' value='$_REQUEST['Name']' /><br />
+        <input type='text' name='Name' value='".$_REQUEST['Name']."' /><br />
 
         Phone:
         <input type='text' name='Phone' /><br />
@@ -68,3 +67,5 @@ echo "
         <input type='submit' name='JobApplication' value='Submit your application' />
 </form>
 ";
+
+	//".Textfield("Name")." was originally 51
