@@ -19,7 +19,7 @@
 			 //$allPostComments = getComments($_REQUEST['blogPostID']);
 
 			 $Blogpost = GetBlogPost($_REQUEST['blogPostID']);
-			 //var_dump($_REQUEST);
+
 			  echo "
 			  	<body style='background-color:#dce5f4'/>
 			  	<h1 style='text-align:center; background-color:#a1c1f4;font-size: 50px;color: #fff; margin-top: 0px;'> $Blogpost[Title] </h1>
@@ -39,45 +39,66 @@
 				foreach($Comments as $index => $Comment){
 					echo "
 					<br/>
-					<p> $Comment[userID] : $Comment[commentDateTime]</p>
-					<p style='border: 2px solid black;'> $Comment[Comment]</p>
+					<p style='margin-right: 25%'> $Comment[userID] : $Comment[commentDateTime]</p>
+					<p style='border: 2px solid black; display: block; background-color: #fff; margin-right: 50%'> $Comment[Comment]</p>
 				";}
 
-				// echo "
-				// 	<h1> $postComments[commentID] </h1>
-				// 	<h2> $postComments[commentDateTime] </h2>
-				// 	<p> $postComments[Comment]</p>
-				// ";
+				$postComment = submitComment(@$_REQUEST['userID'], @$_REQUEST['commentDateTime'], @$_REQUEST['Comment']);
 
 
-//var_dump($postComments);
+				// $Errors = array();
+				// if(isset($_REQUEST['submitComment'])){
+				//
+				// 	if($_REQUEST['userID'] == ''){
+				// 		$Errors['userID'] = "required";
+				//
+				// 	}
+				//
+				// 	if($_REQUEST['Comment'] == ''){
+				// 		$Errors['Comment'] = "required";
+				//
+				// 	}
+				//
+				// 	if (sizeof($Errors) == 0) {
+				//
+				// 		submitComment(
+				// 			$_REQUEST['userID'],
+				// 			$_REQUEST['Comment']
+				// 		);
+				// 	}
+				//
+				// 	if (sizeof($Errors) == 0) {
+				//
+				// 		insertBlogComment(
+				// 			$_REQUEST['blogPostID'],
+				// 			$_REQUEST['userID'],
+				// 			$_REQUEST['commentDateTime'],
+				// 			$_REQUEST['Comment']
+				// 		);
+				// 	}
+				// }
+				// var_dump($Errors);
+
+				echo "
+				<h2> Submit a Comment! </h2>
+
+				<form action='' method='post' style='background-color: #052455; display: inline-block; padding: 20px;'>
+
+				UserID:
+					 <input type='text' name='userID' value='".@$_REQUEST['userID']."'>
+					 <br/>
+				Comment:
+					 <input type='text' name='Comment' value='".@$_REQUEST['Comment']."' >
+					 <br/>
+					 <input type='submit' name='submitComment' value='Submit Comment'>
+				</form>
+				";
+
+				$insertComment = insertBlogComment($_REQUEST['blogPostID'], @$_REQUEST['userID'], @$_REQUEST['commentDateTime'], @$_REQUEST['Comment']);
+
+
+
 		 ?>
 	</body>
 
 </html>
-
-<?php
-//$posts = GetAllBlogPosts(); //we want to have all the data associated with this variable
-//for each post
-/*var_dump($index);*/
-
-/*foreach($posts as $index) {
-var_dump($index);
-echo "
-	<p><a href='/Blog/view/blogpost.php?blogPostID=$index[blogPostID]'> $index[Title] </a></p>
-	";
-}
-/*die("test");*/
-//$post = GetBlogPost($_REQUEST['blogPostID']); //post will find the blogpost ID that is requested
-
-/*echo "
-	<h1> $post[Title]</h1>
-	<br>
-	<h2> $post[Date] </h2>
-	<br>
-	<img src='$post[Image]'/>
-	<br>
-	<p> $post[Text]</p>
-
-";*/
-?>
