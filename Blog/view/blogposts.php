@@ -11,12 +11,12 @@
 		<img alt='Background' src="/images/backdrop2.jpg" class="background">
 		<h1 class="searchenginepg"> Nadia's Blog Posts </h1>
 		<?php
-
-			//$blogPostID = $_REQUEST['blogPostID'];
-			 //$Blogpost = GetBlogPost($_REQUEST['blogPostID']);
-
-
-			 //$allPostComments = getComments($_REQUEST['blogPostID']);
+		
+		if (isset($_REQUEST['submitComment'])) {
+			$page = $_SERVER['PHP_SELF'];
+			$sec = "1";
+			header("location:?blogPostID=$_REQUEST);
+		}
 
 			 $Blogpost = GetBlogPost($_REQUEST['blogPostID']);
 
@@ -34,64 +34,44 @@
 
 			$postComments = getComments($_REQUEST['blogPostID']);
 
+			$postComment = submitComment(@$_REQUEST['userID'], @$_REQUEST['commentTimeStamp'], @$_REQUEST['Comment']);
+
 			$Comments = getComments($_REQUEST['blogPostID']);
 
 				foreach($Comments as $index => $Comment){
 					echo "
 					<br/>
-					<p style='margin-right: 25%'> $Comment[userID] : $Comment[commentDateTime]</p>
-					<p style='border: 2px solid black; display: block; background-color: #fff; margin-right: 50%'> $Comment[Comment]</p>
+					<p style='margin-right: 25%; background-color: #a1c1f4;'> $Comment[userID] : $Comment[commentTimeStamp] </p>
+					<br/>
+
+					<div class='dialogBox'>
+						<div class='body'>
+						<span class='tip tipUp'></span>
+							<p class='commentBox'> $Comment[Comment]</p>
+						</div>
+					</div>
 				";}
 
-				$postComment = submitComment(@$_REQUEST['userID'], @$_REQUEST['commentDateTime'], @$_REQUEST['Comment']);
 
-
-				// $Errors = array();
-				// if(isset($_REQUEST['submitComment'])){
-				//
-				// 	if($_REQUEST['userID'] == ''){
-				// 		$Errors['userID'] = "required";
-				//
-				// 	}
-				//
-				// 	if($_REQUEST['Comment'] == ''){
-				// 		$Errors['Comment'] = "required";
-				//
-				// 	}
-				//
-				// 	if (sizeof($Errors) == 0) {
-				//
-				// 		submitComment(
-				// 			$_REQUEST['userID'],
-				// 			$_REQUEST['Comment']
-				// 		);
-				// 	}
-				//
-				// 	if (sizeof($Errors) == 0) {
-				//
-				// 		insertBlogComment(
-				// 			$_REQUEST['blogPostID'],
-				// 			$_REQUEST['userID'],
-				// 			$_REQUEST['commentDateTime'],
-				// 			$_REQUEST['Comment']
-				// 		);
-				// 	}
-				// }
-				// var_dump($Errors);
 
 				echo "
-				<h2> Submit a Comment! </h2>
 
-				<form action='' method='post' style='background-color: #052455; display: inline-block; padding: 20px;'>
+					<form class='commentForm' action='' method='post'>
 
-				UserID:
-					 <input type='text' name='userID' value='".@$_REQUEST['userID']."'>
-					 <br/>
-				Comment:
-					 <input type='text' name='Comment' value='".@$_REQUEST['Comment']."' >
-					 <br/>
-					 <input type='submit' name='submitComment' value='Submit Comment'>
-				</form>
+					<h2> Submit a Comment! </h2>
+
+					<div class='formContents'>
+					UserID:
+						 <input type='text' name='userID' value='".@$_REQUEST['userID']."'>
+						 <br/>
+						 <br/>
+					Comment:
+						 <input type='text' name='Comment' value='".@$_REQUEST['Comment']."' >
+						 <br/>
+						 <br/>
+						 <input type='submit' name='submitComment' value='Submit Comment' id='submitButton'>
+						</div>
+					</form>
 				";
 
 				$insertComment = insertBlogComment($_REQUEST['blogPostID'], @$_REQUEST['userID'], @$_REQUEST['commentDateTime'], @$_REQUEST['Comment']);

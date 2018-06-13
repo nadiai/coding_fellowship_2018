@@ -59,22 +59,22 @@ function printHeader(){
 
 //var_dump($_REQUEST);
 
-function insertBlogComment($blogPostID, $userID, $commentDateTime, $Comment){
-	$result = dbQuery("
-	INSERT INTO Comments(blogPostID, userID, commentDateTime, Comment)
-	VALUES ('$blogPostID','$userID', '$commentDateTime', '$Comment')
-	")->fetch();
-
-	//return $result;
+function insertBlogComment($blogPostID, $userID, $commentTimeStamp, $Comment){
+	if(isset($_REQUEST['submitComment'])){
+		$result = dbQuery("
+		INSERT INTO Comments(blogPostID, userID, commentTimeStamp, Comment)
+		VALUES ('$blogPostID','$userID', '$commentTimeStamp', '$Comment')
+		")->fetch();
+	}
 }
 
-function submitComment($userID, $commentDateTime, $Comment){
-	if(isset($_REQUEST['submitComment'])){
-		echo "
-		<br/>
-		<p style='margin-right: 25%'> $userID : $commentDateTime </p>
-		<p style='border: 2px solid black; display: block; background-color: #fff; margin-right: 50%'> $Comment </p>
-	";
+function submitComment($userID, $commentTimeStamp, $Comment){
+		if(isset($_REQUEST['submitComment'])){
+			echo "
+			<br/>
+			<p style='margin-right: 25%'> $userID : $commentTimeStamp</p>
+			<p style='border: 2px solid black; display: block; background-color: #fff; margin-right: 50%'> $Comment </p>
+		";
 	}
 }
 

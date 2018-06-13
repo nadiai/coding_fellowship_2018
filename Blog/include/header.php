@@ -37,9 +37,8 @@ $print = printHeader();
 						 foreach($posts as $index => $post){
 							 //var_dump($posts);
 						 echo "
-						 <li>
 								<p class='blogTitleMainPg' style='text-align: center;'> <a href = '/Blog/view/blogposts.php?blogPostID=$index'>$post[Title]</a></p>
-							</li>";
+							";
 						 }
 
 
