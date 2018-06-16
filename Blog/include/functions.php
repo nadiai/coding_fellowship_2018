@@ -54,6 +54,26 @@ function printHeader(){
 		echo "<html>";
 };
 
+function getAllTags(){
+	$result = dbQuery("
+		SELECT *
+		FROM Tags
+	")->fetchAll();
+
+	return $result;
+}
+
+function getTagBlogs($tagID){
+	$result = dbQuery("
+		SELECT *
+		FROM PostTag
+		WHERE tagID = :tagID
+		",
+	 array('tagID' => $tagID )
+ );
+
+ 	return $result->fetchAll();
+}
 
 
 ?>

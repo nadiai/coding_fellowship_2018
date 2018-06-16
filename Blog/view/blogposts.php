@@ -1,10 +1,13 @@
-<html>
+<?php
+include('Blog/include/functions.php');
+$print = printHeader();
+ ?>
 	<head>
 		<title> Nadia's Blogposts </title>
 		<link rel='stylesheet' href="/Blog/include/websiteMasterStyle.css">
-		<?php
-		include('Blog/include/functions.php');
-		 ?>
+		<!-- <?php
+		// include('Blog/include/functions.php');
+		 ?> -->
 	 </head>
 
 	<body>
@@ -39,7 +42,7 @@
 				foreach($Comments as $index => $Comment){
 					echo "
 					<br/>
-					<p> $Comment[userID] : $Comment[commentDateTime]</p>
+					<p> $Comment[userID] : $Comment[commentTimeStamp]</p>
 					<p style='border: 2px solid black;'> $Comment[Comment]</p>
 				";}
 

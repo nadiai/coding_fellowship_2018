@@ -1,42 +1,97 @@
 .mainPageContent{
-	background-image:url('/images/wood.jpg');
-	height: 800px;
-	padding-left: auto;
-	/*padding-right: 25%;*/
+	/* background-image:url('/images/backdrop2.jpg'); */
+	height: auto;
 	margin-top: 0px;
 	padding-top: 10px;
 }
+.mainTopNav {
+    background-color: #052455;
+    overflow: hidden;
+		margin-bottom: 0;
+}
 
+.mainTopNav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.mainTopNav a:hover {
+    background-color: #c2bda2;
+    color: black;
+}
+
+.mainTopNav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+.mainSectionOne{
+	background-image: url('/images/wixbackground.jpg');
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 0;
+	margin-bottom: 0px;
+	display: flex;
+	margin: auto;
+	align-items: center;
+	justify-content: center;
+}
 .picOfNadia{
 	width:300px;
 	height:385px;
-	/*float:left;
-	display:inline;*/
+	float:left;
+	display:inline;
 	border: 5px solid #fff;
 	border-radius: 5px;
-	margin: auto;
-	display: block;
+	margin-right: 5px;
+}
+.portionAboutMe{
+	float: left;
+	max-width: 35%;
+	color: #052455;
+	font-family: 'Raleway Dots';
+}
+
+.portionAboutMe h2{
+	font-size: 35px;
+	border-bottom: 2px solid;
+	border-color: #052455;
+}
+
+.portionAboutMe p{
+	font-size: 20px;
 }
 
 .mainPageTitle{
-	text-align:center;
+	text-align:left;
 	color:#fff;
 	background-color:#a1c1f4;
-	font-size: 80px;
+	font-size: 50px;
 	display: block;
-	margin-top: 0;
 	margin-bottom: 0;
 	font-family: 'Ribeye';
-	/*font-family: 'Pattaya';*/
-	/*font-family: 'Galada';*/
-	/*z-index: 1;
-	position: relative;*/
+	padding-left: 5px;
 }
 
 #Container{
-	margin-left: 200px;
+	/* margin-left: 200px;
+	margin-bottom: 10px; */
 }
-.mainPageBackground{
+.Container2{
+	background-color: #fff;
+	margin-top: auto;
+	text-align: center;
+
+}
+
+.tagHeader{
+	background-color: #a1c1f4;
+	color: #fff;
+}
+/* .mainPageBackground{
 	width: 100%;
 	height: 200px;
 }
@@ -63,36 +118,75 @@
 
 .mainPageSidenav a:hover{
 	color: #d0d879;
-}
+} */
 	/* blogposts style*/
 .background{
 	width: 100%;
 	height: 200px;
 }
 
-.blogTitleMainPg{
+/* .blogTitles{
 	text-align: center;
-}
+} */
+
 
 .blogTitleMainPg a{
-	color: #fff;
+	color: #052455;;
 	font-family: 'Raleway Dots';
 	font-size: 30px;
 	font-weight: bolder;
 }
 
-.blogTitleMainPg a:hover{
-	color: #052455;
+.blogTable{
+	display: table;
+	margin: 0 auto;
 }
 
-.Container li{
+.blogTitles li{
+	display: inline;
+}
+
+.blogTitles{
+	text-align:center;
+	background-color: #fff;
+	margin-top: 0;
+
+}
+
+.blogTitles h1{
+	color: #fff;
+	background-color: #052455;
+	font-family: 'Ribeye';
+	font-size: 35px;
+	padding: 10px;
+}
+
+.blogTitleMainPg a:hover{
+	color: #c2bda2;
+}
+
+.blogTitleMainPg{
+	color: #052455;
+}
+.blogTitleMainPg{
+	border-left: 2px solid;
+	border-color: color: #052455;
+	margin-top: 10px;
 	display: inline-block;
 	margin:auto;
 }
 
-.mainPageContent li + li{
-	border-left: 2px solid white;
-	margin-top: 10px;
+.tagTable table{
+	margin: auto;
+}
+
+.tagTable tr{
+	border: 3px solid;
+	border-color: #052455;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 10px;
+	background-color: #eee;
 }
 
 
