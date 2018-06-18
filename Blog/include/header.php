@@ -1,5 +1,9 @@
 <?php
+
+session_start();
+
 $print = printHeader();
+
  ?>
 
 	<head>
@@ -30,6 +34,7 @@ $print = printHeader();
 				<div class="mainPageContent">
 					<img class='picOfNadia' src='/images/IMG_0601.JPG' alt='Nadia'/>
 					<?php
+
 					echo "<br/>";
 
 						$posts = GetAllBlogPosts();
@@ -41,8 +46,17 @@ $print = printHeader();
 								<p class='blogTitleMainPg' style='text-align: center;'> <a href = '/Blog/view/blogposts.php?blogPostID=$index'>$post[Title]</a></p>
 							</li>";
 						 }
+						 echo "<br/>";
 
+						 echo "
+						 	<form action='' method='post'>
+								<input type='text' name='userName' value='".@$_SESSION['userName']."' placeholder='Username' class='userNameBox'/> <br />
+								<input type='text' name='password' value='".@$_SESSION['password']."' placeholder='Password' class='passwordBox'/> <br />
+								<input type='submit' name='Log in' value='Log In'>
+							</form>
+						 ";
 
 					?>
+
 				</div>
 			</div>
