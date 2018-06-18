@@ -50,9 +50,12 @@ $print = printHeader();
 
 						 echo "
 						 	<form action='' method='post'>
+								<input type='text' name='firstName' value='".@$_SESSION['firstName']."' placeholder='First Name' class='nameBox'/> <br />
+								<input type='text' name='lastName' value='".@$_SESSION['lastName']."' placeholder='Last Name' class='nameBox'/> <br />
+								<input type='text' name='e-mail' value='".@$_SESSION['e-mail']."' placeholder='E-mail' class='emailBox'/> <br />
 								<input type='text' name='userName' value='".@$_SESSION['userName']."' placeholder='Username' class='userNameBox'/> <br />
 								<input type='text' name='password' value='".@$_SESSION['password']."' placeholder='Password' class='passwordBox'/> <br />
-								<input type='submit' name='Log in' value='Log In'>
+								<input type='submit' name='sign-up' value='Sign Up9'>
 							</form>
 						 ";
 
