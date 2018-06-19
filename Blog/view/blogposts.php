@@ -11,12 +11,12 @@
 		<img alt='Background' src="/images/backdrop2.jpg" class="background">
 		<h1 class="searchenginepg"> Nadia's Blog Posts </h1>
 		<?php
-		
-		if (isset($_REQUEST['submitComment'])) {
-			$page = $_SERVER['PHP_SELF'];
-			$sec = "1";
-			header("location:?blogPostID=$_REQUEST);
-		}
+
+		// if (isset($_REQUEST['submitComment'])) {
+		// 	$page = $_SERVER['PHP_SELF'];
+		// 	$sec = "1";
+		// 	header("location:?blogPostID=$_REQUEST);
+		// }
 
 			 $Blogpost = GetBlogPost($_REQUEST['blogPostID']);
 
@@ -32,7 +32,7 @@
 
 				echo "<h1 style=' border-top: solid; border-color:#052455; background-color:#a1c1f4; font-size: 30px;color: #fff; margin-top: 0px;'> Comments </h1>";
 
-			$postComments = getComments($_REQUEST['blogPostID']);
+			// $postComments = getComments($_REQUEST['blogPostID']);
 
 			$postComment = submitComment(@$_REQUEST['userID'], @$_REQUEST['commentTimeStamp'], @$_REQUEST['Comment']);
 
