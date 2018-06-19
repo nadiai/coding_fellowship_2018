@@ -47,7 +47,7 @@
 						 }
 						 echo "<br/>";
 					?>
-				<div class='logInForm'>
+				<div class='signUpForm'>
 					<?php
 
 						 echo "
@@ -60,6 +60,8 @@
 								<input type='text' name='passWord' value='".@$_SESSION['passWord']."' placeholder='Password' class='passwordBox'/> <br />
 								<br/>
 								<input type='submit' name='signUp' value='Sign Up' class='signUpButton'>
+								<br/>
+								<p> Already have an account? <a href='Blog/view/logIn.php'> Login</a></p>
 							</form>
 						 ";
 

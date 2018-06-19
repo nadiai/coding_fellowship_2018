@@ -60,6 +60,8 @@ function insertAnAccount($firstName, $lastName, $email, $userName, $passWord){
 		INSERT INTO LogIn(firstName, lastName, email, userName, passWord)
 		VALUES ('$firstName', '$lastName', '$email', '$userName', '$passWord')
 		")->fetch();
+
+		$_SESSION['userName'] = $userName;
 	}
 
 	return $result;

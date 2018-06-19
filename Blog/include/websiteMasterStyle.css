@@ -95,14 +95,14 @@
 	margin-top: 10px;
 }
 
-.logInForm{
+.signUpForm{
 	background-color: #dbc3a3;
 	text-align: center;
 	padding-bottom: 1px;
 	padding-top: 5px;
 }
 
-.logInForm h2{
+.signUpForm h2{
 	color: #fff;
 	border-bottom: 2px solid;
 	border-color: #fff;
@@ -120,6 +120,9 @@
 	border: 3px solid;
 }
 
+.signUpForm p{
+	color: #fff;
+}
 /*.mainpg{
 	text-align: center;
 	background-color: #084d8a;
@@ -383,4 +386,25 @@
 	 top: 100px;
 	 border: 15px solid;
 	 border-color: #fff transparent transparent #fff;
+}
+
+/* Login page */
+
+.logInHeader{
+	background-color: #052455;
+	color: white;
+	font-size: 40px;
+	font-family: 'Ribeye';
+	text-align: center;
+}
+
+.logInForm{
+	background-color: #a1c1f4;
+	text-align: center;
+}
+.logInHeader2{
+	color: #fff;
+	font-family: 'Raleway Dots';
+	border-bottom: 2px solid white;
+
 }
