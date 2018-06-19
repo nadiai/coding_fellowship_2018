@@ -63,6 +63,7 @@ function getAllTags(){
 	return $result;
 }
 
+
 function getTagBlogs($tagID){
 	$result = dbQuery("
 		SELECT *
@@ -70,7 +71,7 @@ function getTagBlogs($tagID){
 		WHERE tagID = :tagID
 		",
 	 array('tagID' => $tagID )
- );
+ 	);
 
  	return $result->fetchAll();
 }
