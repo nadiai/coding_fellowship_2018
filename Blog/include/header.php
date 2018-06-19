@@ -1,11 +1,10 @@
 <?php
 
-session_start();
+ $print = printHeader();
 
-$print = printHeader();
+?>
 
- ?>
-
+<html>
 	<head>
 
 		<title> Nadia's Website</title>
@@ -47,19 +46,25 @@ $print = printHeader();
 							</li>";
 						 }
 						 echo "<br/>";
+					?>
+				<div class='logInForm'>
+					<?php
 
 						 echo "
 						 	<form action='' method='post'>
+								<h2> Create an Account </h2>
 								<input type='text' name='firstName' value='".@$_SESSION['firstName']."' placeholder='First Name' class='nameBox'/> <br />
 								<input type='text' name='lastName' value='".@$_SESSION['lastName']."' placeholder='Last Name' class='nameBox'/> <br />
 								<input type='text' name='e-mail' value='".@$_SESSION['e-mail']."' placeholder='E-mail' class='emailBox'/> <br />
 								<input type='text' name='userName' value='".@$_SESSION['userName']."' placeholder='Username' class='userNameBox'/> <br />
 								<input type='text' name='password' value='".@$_SESSION['password']."' placeholder='Password' class='passwordBox'/> <br />
-								<input type='submit' name='sign-up' value='Sign Up9'>
+								<br/>
+								<input type='submit' name='sign-up' value='Sign Up' class='signUpButton'>
 							</form>
 						 ";
 
 					?>
+				</div>
 
 				</div>
 			</div>

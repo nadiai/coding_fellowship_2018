@@ -95,6 +95,30 @@
 	margin-top: 10px;
 }
 
+.logInForm{
+	background-color: #dbc3a3;
+	text-align: center;
+	padding-bottom: 1px;
+	padding-top: 5px;
+}
+
+.logInForm h2{
+	color: #fff;
+	border-bottom: 2px solid;
+	border-color: #fff;
+	font-family: 'Raleway Dots';
+	font-size: 30px;
+}
+
+.signUpButton{
+	padding-right: 5px;
+	padding-left: 10px;
+}
+.signUpButton:hover{
+	background-color: #052455;
+	color: #fff;
+	border: 3px solid;
+}
 
 /*.mainpg{
 	text-align: center;
