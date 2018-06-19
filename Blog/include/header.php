@@ -55,14 +55,16 @@
 								<h2> Create an Account </h2>
 								<input type='text' name='firstName' value='".@$_SESSION['firstName']."' placeholder='First Name' class='nameBox'/> <br />
 								<input type='text' name='lastName' value='".@$_SESSION['lastName']."' placeholder='Last Name' class='nameBox'/> <br />
-								<input type='text' name='e-mail' value='".@$_SESSION['e-mail']."' placeholder='E-mail' class='emailBox'/> <br />
+								<input type='text' name='email' value='".@$_SESSION['email']."' placeholder='E-mail' class='emailBox'/> <br />
 								<input type='text' name='userName' value='".@$_SESSION['userName']."' placeholder='Username' class='userNameBox'/> <br />
-								<input type='text' name='password' value='".@$_SESSION['password']."' placeholder='Password' class='passwordBox'/> <br />
+								<input type='text' name='passWord' value='".@$_SESSION['passWord']."' placeholder='Password' class='passwordBox'/> <br />
 								<br/>
-								<input type='submit' name='sign-up' value='Sign Up' class='signUpButton'>
+								<input type='submit' name='signUp' value='Sign Up' class='signUpButton'>
 							</form>
 						 ";
 
+						 $CreateAccount = insertAnAccount( @$_REQUEST['firstName'], @$_REQUEST['lastName'], @$_REQUEST['email'], @$_REQUEST['userName'], @$_REQUEST['passWord']);
+						 var_dump($CreateAccount);
 					?>
 				</div>
 
