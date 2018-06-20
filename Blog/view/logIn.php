@@ -31,9 +31,22 @@ include('Blog/include/loginFunctions.php');
 					";
 
 					if (isset($_REQUEST['logInSubmit'])) {
-						$_SESSION['userName'] = $_REQUEST['userName'];
-						header('Location: logInConfirmation.php');
-						exit();
+						if ($_REQUEST['userName'] == ''|| $_REQUEST['passWord'] == ''){
+							echo "Required Field empty";
+						}else {
+							$_SESSION['userName'] = $_REQUEST['userName'];
+							$_SESSION['passWord'] = $_REQUEST['passWord'];
+							header('Location: logInConfirmation.php');
+							exit();
+						}
+						//
+						// if ($_REQUEST['passWord'] == ''){
+						// 	echo "Password Required";
+						// }
+						// $_SESSION['userName'] = $_REQUEST['userName'];
+						// // $_SESSION['passWord'] = $_REQUEST['passWord'];
+						// header('Location: logInConfirmation.php');
+						// exit();
 					}
 
 				?>
