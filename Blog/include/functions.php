@@ -54,6 +54,18 @@ function printHeader(){
 		echo "<html>";
 };
 
+function insertAnAccount($firstName, $lastName, $email, $userName, $passWord){
+	if(isset($_REQUEST['signUp'])){
+		$result = dbQuery("
+		INSERT INTO LogIn(firstName, lastName, email, userName, passWord)
+		VALUES ('$firstName', '$lastName', '$email', '$userName', '$passWord')
+		")->fetch();
+
+		// $_SESSION['userName'] = $userName;
+	}
+
+
+}
 
 
 ?>

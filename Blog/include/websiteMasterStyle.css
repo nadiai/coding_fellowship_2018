@@ -95,7 +95,34 @@
 	margin-top: 10px;
 }
 
+.signUpForm{
+	background-color: #dbc3a3;
+	text-align: center;
+	padding-bottom: 1px;
+	padding-top: 5px;
+}
 
+.signUpForm h2{
+	color: #fff;
+	border-bottom: 2px solid;
+	border-color: #fff;
+	font-family: 'Raleway Dots';
+	font-size: 30px;
+}
+
+.signUpButton{
+	padding-right: 5px;
+	padding-left: 10px;
+}
+.signUpButton:hover{
+	background-color: #052455;
+	color: #fff;
+	border: 3px solid;
+}
+
+.signUpForm p{
+	color: #fff;
+}
 /*.mainpg{
 	text-align: center;
 	background-color: #084d8a;
@@ -359,4 +386,105 @@
 	 top: 100px;
 	 border: 15px solid;
 	 border-color: #fff transparent transparent #fff;
+}
+
+/* Sign Up Confirmation */
+
+.signUpConfBackDrop{
+	background-color: #a1c1f4;
+	text-align: center;
+	height: 100%;
+	padding-top: 10%;
+}
+
+.signUpConfirmation{
+	background-color: #fff;
+	text-align: center;
+	border: 2px solid;
+	border-radius: 4px;
+	border-color: #7396ce;
+	display: inline-block;
+	width: 50%;
+	margin:auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 20px;
+}
+/* Login page */
+
+.logInHeader{
+	background-color: #052455;
+	color: white;
+	font-size: 40px;
+	font-family: 'Ribeye';
+	text-align: center;
+}
+
+.logInForm{
+	background-color: #a1c1f4;
+	text-align: center;
+}
+.logInHeader2{
+	color: #fff;
+	font-family: 'Raleway Dots';
+	border-bottom: 2px solid white;
+
+}
+
+.logInForm p{
+	color: #fff;
+}
+
+.logInForm a{
+	color: #052455;
+}
+
+.logInForm a:hover{
+	color: #fff;
+}
+
+/* Login COnfirmation */
+
+.logInConfBackDrop{
+	background-color: #dbc3a3;
+	text-align: center;
+	height: 100%;
+	padding-top: 10%;
+}
+
+.logInConfirmation{
+	background-color: #fff;
+	text-align: center;
+	border: 2px solid;
+	border-radius: 4px;
+	border-color: #b29a7c;
+	display: inline-block;
+	width: 50%;
+	margin:auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 20px;
+}
+
+/* Log out Confirmation */
+
+.logOutConfBackDrop{
+	background-color: #052455;
+	text-align: center;
+	height: 100%;
+	padding-top: 10%;
+}
+
+.logOutConfirmation{
+	background-color: #fff;
+	text-align: center;
+	border: 2px solid;
+	border-radius: 4px;
+	border-color: #00112d;
+	display: inline-block;
+	width: 50%;
+	margin:auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 20px;
 }

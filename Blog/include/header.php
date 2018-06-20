@@ -1,7 +1,21 @@
 <?php
-$print = printHeader();
+if(isset($_REQUEST['signUp'])){
+ $_SESSION['userName'] = $_REQUEST['userName'];
+ $_SESSION['firstName'] = $_REQUEST['firstName'];
+ $_SESSION['lastName'] = $_REQUEST['lastName'];
+ $_SESSION['email'] = $_REQUEST['email'];
+ $_SESSION['passWord'] = $_REQUEST['passWord'];
+ header('Location: Blog/view/signUpConfirmation.php');
+ exit();
+}
+
  ?>
 
+<?php
+
+ $print = printHeader();
+
+?>
 	<head>
 
 		<title> Nadia's Website</title>
@@ -30,6 +44,7 @@ $print = printHeader();
 				<div class="mainPageContent">
 					<img class='picOfNadia' src='/images/IMG_0601.JPG' alt='Nadia'/>
 					<?php
+
 					echo "<br/>";
 
 						$posts = GetAllBlogPosts();
@@ -41,8 +56,29 @@ $print = printHeader();
 								<p class='blogTitleMainPg' style='text-align: center;'> <a href = '/Blog/view/blogposts.php?blogPostID=$index'>$post[Title]</a></p>
 							</li>";
 						 }
-
-
+						 echo "<br/>";
 					?>
+				<div class='signUpForm'>
+					<?php
+
+						 echo "
+						 	<form action='' method='post'>
+								<h2> Create an Account </h2>
+								<input type='text' name='firstName' value='".@$_SESSION['firstName']."' placeholder='First Name' class='nameBox'/> <br />
+								<input type='text' name='lastName' value='".@$_SESSION['lastName']."' placeholder='Last Name' class='nameBox'/> <br />
+								<input type='text' name='email' value='".@$_SESSION['email']."' placeholder='E-mail' class='emailBox'/> <br />
+								<input type='text' name='userName' value='".@$_SESSION['userName']."' placeholder='Username' class='userNameBox'/> <br />
+								<input type='text' name='passWord' value='".@$_SESSION['passWord']."' placeholder='Password' class='passwordBox'/> <br />
+								<br/>
+								<input type='submit' name='signUp' value='Sign Up' class='signUpButton'>
+								<br/>
+								<p> Already have an account? <a href='Blog/view/logIn.php'> Login</a></p>
+							</form>
+						 ";
+
+						 $CreateAccount = insertAnAccount( @$_REQUEST['firstName'], @$_REQUEST['lastName'], @$_REQUEST['email'], @$_REQUEST['userName'], @$_REQUEST['passWord']);
+					?>
+				</div>
+
 				</div>
 			</div>
