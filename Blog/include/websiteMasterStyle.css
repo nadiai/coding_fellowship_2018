@@ -388,6 +388,28 @@
 	 border-color: #fff transparent transparent #fff;
 }
 
+/* Sign Up Confirmation */
+
+.signUpConfBackDrop{
+	background-color: #a1c1f4;
+	text-align: center;
+	height: 100%;
+	padding-top: 10%;
+}
+
+.signUpConfirmation{
+	background-color: #fff;
+	text-align: center;
+	border: 2px solid;
+	border-radius: 4px;
+	border-color: #7396ce;
+	display: inline-block;
+	width: 50%;
+	margin:auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 20px;
+}
 /* Login page */
 
 .logInHeader{
@@ -407,4 +429,62 @@
 	font-family: 'Raleway Dots';
 	border-bottom: 2px solid white;
 
+}
+
+.logInForm p{
+	color: #fff;
+}
+
+.logInForm a{
+	color: #052455;
+}
+
+.logInForm a:hover{
+	color: #fff;
+}
+
+/* Login COnfirmation */
+
+.logInConfBackDrop{
+	background-color: #dbc3a3;
+	text-align: center;
+	height: 100%;
+	padding-top: 10%;
+}
+
+.logInConfirmation{
+	background-color: #fff;
+	text-align: center;
+	border: 2px solid;
+	border-radius: 4px;
+	border-color: #b29a7c;
+	display: inline-block;
+	width: 50%;
+	margin:auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 20px;
+}
+
+/* Log out Confirmation */
+
+.logOutConfBackDrop{
+	background-color: #052455;
+	text-align: center;
+	height: 100%;
+	padding-top: 10%;
+}
+
+.logOutConfirmation{
+	background-color: #fff;
+	text-align: center;
+	border: 2px solid;
+	border-radius: 4px;
+	border-color: #00112d;
+	display: inline-block;
+	width: 50%;
+	margin:auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 20px;
 }

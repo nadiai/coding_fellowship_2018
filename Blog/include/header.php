@@ -3,8 +3,6 @@
  $print = printHeader();
 
 ?>
-
-<html>
 	<head>
 
 		<title> Nadia's Website</title>
@@ -66,7 +64,16 @@
 						 ";
 
 						 $CreateAccount = insertAnAccount( @$_REQUEST['firstName'], @$_REQUEST['lastName'], @$_REQUEST['email'], @$_REQUEST['userName'], @$_REQUEST['passWord']);
-						 var_dump($CreateAccount);
+
+						 if(isset($_REQUEST['signUp'])){
+							$_SESSION['userName'] = $_REQUEST['userName'];
+							$_SESSION['firstName'] = $_REQUEST['firstName'];
+							$_SESSION['lastName'] = $_REQUEST['lastName'];
+							$_SESSION['email'] = $_REQUEST['email'];
+							$_SESSION['passWord'] = $_REQUEST['passWord'];
+							header('Location: signUpConfirmation.php');
+							exit();
+						}
 					?>
 				</div>
 

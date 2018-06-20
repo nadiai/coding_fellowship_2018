@@ -61,12 +61,10 @@ function insertAnAccount($firstName, $lastName, $email, $userName, $passWord){
 		VALUES ('$firstName', '$lastName', '$email', '$userName', '$passWord')
 		")->fetch();
 
-		$_SESSION['userName'] = $userName;
+		// $_SESSION['userName'] = $userName;
 	}
 
-	return $result;
 
-	var_dump($result);
 }
 
 
