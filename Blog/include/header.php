@@ -1,4 +1,17 @@
 <?php
+if(isset($_REQUEST['signUp'])){
+ $_SESSION['userName'] = $_REQUEST['userName'];
+ $_SESSION['firstName'] = $_REQUEST['firstName'];
+ $_SESSION['lastName'] = $_REQUEST['lastName'];
+ $_SESSION['email'] = $_REQUEST['email'];
+ $_SESSION['passWord'] = $_REQUEST['passWord'];
+ header('Location: Blog/view/signUpConfirmation.php');
+ exit();
+}
+
+ ?>
+
+<?php
 
  $print = printHeader();
 
@@ -65,15 +78,15 @@
 
 						 $CreateAccount = insertAnAccount( @$_REQUEST['firstName'], @$_REQUEST['lastName'], @$_REQUEST['email'], @$_REQUEST['userName'], @$_REQUEST['passWord']);
 
-						 if(isset($_REQUEST['signUp'])){
-							$_SESSION['userName'] = $_REQUEST['userName'];
-							$_SESSION['firstName'] = $_REQUEST['firstName'];
-							$_SESSION['lastName'] = $_REQUEST['lastName'];
-							$_SESSION['email'] = $_REQUEST['email'];
-							$_SESSION['passWord'] = $_REQUEST['passWord'];
-							header('Location: signUpConfirmation.php');
-							exit();
-						}
+						//  if(isset($_REQUEST['signUp'])){
+						// 	$_SESSION['userName'] = $_REQUEST['userName'];
+						// 	$_SESSION['firstName'] = $_REQUEST['firstName'];
+						// 	$_SESSION['lastName'] = $_REQUEST['lastName'];
+						// 	$_SESSION['email'] = $_REQUEST['email'];
+						// 	$_SESSION['passWord'] = $_REQUEST['passWord'];
+						// 	header('Location: signUpConfirmation.php');
+						// 	exit();
+						// }
 					?>
 				</div>
 
