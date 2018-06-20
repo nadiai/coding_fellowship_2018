@@ -30,23 +30,22 @@ include('Blog/include/loginFunctions.php');
 						<p> Return to the <a href='/index.php'> Home Page </a></p>
 					";
 
+					$Errors = array();
 					if (isset($_REQUEST['logInSubmit'])) {
-						if ($_REQUEST['userName'] == ''|| $_REQUEST['passWord'] == ''){
-							echo "Required Field empty";
-						}else {
+						if ($_REQUEST['userName'] == ''){
+							$Errors['userName'] = "required";
+							echo "Username Required <br/>";
+						}
+						if ($_REQUEST['passWord'] == ''){
+							$Errors['passWord'] = "required";
+							echo "Password Required";
+						}
+						if (sizeof($Errors) == 0){
 							$_SESSION['userName'] = $_REQUEST['userName'];
 							$_SESSION['passWord'] = $_REQUEST['passWord'];
 							header('Location: logInConfirmation.php');
 							exit();
 						}
-						//
-						// if ($_REQUEST['passWord'] == ''){
-						// 	echo "Password Required";
-						// }
-						// $_SESSION['userName'] = $_REQUEST['userName'];
-						// // $_SESSION['passWord'] = $_REQUEST['passWord'];
-						// header('Location: logInConfirmation.php');
-						// exit();
 					}
 
 				?>

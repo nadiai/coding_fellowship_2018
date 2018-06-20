@@ -1,14 +1,36 @@
 <?php
+$Errors = array();
 if(isset($_REQUEST['signUp'])){
- $_SESSION['userName'] = $_REQUEST['userName'];
- $_SESSION['firstName'] = $_REQUEST['firstName'];
- $_SESSION['lastName'] = $_REQUEST['lastName'];
- $_SESSION['email'] = $_REQUEST['email'];
- $_SESSION['passWord'] = $_REQUEST['passWord'];
- header('Location: Blog/view/signUpConfirmation.php');
- exit();
+	if ($_REQUEST['firstName'] == ''){
+		$Errors['firstName'] = "required";
+		echo "First name Required <br/>";
+	}
+	if ($_REQUEST['lastName'] == ''){
+		$Errors['lastName'] = "required";
+		echo "Last name Required <br/>";
+	}
+	if ($_REQUEST['email'] == ''){
+		$Errors['email'] = "required";
+		echo "E-mail Required <br/>";
+	}
+	if ($_REQUEST['userName'] == ''){
+		$Errors['userName'] = "required";
+		echo "Username Required <br/>";
+	}
+	if ($_REQUEST['passWord'] == ''){
+		$Errors['passWord'] = "required";
+		echo "Password Required";
+	}
+	if (sizeof($Errors) == 0){
+	 $_SESSION['userName'] = $_REQUEST['userName'];
+	 $_SESSION['firstName'] = $_REQUEST['firstName'];
+	 $_SESSION['lastName'] = $_REQUEST['lastName'];
+	 $_SESSION['email'] = $_REQUEST['email'];
+	 $_SESSION['passWord'] = $_REQUEST['passWord'];
+	 header('Location: Blog/view/signUpConfirmation.php');
+	 exit();
+	}
 }
-
  ?>
 
 <?php
@@ -23,7 +45,7 @@ if(isset($_REQUEST['signUp'])){
 		<link href='https://fonts.googleapis.com/css?family=Raleway Dots' rel='stylesheet'>
 	</head>
 		<body>
-			<div class="mainPageSidenav">
+			<!-- <div class="mainPageSidenav">
 					<a href='Blog/view/paboutme.php'> About Me</a>
 					<br>
 					<br>
@@ -37,7 +59,7 @@ if(isset($_REQUEST['signUp'])){
 					<br>
 					<br>
 					<!--<a href='Blog/view/blogposts.php'> My Blog </a>-->
-			</div>
+			</div> -->
 			<div id="Container">
 				<img class="mainPageBackground" src="/images/backdrop2.jpg" alt='Background'/>
 				<h1 class='mainPageTitle'> NADIA IRVIN</h1>
