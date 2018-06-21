@@ -1,20 +1,36 @@
 <?php
+
+$Errors = array();
 if (isset($_REQUEST['submitComment'])) {
-	if ($_REQUEST) {
-		// code...
+	if ($_REQUEST['userName'] == '') {
+		$Error['userName'] = "required";
+		echo "Username required";
 	}
-	insertBlogComment($_REQUEST['blogPostID'], @$_REQUEST['userID'], @$_REQUEST['commentDateTime'], @$_REQUEST['Comment']);
-	header("location:?blogPostID=$_REQUEST[blogPostID]");
+	if ($_REQUEST['Comment'] == '') {
+		$Error['Comment'] = "required";
+		echo "Comment required";
+	}
+	if (sizeof($Errors) == 0) {
+		header("location:?blogPostID=$_REQUEST[blogPostID]");
+	}
+
 }
 
 ?>
+<?php
+include('Blog/include/functions.php');
+if (isset($_REQUEST['submitComment'])) {
+	if ($_REQUEST['userName'] != '' && $_REQUEST['Comment'] != '') {
+	insertBlogComment($_REQUEST['blogPostID'], @$_REQUEST['userName'], @$_REQUEST['commentDateTime'], @$_REQUEST['Comment']);
+	}
+}
+?>
+
+
 <html>
 	<head>
 		<title> Nadia's Blogposts </title>
 		<link rel='stylesheet' href="/Blog/include/websiteMasterStyle.css">
-		<?php
-		include('Blog/include/functions.php');
-		 ?>
 	 </head>
 
 	<body>
@@ -45,7 +61,7 @@ if (isset($_REQUEST['submitComment'])) {
 				foreach($Comments as $index => $Comment){
 					echo "
 					<br/>
-					<p style='margin-right: 25%; background-color: #a1c1f4;'> $Comment[userID] : $Comment[commentTimeStamp] </p>
+					<p style='margin-right: 25%; background-color: #a1c1f4;'> $Comment[userName] : $Comment[commentTimeStamp] </p>
 					<br/>
 
 					<div class='dialogBox'>
@@ -66,7 +82,7 @@ if (isset($_REQUEST['submitComment'])) {
 
 					<div class='formContents'>
 					UserID:
-						 <input type='text' name='userID' value='".@$_REQUEST['userID']."'>
+						 <input type='text' name='userName' value='".@$_REQUEST['userName']."'>
 						 <br/>
 						 <br/>
 					Comment:
@@ -78,6 +94,7 @@ if (isset($_REQUEST['submitComment'])) {
 					</form>
 				";
 
+				//insertBlogComment($_REQUEST['blogPostID'], @$_REQUEST['userName'], @$_REQUEST['commentDateTime'], @$_REQUEST['Comment']);
 		 ?>
 	</body>
 

@@ -56,14 +56,14 @@ function printHeader(){
 
 //var_dump($_REQUEST);
 
-function insertBlogComment($blogPostID, $userID, $commentTimeStamp, $Comment){
+function insertBlogComment($blogPostID, $userName, $commentTimeStamp, $Comment){
 		$result = dbQuery("
-		INSERT INTO Comments(blogPostID, userID, commentTimeStamp, Comment)
-		VALUES ('$blogPostID','$userID', '$commentTimeStamp', '$Comment')
+		INSERT INTO Comments(blogPostID, userName, commentTimeStamp, Comment)
+		VALUES ('$blogPostID','$userName', '$commentTimeStamp', '$Comment')
 		")->fetch();
 }
 
-function echoComment($userID, $commentTimeStamp, $Comment){
+function echoComment($userName, $commentTimeStamp, $Comment){
 			echo "
 			<br/>
 			<p style='margin-right: 25%'> $userID : $commentTimeStamp</p>
