@@ -52,18 +52,12 @@ if (isset($_REQUEST['submitComment'])) {
 
 				echo "<h1 style=' border-top: solid; border-color:#052455; background-color:#a1c1f4; font-size: 30px;color: #fff; margin-top: 0px;'> Comments </h1>";
 
-			// $postComments = getComments($_REQUEST['blogPostID']);
-
-			// $postComment = echoComment(@$_REQUEST['userID'], @$_REQUEST['commentTimeStamp'], @$_REQUEST['Comment']);
 
 			$Comments = getComments($_REQUEST['blogPostID']);
 
 				foreach($Comments as $index => $Comment){
 					echo "
 					<br/>
-
-					<p> $Comment[userName] : $Comment[commentTimeStamp]</p>
-					<p style='border: 2px solid black;'> $Comment[Comment]</p>
 
 					<p style='margin-right: 25%; background-color: #a1c1f4;'> $Comment[userName] : $Comment[commentTimeStamp] </p>
 					<br/>
