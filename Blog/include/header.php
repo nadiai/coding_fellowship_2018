@@ -71,23 +71,4 @@ $print = printHeader();
 					</div>
 				</div>
 			</div>
-			<!-- <div class='Container2'>
-				<h1 class='tagHeader'> Sort by tags </h1>
-				<?php
-				$tags = getAllTags();
-
-					foreach ($tags as $index => $tag) {
-						echo "
-						<div class='tagTable'>
-							<table>
-								<tr>
-									<td>
-										<p class='tagsOnMainPg'> <a href = '/Blog/view/tags.php?tagID=$index'> $tag[tagName]</a></p>
-									</td>
-								</tr>
-							</table>
-						</div>
-						";
-					}
-				?>
-			</div> -->
+	

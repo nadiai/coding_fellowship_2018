@@ -3,21 +3,26 @@ include('Blog/include/functions.php');
 $print = printHeader();
  ?>
 	<head>
-		<!-- <title> Sort by Tags </title> -->
+		<title> Sort by Tags </title>
 		<link rel='stylesheet' href="/Blog/include/websiteMasterStyle.css">
 	</head>
 	<body>
 
 		<?php
-		 if ($_REQUEST['tagID'] == 0) {
-			echo "<title class='tagTitle'> Life Updates</title>";
-		}
-		if ($_REQUEST['tagID'] == 1) {
-			echo "<title class='tagTitle'> Food </title>";
-		}
-		if ($_REQUEST['tagID'] == 2) {
-			echo "<title class='tagTitle'> Events </title>";
-		}
+
+		$showTag = getTag($_REQUEST['tagID']);
+
+		// echo "<title class='tagTitle'> $listPosts[tagName] </title>";
+		//  if ($_REQUEST['tagID'] == $tagID) {
+		// 	echo "<title class='tagTitle'> $tag[tagName]</title>";
+		// }
+		// var_dump($tag);
+		// if ($_REQUEST['tagID'] == 1) {
+		// 	echo "<title class='tagTitle'> Food </title>";
+		// }
+		// if ($_REQUEST['tagID'] == 2) {
+		// 	echo "<title class='tagTitle'> Events </title>";
+		// }
 		?>
 		<div class="tagTopNav">
 				<a href='events.php'> Events</a>
