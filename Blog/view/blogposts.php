@@ -1,3 +1,13 @@
+<?php
+if (isset($_REQUEST['submitComment'])) {
+	if ($_REQUEST) {
+		// code...
+	}
+	insertBlogComment($_REQUEST['blogPostID'], @$_REQUEST['userID'], @$_REQUEST['commentDateTime'], @$_REQUEST['Comment']);
+	header("location:?blogPostID=$_REQUEST[blogPostID]");
+}
+
+?>
 <html>
 	<head>
 		<title> Nadia's Blogposts </title>
@@ -11,11 +21,6 @@
 		<img alt='Background' src="/images/backdrop2.jpg" class="background">
 		<h1 class="searchenginepg"> Nadia's Blog Posts </h1>
 		<?php
-
-		if (isset($_REQUEST['submitComment'])) {
-
-			header("location:?blogPostID=$_REQUEST['blogPostID']");
-		}
 
 			 $Blogpost = GetBlogPost($_REQUEST['blogPostID']);
 
@@ -33,7 +38,7 @@
 
 			// $postComments = getComments($_REQUEST['blogPostID']);
 
-			$postComment = echoComment(@$_REQUEST['userID'], @$_REQUEST['commentTimeStamp'], @$_REQUEST['Comment']);
+			// $postComment = echoComment(@$_REQUEST['userID'], @$_REQUEST['commentTimeStamp'], @$_REQUEST['Comment']);
 
 			$Comments = getComments($_REQUEST['blogPostID']);
 
@@ -72,10 +77,6 @@
 						</div>
 					</form>
 				";
-
-				$insertComment = insertBlogComment($_REQUEST['blogPostID'], @$_REQUEST['userID'], @$_REQUEST['commentDateTime'], @$_REQUEST['Comment']);
-
-
 
 		 ?>
 	</body>
