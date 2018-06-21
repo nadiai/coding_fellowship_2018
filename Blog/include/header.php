@@ -44,22 +44,7 @@ if(isset($_REQUEST['signUp'])){
 		<link href='https://fonts.googleapis.com/css?family=Ribeye' rel='stylesheet'>
 		<link href='https://fonts.googleapis.com/css?family=Raleway Dots' rel='stylesheet'>
 	</head>
-		<body>
-			<!-- <div class="mainPageSidenav">
-					<a href='Blog/view/paboutme.php'> About Me</a>
-					<br>
-					<br>
-					<a href='Blog/view/myInterests.php'> My Interests</a>
-					<br>
-					<br>
-					<a href='Blog/view/Resume.php'> My Resume</a>
-					<br>
-					<br>
-					<a href='Blog/view/Projects.php'> Summer 2018</a>
-					<br>
-					<br>
-					<!--<a href='Blog/view/blogposts.php'> My Blog </a>-->
-			</div> -->
+
 			<div id="Container">
 				<img class="mainPageBackground" src="/images/backdrop2.jpg" alt='Background'/>
 				<h1 class='mainPageTitle'> NADIA IRVIN</h1>

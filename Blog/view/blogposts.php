@@ -32,8 +32,6 @@
 
 				echo "<h1 style=' border-top: solid; border-color:#052455; background-color:#a1c1f4; font-size: 30px;color: #fff; margin-top: 0px;'> Comments </h1>";
 
-			$postComments = getComments($_REQUEST['blogPostID']);
-
 			$Comments = getComments($_REQUEST['blogPostID']);
 
 				foreach($Comments as $index => $Comment){
@@ -55,29 +53,3 @@
 	</body>
 
 </html>
-
-<?php
-//$posts = GetAllBlogPosts(); //we want to have all the data associated with this variable
-//for each post
-/*var_dump($index);*/
-
-/*foreach($posts as $index) {
-var_dump($index);
-echo "
-	<p><a href='/Blog/view/blogpost.php?blogPostID=$index[blogPostID]'> $index[Title] </a></p>
-	";
-}
-/*die("test");*/
-//$post = GetBlogPost($_REQUEST['blogPostID']); //post will find the blogpost ID that is requested
-
-/*echo "
-	<h1> $post[Title]</h1>
-	<br>
-	<h2> $post[Date] </h2>
-	<br>
-	<img src='$post[Image]'/>
-	<br>
-	<p> $post[Text]</p>
-
-";*/
-?>
