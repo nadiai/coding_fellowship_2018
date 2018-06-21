@@ -10,9 +10,9 @@ printHeader();
 
 		<?php
 
-		$showTag = getTag($_REQUEST['tagID']);
+		$tag = getTag($_REQUEST['tagID']);
 
-		echo "";
+		echo "<title class='tagTitle'> $tag[tagName]</title>";
 
 		// echo "<title class='tagTitle'> $listPosts[tagName] </title>";
 		//  if ($_REQUEST['tagID'] == $tagID) {

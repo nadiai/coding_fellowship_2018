@@ -74,7 +74,7 @@ function getTag($tagID){
 }
 
 
-function getTagBlogs($a){
+function getTagBlogs($tagID){
 	$result = dbQuery("
 		SELECT *
 		FROM post_tag

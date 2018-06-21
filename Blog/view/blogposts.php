@@ -42,7 +42,7 @@ $print = printHeader();
 				foreach($Comments as $index => $Comment){
 					echo "
 					<br/>
-					<p> $Comment[userID] : $Comment[commentTimeStamp]</p>
+					<p> $Comment[userName] : $Comment[commentTimeStamp]</p>
 					<p style='border: 2px solid black;'> $Comment[Comment]</p>
 				";}
 
