@@ -62,9 +62,6 @@ if (isset($_REQUEST['submitComment'])) {
 					echo "
 					<br/>
 
-					<p> $Comment[userName] : $Comment[commentTimeStamp]</p>
-					<p style='border: 2px solid black;'> $Comment[Comment]</p>
-
 					<p style='margin-right: 25%; background-color: #a1c1f4;'> $Comment[userName] : $Comment[commentTimeStamp] </p>
 					<br/>
 
