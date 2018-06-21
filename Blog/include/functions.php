@@ -85,6 +85,7 @@ function getTagBlogs($tagID){
 
  	return $result->fetchAll();
 
+}
 function insertBlogComment($blogPostID, $userName, $commentTimeStamp, $Comment){
 		$result = dbQuery("
 		INSERT INTO Comments(blogPostID, userName, commentTimeStamp, Comment)
