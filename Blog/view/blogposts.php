@@ -12,11 +12,10 @@
 		<h1 class="searchenginepg"> Nadia's Blog Posts </h1>
 		<?php
 
-		// if (isset($_REQUEST['submitComment'])) {
-		// 	$page = $_SERVER['PHP_SELF'];
-		// 	$sec = "1";
-		// 	header("location:?blogPostID=$_REQUEST);
-		// }
+		if (isset($_REQUEST['submitComment'])) {
+
+			header("location:?blogPostID=$_REQUEST['blogPostID']");
+		}
 
 			 $Blogpost = GetBlogPost($_REQUEST['blogPostID']);
 
@@ -34,7 +33,7 @@
 
 			// $postComments = getComments($_REQUEST['blogPostID']);
 
-			$postComment = submitComment(@$_REQUEST['userID'], @$_REQUEST['commentTimeStamp'], @$_REQUEST['Comment']);
+			$postComment = echoComment(@$_REQUEST['userID'], @$_REQUEST['commentTimeStamp'], @$_REQUEST['Comment']);
 
 			$Comments = getComments($_REQUEST['blogPostID']);
 
