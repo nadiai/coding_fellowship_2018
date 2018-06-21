@@ -1,6 +1,6 @@
 <?php
 include('Blog/include/functions.php');
-$print = printHeader();
+printHeader();
  ?>
 	<head>
 		<title> Sort by Tags </title>
@@ -11,6 +11,8 @@ $print = printHeader();
 		<?php
 
 		$showTag = getTag($_REQUEST['tagID']);
+
+		echo "";
 
 		// echo "<title class='tagTitle'> $listPosts[tagName] </title>";
 		//  if ($_REQUEST['tagID'] == $tagID) {
