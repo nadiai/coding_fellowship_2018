@@ -9,39 +9,66 @@ $print = printHeader();
 		<link href='https://fonts.googleapis.com/css?family=Raleway Dots' rel='stylesheet'>
 	</head>
 		<body>
-			<div class="mainPageSidenav">
-					<a href='Blog/view/paboutme.php'> About Me</a>
-					<br>
-					<br>
-					<a href='Blog/view/myInterests.php'> My Interests</a>
-					<br>
-					<br>
-					<a href='Blog/view/Resume.php'> My Resume</a>
-					<br>
-					<br>
-					<a href='Blog/view/Projects.php'> Summer 2018</a>
-					<br>
-					<br>
-					<!--<a href='Blog/view/blogposts.php'> My Blog </a>-->
-			</div>
 			<div id="Container">
-				<img class="mainPageBackground" src="/images/backdrop2.jpg" alt='Background'/>
-				<h1 class='mainPageTitle'> NADIA IRVIN</h1>
+				<a href='index.php' class='mainPageTitle'> NADIA IRVIN</a>
+				<div class="mainTopNav">
+						<a href='Blog/view/Projects.php'> Summer 2018</a>
+						<a href='Blog/view/Resume.php'> My Resume</a>
+						<a href='Blog/view/myInterests.php'> My Interests</a>
+						<a href='Blog/view/paboutme.php'> About Me</a>
+				</div>
 				<div class="mainPageContent">
-					<img class='picOfNadia' src='/images/IMG_0601.JPG' alt='Nadia'/>
-					<?php
-					echo "<br/>";
+					<div class='mainSectionOne'>
+						<img class='picOfNadia' src='/images/IMG_0601.JPG' alt='Nadia'/>
+						<div class='portionAboutMe'>
+							<h2> About Me </h2>
+							<p> I am a junior majoring in Organization and Strategic management, and double minoring in Educational Studies and Jazz Studies. </p>
+						</div>
+				</div>
 
-						$posts = GetAllBlogPosts();
+						<?php
+						echo "
+						<h1 class='myBLogHeading'> My Blog </h1>";
+						?>
+					<div class='blogPage'>
+						<div class="tagSideNav">
+							<h1 class='tagHeader'> Sort by tags </h1>
+							<?php
+							$tags = getAllTags();
 
-						 foreach($posts as $index => $post){
-							 //var_dump($posts);
-						 echo "
-								<p class='blogTitleMainPg' style='text-align: center;'> <a href = '/Blog/view/blogposts.php?blogPostID=$index'>$post[Title]</a></p>
-							";
-						 }
+								foreach ($tags as $index => $tag) {
+									echo "
+									<div class='tagTable'>
+										<table>
+											<tr>
+												<td>
+													<p class='tagsOnMainPg'> <a href = '/Blog/view/tags.php?tagID=$index'> $tag[tagName]</a></p>
+												</td>
+											</tr>
+										</table>
+									</div>
+									";
+								}
+							?>
+						</div>
+						<div class="blogTitles">
+							<br/>
+							<br/>
+						<?php
 
+							$posts = GetAllBlogPosts();
+							 foreach($posts as $index => $post){
+								 //var_dump($posts);
+							 echo "
+							 	<li>
+									<p class='blogTitleMainPg' style='text-align: center;'> <a href = '/Blog/view/blogposts.php?blogPostID=$index'>$post[Title]</a></p>
+								</li>
+								";
+							 }
 
-					?>
+						?>
+							</div>
+					</div>
 				</div>
 			</div>
+	

@@ -7,7 +7,7 @@ include('Blog/include/db_query.php');
 function GetAllBlogPosts(){
 	$result = dbQuery("
  		SELECT *
-		FROM Blogposts
+		FROM blogposts
 	")->fetchAll();
 
 	return $result;
@@ -18,7 +18,7 @@ function GetAllBlogPosts(){
 function GetBlogPost($blogPostID){
 	$result= dbQuery("
 		SELECT *
-		FROM Blogposts
+		FROM blogposts
 		WHERE blogPostID = $blogPostID
 	")->fetch();
 
@@ -30,7 +30,7 @@ function GetBlogPost($blogPostID){
 function getAllComments(){
 	$result = dbQuery("
 		SELECT *
-		FROM Comments
+		FROM comments
 	")-> fetchAll();
 
 	return $result;
@@ -40,7 +40,7 @@ function getAllComments(){
 function getComments($blogPostID){ //colon is a security prevention
 	$result = dbQuery("
 		SELECT *
-		FROM Comments
+		FROM comments
 		WHERE blogPostID = :blogPostID
 	",
 	array('blogPostID' => $blogPostID)
@@ -54,7 +54,36 @@ function printHeader(){
 		echo "<html>";
 };
 
-//var_dump($_REQUEST);
+function getAllTags(){
+	$result = dbQuery("
+		SELECT *
+		FROM tags
+	")->fetchAll();
+
+	return $result;
+}
+
+function getTag($tagID){
+	$result = dbQuery("
+		SELECT *
+		FROM tags
+		WHERE tagID = $tagID
+	")->fetch();
+
+	return $result;
+}
+
+
+function getTagBlogs($tagID){
+	$result = dbQuery("
+		SELECT *
+		FROM post_tag
+		WHERE tagID = :tagID
+		",
+	 array('tagID' => $tagID )
+ 	);
+
+ 	return $result->fetchAll();
 
 function insertBlogComment($blogPostID, $userName, $commentTimeStamp, $Comment){
 		$result = dbQuery("

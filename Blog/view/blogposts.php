@@ -31,7 +31,7 @@ if (isset($_REQUEST['submitComment'])) {
 	<head>
 		<title> Nadia's Blogposts </title>
 		<link rel='stylesheet' href="/Blog/include/websiteMasterStyle.css">
-	 </head>
+	</head>
 
 	<body>
 		<img alt='Background' src="/images/backdrop2.jpg" class="background">
@@ -61,6 +61,10 @@ if (isset($_REQUEST['submitComment'])) {
 				foreach($Comments as $index => $Comment){
 					echo "
 					<br/>
+
+					<p> $Comment[userName] : $Comment[commentTimeStamp]</p>
+					<p style='border: 2px solid black;'> $Comment[Comment]</p>
+
 					<p style='margin-right: 25%; background-color: #a1c1f4;'> $Comment[userName] : $Comment[commentTimeStamp] </p>
 					<br/>
 
@@ -70,6 +74,7 @@ if (isset($_REQUEST['submitComment'])) {
 							<p class='commentBox'> $Comment[Comment]</p>
 						</div>
 					</div>
+
 				";}
 
 
