@@ -180,15 +180,74 @@
 	background-color: #eee;
 } */
 
+.dialogbox .body {
+  position: relative;
+  max-width: 75%;
+  /* height: auto;*/
+  margin-bottom: 10px;
+  /* padding: 5px; */
+  background-color: #fff;
+  border-radius: 3px;
+  border: 5px solid;
+	border-color: #052455;
+}
 
-/*.mainpg{
+.body .commentBox{
+  min-height: 30px;
+  border-radius: 3px;
+  font-family: Arial;
+  font-size: 20px;
+  color: #23262b;
+}
+
+.tipUp{
+	width: 0px;
+  height: 0px;
+  position: absolute;
+  background: transparent;
+  border: 10px solid;
+	border-color: #052455;
+	}
+.tip{
+	top: -25px; Same as body margin top + border
+  left: 10px;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-top-color: transparent;
+}
+
+
+
+.commentForm{
+	border: 8px solid;
+	border-color: #052455;
+	background-color: #fff;
+	padding: 5px 20px 20px 20px;
+	width: 50%;
+	height: auto;
+	display: block;
+	margin: auto;
+}
+
+.commentForm h2{
+	border-bottom: 2px solid;
+}
+
+
+.formContents{
+	margin:auto;
 	text-align: center;
-	background-color: #084d8a;
-	font-size: 50px;
-	color: #fff;
-	margin-top: 0;
-}*/
+}
 
+#submitButton{
+	background-color: #5779af;
+	color: #fff;
+}
+
+.commentForm h2{
+	text-align: center;
+	color: #052455;
+}
 .searchenginepg{
 	font-size: 70px;
 	color: #fff;
