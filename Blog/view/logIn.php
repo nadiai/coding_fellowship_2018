@@ -2,7 +2,7 @@
 
 session_start();
 
-include('Blog/include/loginFunctions.php');
+include('Blog/include/functions.php');
 
  ?>
 
@@ -30,6 +30,13 @@ include('Blog/include/loginFunctions.php');
 						<p> Return to the <a href='/index.php'> Home Page </a></p>
 					";
 
+					$users = findUsers();
+					// var_dump($users);
+
+
+					$user = findUser('userID');
+					var_dump($user);
+
 					$Errors = array();
 					if (isset($_REQUEST['logInSubmit'])) {
 						if ($_REQUEST['userName'] == ''){
@@ -38,7 +45,7 @@ include('Blog/include/loginFunctions.php');
 						}
 						if ($_REQUEST['passWord'] == ''){
 							$Errors['passWord'] = "required";
-							echo "Password Required";
+							echo "Password Required <br/>";
 						}
 						if (sizeof($Errors) == 0){
 							$_SESSION['userName'] = $_REQUEST['userName'];

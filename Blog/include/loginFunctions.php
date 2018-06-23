@@ -8,3 +8,21 @@ function setUserName(){
 		$_SESSION['userName'] = $userName;
 	}
 }
+
+function checkUser(){
+	$result = dbQuery("
+		SELECT *
+		FROM users
+	")->fetchAll();
+
+	return $result;
+}
+
+function checkUserID($userID){
+	$result = dbQuery("
+		SELECT *
+		FROM users
+	")->fetchAll();
+
+	return $result;
+}
