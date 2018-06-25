@@ -11,7 +11,7 @@ session_start();
 </style>
 
 <?php
-	if(!isset($_SESSION['userName']) || !isset($_SESSION['passWord'])){
+	if(!isset($_SESSION['userID'])){
 		//this part still doesnt work
 		echo "You are not Logged in. <a href='logIn.php'> Return to the Log in Page</a>";
 	} else{

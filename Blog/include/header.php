@@ -27,6 +27,7 @@ if(isset($_REQUEST['signUp'])){
 	 $_SESSION['lastName'] = $_REQUEST['lastName'];
 	 $_SESSION['email'] = $_REQUEST['email'];
 	 $_SESSION['passWord'] = $_REQUEST['passWord'];
+	 insertAnAccount( @$_REQUEST['firstName'], @$_REQUEST['lastName'], @$_REQUEST['email'], @$_REQUEST['userName'], @$_REQUEST['passWord']);
 	 header('Location: Blog/view/signUpConfirmation.php');
 	 exit();
 	}
@@ -83,7 +84,6 @@ if(isset($_REQUEST['signUp'])){
 							</form>
 						 ";
 
-						 $CreateAccount = insertAnAccount( @$_REQUEST['firstName'], @$_REQUEST['lastName'], @$_REQUEST['email'], @$_REQUEST['userName'], @$_REQUEST['passWord']);
 					?>
 				</div>
 

@@ -2,7 +2,24 @@
 
 session_start();
 
-include('Blog/include/functions.php');
+//include('Blog/include/functions.php');
+include('Blog/include/loginFunctions.php');
+					$Errors = array();
+
+					if (isset($_REQUEST['logInSubmit'])) {
+						if ($_REQUEST['userName'] == ''){
+							$Errors['userName'] = "required";
+							echo "Username Required <br/>";
+						}
+						if ($_REQUEST['passWord'] == ''){
+							$Errors['passWord'] = "required";
+							echo "Password Required <br/>";
+						}
+						if (sizeof($Errors) == 0){
+							verifyUser($_REQUEST['userName'], $_REQUEST['passWord']);
+						}
+					}
+
 
  ?>
 
@@ -29,32 +46,9 @@ include('Blog/include/functions.php');
 						<br/>
 						<p> Return to the <a href='/index.php'> Home Page </a></p>
 					";
-
-					$users = findUsers();
-					// var_dump($users);
-
-
-					$user = findUser('userID');
-					var_dump($user);
-
-					$Errors = array();
-					if (isset($_REQUEST['logInSubmit'])) {
-						if ($_REQUEST['userName'] == ''){
-							$Errors['userName'] = "required";
-							echo "Username Required <br/>";
-						}
-						if ($_REQUEST['passWord'] == ''){
-							$Errors['passWord'] = "required";
-							echo "Password Required <br/>";
-						}
-						if (sizeof($Errors) == 0){
-							$_SESSION['userName'] = $_REQUEST['userName'];
-							$_SESSION['passWord'] = $_REQUEST['passWord'];
-							header('Location: logInConfirmation.php');
-							exit();
-						}
-					}
-
+					// $findUser = getDistinctUser(9);
+					// echo "$findUser[lastName]";
+					// var_dump($findUser);
 				?>
 		<div>
 		</div>

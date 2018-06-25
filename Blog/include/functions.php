@@ -53,31 +53,10 @@ function getComments($blogPostID){ //colon is a security prevention
 function printHeader(){
 		echo "<html>";
 }
-//
-// function insertAnAccount($firstName, $lastName, $email, $userName, $passWord){
-// 	if(isset($_REQUEST['signUp'])){
-// 		$result = dbQuery("
-// 		INSERT INTO users(firstName, lastName, email, userName, passWord)
-// 		VALUES ('$firstName', '$lastName', '$email', '$userName', '$passWord')
-// 		")->fetch();
-// }
 
-		// $_SESSION['userName'] = $userName;
-function findUsers(){
-	$result = dbQuery("
-		SELECT *
-		FROM users
-	")->fetchAll();
-
-	return $result;
-}
-
-function findUser($userID){
-	$result = dbQuery("
-		SELECT *
-		FROM users
-		WHERE userID = $userID
-	")->fetchAll();
-
-	return $result;
+function insertAnAccount($firstName, $lastName, $email, $userName, $passWord){
+		$result = dbQuery("
+		INSERT INTO users(firstName, lastName, email, userName, passWord)
+		VALUES ('$firstName', '$lastName', '$email', '$userName', '$passWord')
+		")->fetch();
 }
