@@ -488,3 +488,11 @@
 	padding-bottom: 20px;
 	font-size: 20px;
 }
+
+/* Logged in Main */
+
+.logInMessage{
+	text-align: right;
+	background-color: #a1c1f4;
+	color: #fff;
+}
