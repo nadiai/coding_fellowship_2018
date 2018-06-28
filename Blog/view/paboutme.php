@@ -1,3 +1,8 @@
+<?php
+
+include('Blog/include/includeAll.php');
+
+?>
 <html>
 	<head>
 		<title> About Me</title>

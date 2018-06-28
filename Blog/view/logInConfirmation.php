@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+include('Blog/include/includeAll.php');
 
 ?>
 
@@ -15,8 +15,8 @@ session_start();
 		//this part still doesnt work
 		echo "You are not Logged in. <a href='logIn.php'> Return to the Log in Page</a>";
 	} else{
-		echo "<div class='logInConfBackDrop'><div class='logInConfirmation'> You are logged in as " .@$_SESSION['userName'].
-		"<br/> You can return to the <a href='/index.php'> Main page</a> <br/>
+		echo "<div class='logInConfBackDrop'><div class='logInConfirmation'> You are logged in!
+		<br/> You can return to the <a href='/index.php'> Main page</a> <br/>
 			or you can <a href='sessionLogOut.php'> Log out </a> </div></div>";
 	}
 	 ?>

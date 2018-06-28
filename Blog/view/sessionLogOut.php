@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+include('Blog/include/includeAll.php');
 
 ?>
 <style type="text/css">
@@ -11,7 +11,7 @@ session_start();
 
 <?php
 
-unset($_SESSION['userName']);
+unset($_SESSION['userID']);
 
 echo "<div class='logOutConfBackDrop'><div class='logOutConfirmation'>  You are Logged out. <br/> <a href='logIn.php'> Login here</a> <br/> Return to main page <a href='/index.php'> here</a></div></div>";
 

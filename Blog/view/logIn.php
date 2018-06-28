@@ -1,9 +1,7 @@
 <?php
 
-session_start();
-
 //include('Blog/include/functions.php');
-include('Blog/include/loginFunctions.php');
+include('Blog/include/includeAll.php');
 					$Errors = array();
 
 					if (isset($_REQUEST['logInSubmit'])) {

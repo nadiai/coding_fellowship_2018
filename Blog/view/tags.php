@@ -1,7 +1,8 @@
 <?php
-include('Blog/include/functions.php');
-$print = printHeader();
- ?>
+
+include('Blog/include/includeAll.php');
+
+?>
 	<head>
 		<!-- <title> Sort by Tags </title> -->
 		<link rel='stylesheet' href="/Blog/include/websiteMasterStyle.css">

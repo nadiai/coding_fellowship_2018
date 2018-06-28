@@ -1,7 +1,7 @@
 <?php
 
-include('Blog/config/config.php');
-include('Blog/include/db_query.php');
+// include('Blog/config/config.php');
+// include('Blog/include/db_query.php');
 
 // $userName = isset($_REQUEST['userName']);
 // $passWord = isset($_REQUEST['passWord']);
@@ -31,40 +31,37 @@ function findUser($userName){
 	return $result;
 }
 
-function getDistinctUser($userName){
-	$result = dbQuery("
-		SELECT *
-		FROM users
-		WHERE userName = :userName
-	",
-	 array('userName' => $userName)
- )
-	->fetch();
-
-}
+// function getDistinctUser($userName){
+// 	$result = dbQuery("
+// 		SELECT *
+// 		FROM users
+// 		WHERE userName = :userName
+// 	",
+// 	 array('userName' => $userName)
+//  )
+// 	->fetch();
+//
+// }
 
 function verifyUser($userName, $passWord){
 	$findUser = findUser($userName);
 	$userNme = $findUser['userName'];
 	$passWrd = $findUser['passWord'];
 	$usrID = $findUser['userID'];
-	var_dump($userName);
-	var_dump($passWord);
-	dbQuery("
-		SELECT *
-		FROM users
-		WHERE userName = :userName
-		AND passWord = :passWord
-	",
-	 array('userName' => $userName,
- 	'passWord' => $passWord,)
- );
+	// dbQuery("
+	// 	SELECT *
+	// 	FROM users
+	// 	WHERE userName = :userName
+	// 	AND passWord = :passWord
+	// ",
+	//  array('userName' => $userName,
+ // 	'passWord' => $passWord,)
+ // );
 
 	if ($userName == $userNme && $passWord == $passWrd){
 		$_SESSION['userID'] = $usrID;
-		$_SESSION['userName'] = $userName;
 		header('Location: logInConfirmation.php');
-
+		exit();
 	}
 	else{
 		echo "Login Failed";

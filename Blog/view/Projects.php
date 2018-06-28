@@ -1,3 +1,8 @@
+<?php
+
+include('Blog/include/includeAll.php');
+
+?>
 <html>
 	<head>
 		<title> Summer 2018</title>

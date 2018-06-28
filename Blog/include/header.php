@@ -3,31 +3,27 @@ $Errors = array();
 if(isset($_REQUEST['signUp'])){
 	if ($_REQUEST['firstName'] == ''){
 		$Errors['firstName'] = "required";
-		echo "First name Required <br/>";
 	}
 	if ($_REQUEST['lastName'] == ''){
 		$Errors['lastName'] = "required";
-		echo "Last name Required <br/>";
 	}
 	if ($_REQUEST['email'] == ''){
 		$Errors['email'] = "required";
-		echo "E-mail Required <br/>";
 	}
 	if ($_REQUEST['userName'] == ''){
 		$Errors['userName'] = "required";
-		echo "Username Required <br/>";
 	}
 	if ($_REQUEST['passWord'] == ''){
 		$Errors['passWord'] = "required";
-		echo "Password Required";
 	}
 	if (sizeof($Errors) == 0){
-	 $_SESSION['userName'] = $_REQUEST['userName'];
-	 $_SESSION['firstName'] = $_REQUEST['firstName'];
-	 $_SESSION['lastName'] = $_REQUEST['lastName'];
-	 $_SESSION['email'] = $_REQUEST['email'];
-	 $_SESSION['passWord'] = $_REQUEST['passWord'];
-	 insertAnAccount( @$_REQUEST['firstName'], @$_REQUEST['lastName'], @$_REQUEST['email'], @$_REQUEST['userName'], @$_REQUEST['passWord']);
+		// $_SESSION['userName'] = $_REQUEST['userName'];
+		// $_SESSION['firstName'] = $_REQUEST['firstName'];
+		// $_SESSION['lastName'] = $_REQUEST['lastName'];
+		// $_SESSION['email'] = $_REQUEST['email'];
+		// $_SESSION['passWord'] = $_REQUEST['passWord'];
+	 insertAnAccount( @$_REQUEST['firstName'], @$_REQUEST['lastName'], @$_REQUEST['email'], @$_REQUEST['userName'], @$_REQUEST['passWord'],$_REQUEST['userID']);
+	 $_SESSION['userID'] = $_REQUEST['userID'];
 	 header('Location: Blog/view/signUpConfirmation.php');
 	 exit();
 	}
@@ -36,7 +32,7 @@ if(isset($_REQUEST['signUp'])){
 
 <?php
 
- $print = printHeader();
+printHeader();
 
 ?>
 	<head>
@@ -45,7 +41,13 @@ if(isset($_REQUEST['signUp'])){
 		<link href='https://fonts.googleapis.com/css?family=Ribeye' rel='stylesheet'>
 		<link href='https://fonts.googleapis.com/css?family=Raleway Dots' rel='stylesheet'>
 	</head>
+		<?php
+			if (isset($_SESSION['userID'])) {
+				echo "<p class='loggedInMessage'> You are logged in as $_SESSION[firstName] <br/>
+				<a href='Blog/view/sessionLogOut.php'> Log Out </a></p>";
 
+			}
+		 ?>
 			<div id="Container">
 				<img class="mainPageBackground" src="/images/backdrop2.jpg" alt='Background'/>
 				<h1 class='mainPageTitle'> NADIA IRVIN</h1>

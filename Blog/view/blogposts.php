@@ -1,13 +1,21 @@
+<?php
+
+include('Blog/include/includeAll.php');
+
+?>
 <html>
 	<head>
 		<title> Nadia's Blogposts </title>
-		<link rel='stylesheet' href="/Blog/include/websiteMasterStyle.css">
-		<?php
-		include('Blog/include/functions.php');
-		 ?>
+		<link rel='stylesheet' href="/Blog/include/websiteMasterStyle.css"/>
 	 </head>
 
 	<body>
+		<a class="backButton" href="/index.php"> Back to main </a>
+		<?php
+			if (isset($_SESSION['userID'])) {
+				echo "<p class='loggedInMessage'> You are logged in as $_SESSION[firstName]</p>";
+			}
+		 ?>
 		<img alt='Background' src="/images/backdrop2.jpg" class="background">
 		<h1 class="searchenginepg"> Nadia's Blog Posts </h1>
 		<?php

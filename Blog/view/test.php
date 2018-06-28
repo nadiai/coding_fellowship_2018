@@ -1,9 +1,8 @@
 <?php
 
-include('Blog/include/loginFunctions.php');
+include('Blog/include/includeAll.php');
 
- ?>
-
+?>
  <?php
 
  checkUser();

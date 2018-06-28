@@ -1,9 +1,5 @@
 <?php
 
-include('Blog/config/config.php');
-include('Blog/include/db_query.php');
-/*include('include/blogstyle.css');*/
-
 function GetAllBlogPosts(){
 	$result = dbQuery("
  		SELECT *
@@ -57,6 +53,12 @@ function printHeader(){
 function insertAnAccount($firstName, $lastName, $email, $userName, $passWord){
 		$result = dbQuery("
 		INSERT INTO users(firstName, lastName, email, userName, passWord)
-		VALUES ('$firstName', '$lastName', '$email', '$userName', '$passWord')
-		")->fetch();
+		VALUES (:firstName, :lastName, :email, :userName, :passWord)",
+		array('firstName' => $firstName,
+			'lastName' => $lastName,
+			'email' => $email,
+			'userName' => $userName,
+			'passWord' => $passWord
+		)
+		)->fetch();
 }

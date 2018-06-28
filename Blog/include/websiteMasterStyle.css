@@ -7,6 +7,13 @@
 	padding-top: 10px;
 }
 
+.loggedInMessage{
+	float:right;
+	color: #fff;
+	background-color: #a1c1f4;
+	display: inline;
+}
+
 .picOfNadia{
 	width:300px;
 	height:385px;
@@ -139,6 +146,12 @@
 	margin-top: 0;
 }
 
+.backButton{
+	background-color: #a1c1f4;
+	color: #fff;
+	display: block;
+	float: left;
+}
 .blogDate{
 	text-align: center;
 }
