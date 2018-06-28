@@ -4,21 +4,21 @@ session_start();
 
 //include('Blog/include/functions.php');
 include('Blog/include/loginFunctions.php');
-					$Errors = array();
+$Errors = array();
 
-					if (isset($_REQUEST['logInSubmit'])) {
-						if ($_REQUEST['userName'] == ''){
-							$Errors['userName'] = "required";
-							echo "Username Required <br/>";
-						}
-						if ($_REQUEST['passWord'] == ''){
-							$Errors['passWord'] = "required";
-							echo "Password Required <br/>";
-						}
-						if (sizeof($Errors) == 0){
-							verifyUser($_REQUEST['userName'], $_REQUEST['passWord']);
-						}
-					}
+if (isset($_REQUEST['logInSubmit'])) {
+	if ($_REQUEST['userName'] == ''){
+		$Errors['userName'] = "required";
+		echo "Username Required <br/>";
+	}
+	if ($_REQUEST['passWord'] == ''){
+		$Errors['passWord'] = "required";
+		echo "Password Required <br/>";
+	}
+	if (sizeof($Errors) == 0){
+		verifyUser($_REQUEST['userName'], $_REQUEST['passWord']);
+	}
+}
 
 
  ?>

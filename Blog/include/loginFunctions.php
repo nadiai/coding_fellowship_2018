@@ -64,7 +64,7 @@ function verifyUser($userName, $passWord){
 		$_SESSION['userID'] = $usrID;
 		$_SESSION['userName'] = $userName;
 		header('Location: logInConfirmation.php');
-
+		exit();
 	}
 	else{
 		echo "Login Failed";
