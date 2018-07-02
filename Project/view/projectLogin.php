@@ -2,6 +2,20 @@
 
 include('Project/include/headerPage.php');
 
+$Errors = array();
+if(isset($_REQUEST['loginSubmission'])){
+	if ($_REQUEST['p_UserName'] == '') {
+		$Errors['p_UserName'] = "required";
+	}
+	if ($_REQUEST['p_UserEmail'] == '') {
+		$Errors['p_UserEmail'] = "required";
+	}
+	if (sizeof($Errors) == 0) {
+		 insertUser($projectUserID, @$p_UserName, @$p_UserEmail);
+		 header('Location: /Project/view/questionsForm.php');
+	}
+}
+
 printHeader();
 ?>
 		<title> Login Page </title>
@@ -17,9 +31,9 @@ printHeader();
 									<br/>
 									<input type='text' placeholder='Username' name='p_UserName' value='".@$_REQUEST['p_UserName']."'/>
 									<br/>
-									<input type='text' placeholder='Email' name='p_Email' value='".@$_REQUEST['p_UserEmail']."'/>
+									<input type='text' placeholder='Email' name='p_UserEmail' value='".@$_REQUEST['p_UserEmail']."'/>
 									<br/>
-									<input type='submit' name='JobApplication' value='Login' />
+									<input type='submit' name='loginSubmission' value='Login' />
 							</div>
 							</form>
 							</div>
