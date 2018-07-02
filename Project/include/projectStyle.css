@@ -1,0 +1,36 @@
+.loginPage{
+background-image: url('/images/projectLoginBackground.jpg');
+display: block;
+}
+
+/* .loginBackground{
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+} */
+
+.login p{
+	font-family: 'Cinzel Decorative';
+	font-size: 40px;
+	border-bottom: 2px;
+	border-color: #fff;
+}
+
+.login{
+	border-left: 5px;
+	border-color: #72664b;
+	z-index: 1;
+	float:right;
+	background-color: #bab2a1;
+	padding: 20px;
+	height: 100%;
+	width: 25%;
+	opacity: .7;
+	margin-left: 10px;
+}
+
+.loginText{
+	text-align: center;
+	opacity: none;
+	color: #000;
+}
