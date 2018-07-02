@@ -11,7 +11,8 @@ if(isset($_REQUEST['loginSubmission'])){
 		$Errors['p_UserEmail'] = "required";
 	}
 	if (sizeof($Errors) == 0) {
-		 insertUser($projectUserID, @$p_UserName, @$p_UserEmail);
+		$_SESSION['projectUserID'] = $_REQUEST['projectUserID'];
+		 insertUser( @$_REQUEST['p_UserName'], @$_REQUEST['p_UserEmail']);
 		 header('Location: /Project/view/questionsForm.php');
 	}
 }

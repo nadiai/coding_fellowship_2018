@@ -21,13 +21,11 @@ function printFooter(){
 	";
 }
 
-function insertUser($projectUserID, $p_UserName, $p_UserEmail){
+function insertUser($p_UserName, $p_UserEmail){
 	$result = dbQuery("
-		INSERT INTO project_users(projectUserID, p_UserName, p_UserEmail)
-		VALUES (:projectUserID, :p_UserName, :p_UserEmail)
-	",
-		array('projectUserID' => $projectUserID,
-		'p_UserName' => $p_UserName,
+		INSERT INTO project_users( p_UserName, p_UserEmail)
+		VALUES (:p_UserName, :p_UserEmail)",
+		array('p_UserName' => $p_UserName,
 		'p_UserEmail' => $p_UserEmail)
 		)->fetch();
 }
