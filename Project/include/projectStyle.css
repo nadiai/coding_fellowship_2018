@@ -12,8 +12,7 @@ display: block;
 .login p{
 	font-family: 'Cinzel Decorative';
 	font-size: 40px;
-	border-bottom: 2px;
-	border-color: #fff;
+	color: #fff;
 }
 
 .login{
@@ -33,4 +32,17 @@ display: block;
 	text-align: center;
 	opacity: none;
 	color: #000;
+}
+
+/* questions form */
+
+.questionPageBody{
+	background-image: url('/images/questionnaireBackground.jpg');
+}
+
+.questionPageBody h1{
+	font-family: 'Paprika';
+	color: #fff;
+	font-weight: bolder;
+	font-size: 50px;
 }

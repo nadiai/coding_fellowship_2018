@@ -29,4 +29,25 @@ function insertUser($p_UserName, $p_UserEmail){
 		'p_UserEmail' => $p_UserEmail)
 		)->fetch();
 }
+
+function getQuestions(){
+	$result = dbQuery("
+		SELECT *
+		FROM project_questions
+	")->fetchAll();
+
+	return $result;
+}
+
+function listQuestions($questionID){
+	$result = dbQuery("
+		SELECT *
+		FROM project_questions
+		WHERE questionID = :questionID
+	",
+		array('questionID' => $questionID)
+	)->fetch();
+
+	return $result;
+}
  ?>
