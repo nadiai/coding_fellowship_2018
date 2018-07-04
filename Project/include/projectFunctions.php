@@ -30,6 +30,18 @@ function insertUser($p_UserName, $p_UserEmail){
 		)->fetch();
 }
 
+function getUser($projectUserID){
+	$result = dbQuery("
+		SELECT *
+		FROM project_users
+		WHERE projectUserID = :projectUserID
+	",
+	array('projectUserID' => $projectUserID)
+	)->fetch();
+
+	return $result;
+}
+
 function getQuestions(){
 	$result = dbQuery("
 		SELECT *
