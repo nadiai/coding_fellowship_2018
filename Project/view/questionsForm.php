@@ -4,7 +4,7 @@ include('Project/include/headerPage.php');
 
 $Errors = array();
 if (isset($_REQUEST['formSubmitButton'])) {
-		insertResponse($_SESSION['projectUserID'], @$_REQUEST['Answers']);
+		insertResponse($_SESSION['questionID'], $_SESSION['projectUserID'], @$_REQUEST['Answers']);
 }
 
 printHeader();
@@ -32,12 +32,13 @@ printHeader();
 
 					<?php
 
-						$questionDisplay = getQuestions();
+						$Displayquestions = getQuestions();
 
-							foreach ($questionDisplay as $question) {
+							foreach ($Displayquestions as $question) {
 								echo "
-							 $question[questionID]. <input type='text' placeholder='$question[Question]' name='questionResponse' value='".@$_REQUEST['Answers']."' required> <br/> <br/>";
+							 $question[questionID]. <input type='text' placeholder='$question[Question]' name='Answers[$question[questionID]]' value='".@$_REQUEST['Answers[$question[questionID]]']."' required> <br/> <br/>";
 							}
+							var_dump($_REQUEST);
 
 					 ?>
 					 <br/>

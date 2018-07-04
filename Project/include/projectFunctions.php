@@ -67,28 +67,28 @@ function getQuestions(){
 	return $result;
 }
 
-function listQuestions($questionID){
+function listQuestions($Question){
 	$result = dbQuery("
 		SELECT *
 		FROM project_questions
-		WHERE questionID = :questionID
+		WHERE Question = :Question
 	",
-		array('questionID' => $questionID)
+		array('Question' => $Question)
 	)->fetchAll();
 
 	return $result;
 }
 
+//function matchQuestions()
 
-function insertResponse( $projectUserID, $Answers){
 
-	// $findElement = getQuestions();
-	// $questionID = $findElement['questionID'];
+function insertResponse($questionID, $projectUserID, $Answers){
 	$result = dbQuery("
-		INSERT INTO project_answers(projectUserID, Answers)
-		VALUES ( :projectUserID, :Answers)
+		INSERT INTO project_responses(questionID, projectUserID, Answers)
+		VALUES ( :questionID, :projectUserID, :Answers)
 	",
-		array('projectUserID' => $projectUserID,
+		array('questionID' => $questionID,
+		'projectUserID' => $projectUserID,
 		'Answers' => $Answers)
 	)->fetch();
 }

@@ -156,3 +156,49 @@ display: block;
 	border-color: #1e5259;
 	text-align: center;
 }
+
+/* Profile Page */
+
+#profileContainer{
+	/* background-color: #6c2896; */
+	/* background-color: #753e3e; */
+	/* background-color: #3e753e; */
+	background-color: #3e6175;
+	/* background-color:#8c6d27 */
+}
+
+.profileImage{
+	height:300px;
+	width: 100%;
+}
+
+#profileContainer h1{
+	font-family: 'Peralta';
+	color: #fff;
+	border-bottom: 2px solid white;
+	text-align: center;
+}
+
+#informationContainer{
+	display: flex;
+}
+
+#informationContainer p{
+	font-family: 'Poiret One';
+	color: #fff;
+}
+
+.sectionOne{
+	float: left;
+	flex: 30%;
+}
+
+.sectionTwo{
+	float: center;
+	flex: 30%;
+}
+
+.sectionThree{
+	float: right;
+flex: 30%;
+}
