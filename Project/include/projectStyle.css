@@ -46,3 +46,53 @@ display: block;
 	font-weight: bolder;
 	font-size: 50px;
 }
+
+.questionPageBody h2{
+	font-family: 'Paprika';
+	color: #103e44;
+}
+
+.questionPageBody p{
+	font-family: 'Nothing You Could Do';
+}
+
+.questionDisplay{
+	text-align: center;
+	background-color: #f7fcfc;
+	border: 5px solid;
+	border-color: #377172;
+	border-radius: 10px;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 25px;
+	/*background-repeat: no-repeat;*/
+}
+
+.questionDisplay input[type='text']{
+	border: none;
+	border-bottom: 2px solid;
+	border-color: #1e5259;
+	width: 80%;
+	line-height: 150%;
+	padding: 2px;
+	border-radius: 5px;
+}
+.questionDisplay input[type='text']:focus{
+	outline: none;
+}
+
+.questionDisplay input[type='submit']:hover{
+	background: #1e5259;
+	border: 2px solid;
+	border-color: #deeef4;
+	color: #fff;
+}
+
+.questionDisplay input[type='submit']{
+	font-family: 'Nothing You Could Do';
+	border: 2px solid;
+	border-color: #1e5259;
+	text-align: center;
+}

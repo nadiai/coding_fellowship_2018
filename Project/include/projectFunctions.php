@@ -33,7 +33,7 @@ function insertUser($p_UserName, $p_UserEmail){
 function getQuestions(){
 	$result = dbQuery("
 		SELECT *
-		FROM project_questions
+		FROM project_questions_copy
 	")->fetchAll();
 
 	return $result;
@@ -46,8 +46,22 @@ function listQuestions($questionID){
 		WHERE questionID = :questionID
 	",
 		array('questionID' => $questionID)
-	)->fetch();
+	)->fetchAll();
 
 	return $result;
+}
+
+
+function insertResponse( $projectUserID, $Answers){
+
+	// $findElement = getQuestions();
+	// $questionID = $findElement['questionID'];
+	$result = dbQuery("
+		INSERT INTO project_answers(projectUserID, Answers)
+		VALUES ( :projectUserID, :Answers)
+	",
+		array('projectUserID' => $projectUserID,
+		'Answers' => $Answers)
+	)->fetch();
 }
  ?>
