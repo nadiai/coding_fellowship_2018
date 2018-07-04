@@ -20,7 +20,7 @@ printHeader();
 			<h1> Title of This Questionnaire </h1>
 			<?php
 				if (isset($_SESSION['projectUserID'])) {
-					echo "You're logged in as $_SESSION[p_UserName]";
+					echo "You're logged in as $_SESSION[p_FirstName]";
 				}else {
 					echo "not logged in";
 				}

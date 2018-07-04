@@ -7,14 +7,11 @@ if(isset($_REQUEST['loginSubmission'])){
 	if ($_REQUEST['p_UserName'] == '') {
 		$Errors['p_UserName'] = "required";
 	}
-	if ($_REQUEST['p_UserEmail'] == '') {
-		$Errors['p_UserEmail'] = "required";
+	if ($_REQUEST['p_PassWord'] == '') {
+		$Errors['p_PassWord'] = "required";
 	}
 	if (sizeof($Errors) == 0) {
-		 insertUser( @$_REQUEST['p_UserName'], @$_REQUEST['p_UserEmail']);
-		 $_SESSION['projectUserID'] = $_REQUEST['projectUserID'];
-		 header('Location: /Project/view/questionsForm.php');
-		 exit();
+		 verifyUser( @$_REQUEST['p_UserName'], @$_REQUEST['p_PassWord']);
 	}
 }
 
@@ -33,7 +30,7 @@ printHeader();
 									<br/>
 									<input type='text' placeholder='Username' name='p_UserName' value='".@$_REQUEST['p_UserName']."'/>
 									<br/>
-									<input type='text' placeholder='Email' name='p_UserEmail' value='".@$_REQUEST['p_UserEmail']."'/>
+									<input type='password' placeholder='Password' name='p_PassWord' value='".@$_REQUEST['p_PassWord']."'/>
 									<br/>
 									<input type='submit' name='loginSubmission' value='Login' />
 							</div>
