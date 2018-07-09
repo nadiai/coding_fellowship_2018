@@ -12,6 +12,8 @@ if(isset($_REQUEST['loginSubmission'])){
 	}
 	if (sizeof($Errors) == 0) {
 		 verifyUser( @$_REQUEST['p_UserName'], @$_REQUEST['p_PassWord']);
+	} else {
+		echo "login Failed";
 	}
 }
 

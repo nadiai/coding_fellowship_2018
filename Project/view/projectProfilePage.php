@@ -17,7 +17,16 @@ printheader();
 			<h1> THIS IS THE TITLE OF THE MOVIE THAT IS MY LIFE </h1>
 			<div id="informationContainer">
 				<div class="sectionOne">
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. forem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt tincidunt commodo. Curabitur porta bibendum dolor non iaculis. Etiam malesuada ante et faucibus fermentum. Sed viverra bibendum neque, id cursus dolor egestas vitae. Ut convallis turpis eu mauris ullamcorper, in molestie metus laoreet. Donec sagittis in orci in rutrum. Duis consequat scelerisque mollis. Nullam porttitor laoreet velit. Vestibulum lacinia bibendum orci. Suspendisse hendrerit posuere metus ac pretium. Duis nec tempor urna. Vivamus vehicula erat in lobortis gravida.</p>
+					<?php
+
+						$UserResponses = getAnswers($_SESSION['projectUserID']);
+
+						foreach ($UserResponses as $key => $Responses) {
+							echo "<p> $Responses[Answers]</p>
+							<br/>";
+						}
+					 ?>
+					<!-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. forem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt tincidunt commodo. Curabitur porta bibendum dolor non iaculis. Etiam malesuada ante et faucibus fermentum. Sed viverra bibendum neque, id cursus dolor egestas vitae. Ut convallis turpis eu mauris ullamcorper, in molestie metus laoreet. Donec sagittis in orci in rutrum. Duis consequat scelerisque mollis. Nullam porttitor laoreet velit. Vestibulum lacinia bibendum orci. Suspendisse hendrerit posuere metus ac pretium. Duis nec tempor urna. Vivamus vehicula erat in lobortis gravida.</p> -->
 				</div>
 				<div class="sectionTwo">
 					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. forem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt tincidunt commodo. Curabitur porta bibendum dolor non iaculis. Etiam malesuada ante et faucibus fermentum. Sed viverra bibendum neque, id cursus dolor egestas vitae. Ut convallis turpis eu mauris ullamcorper, in molestie metus laoreet. Donec sagittis in orci in rutrum. Duis consequat scelerisque mollis. Nullam porttitor laoreet velit. Vestibulum lacinia bibendum orci. Suspendisse hendrerit posuere metus ac pretium. Duis nec tempor urna. Vivamus vehicula erat in lobortis gravida.</p>
@@ -25,5 +34,8 @@ printheader();
 				<div class="sectionThree">
 					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. forem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt tincidunt commodo. Curabitur porta bibendum dolor non iaculis. Etiam malesuada ante et faucibus fermentum. Sed viverra bibendum neque, id cursus dolor egestas vitae. Ut convallis turpis eu mauris ullamcorper, in molestie metus laoreet. Donec sagittis in orci in rutrum. Duis consequat scelerisque mollis. Nullam porttitor laoreet velit. Vestibulum lacinia bibendum orci. Suspendisse hendrerit posuere metus ac pretium. Duis nec tempor urna. Vivamus vehicula erat in lobortis gravida.</p>
 				</div>
+			</div>
+			<div class="logOutFooter">
+				<p> Log out of your account<a href="logOutPage.php"> here </a></p>
 			</div>
 		</div>

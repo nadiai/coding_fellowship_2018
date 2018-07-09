@@ -3,7 +3,7 @@
 include('Project/include/headerPage.php');
 
 $Errors = array();
-if(isset($_REQUEST['loginSubmission'])){
+if(isset($_REQUEST['signUpSubmission'])){
 	if ($_REQUEST['p_FirstName'] == '') {
 		$Errors['p_FirstName'] = "required";
 	}
@@ -49,7 +49,7 @@ printHeader();
 											<br/>
 											<input type='password' placeholder='Password' name='p_PassWord' value='".@$_REQUEST['p_PassWord']."'/>
 											<br/>
-											<input type='submit' name='loginSubmission' value='Login' />
+											<input type='submit' name='signUpSubmission' value='Sign Up' />
 											<br/>
 											<p> Already Have and account? <a href='/Project/view/projectLogin.php'> Login Directly </a></p>
 									</div>

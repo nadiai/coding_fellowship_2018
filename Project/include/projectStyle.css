@@ -94,22 +94,68 @@ display: block;
 	color: #000;
 }
 
+/* Home Page */
+
+.homePageBody{
+	background-color: #f4eee1;
+}
+.homePageBackground{
+	width: 100%;
+	height: 300px;
+}
+
+.homePageHead{
+	display: block;
+}
+
+.homePageBody h1{
+	font-family: 'Give You Glory';
+	font-size: 60px;
+	text-align: center;
+	color: #231a08;
+}
+
+.homePageBody h2{
+	font-family: 'The Girl Next Door';
+	text-align: center;
+	color: #231a08;
+	border-top: 2px solid;
+	border-bottom: 2px solid;
+	background-color: #f7f6f4;
+}
+
+.listsurveys p{
+	text-align:center;
+}
+
+.listsurvey tr{
+	border: 2px solid;
+	border-color: #000;
+}
+
 /* questions form */
 
-.questionPageBody{
-	background-image: url('/images/questionnaireBackground.jpg');
+.backgroundImageSurveyPage{
+	width: 100%;
+	height: 200px;
+	z-index: 1;
+	margin: auto;
+}
+
+.formContainer{
+	z-index: 2;
 }
 
 .questionPageBody h1{
 	font-family: 'Paprika';
-	color: #fff;
+	color: #2d1605;
 	font-weight: bolder;
 	font-size: 50px;
 }
 
 .questionPageBody h2{
 	font-family: 'Paprika';
-	color: #103e44;
+	color: #634a38;;
 }
 
 .questionPageBody p{
@@ -120,7 +166,7 @@ display: block;
 	text-align: center;
 	background-color: #f7fcfc;
 	border: 5px solid;
-	border-color: #377172;
+	border-color: #2d1605;
 	border-radius: 10px;
 	margin-left: 10%;
 	margin-right: 10%;
@@ -133,7 +179,7 @@ display: block;
 .questionDisplay input[type='text']{
 	border: none;
 	border-bottom: 2px solid;
-	border-color: #1e5259;
+	border-color: #2d1605;
 	width: 80%;
 	line-height: 150%;
 	padding: 2px;
@@ -144,16 +190,16 @@ display: block;
 }
 
 .questionDisplay input[type='submit']:hover{
-	background: #1e5259;
+	background: #634a38;
 	border: 2px solid;
-	border-color: #deeef4;
+	border-color: #2d1605;
 	color: #fff;
 }
 
 .questionDisplay input[type='submit']{
 	font-family: 'Nothing You Could Do';
 	border: 2px solid;
-	border-color: #1e5259;
+	border-color: #2d1605;
 	text-align: center;
 }
 
@@ -183,6 +229,10 @@ display: block;
 	display: flex;
 }
 
+#informationContainer:after{
+	flex: none;
+}
+
 #informationContainer p{
 	font-family: 'Poiret One';
 	color: #fff;
@@ -201,4 +251,17 @@ display: block;
 .sectionThree{
 	float: right;
 flex: 30%;
+}
+
+.logOutFooter p{
+	font-family: 'Poiret One';
+	color: #fff;
+}
+
+.logOutFooter a{
+	color: #000;
+}
+
+.logOutFooter a:hover{
+	color: #fff;
 }

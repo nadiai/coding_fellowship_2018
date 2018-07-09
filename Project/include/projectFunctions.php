@@ -53,10 +53,28 @@ function verifyUser($p_UserName, $p_PassWord){
 
 	if ($p_UserName == $loginUserName && $p_PassWord == $loginPassWord) {
 		$_SESSION['projectUserID'] = $loginUserID;
-		header('Location: /Project/view/questionsForm.php');
+		header('Location: /Project/view/projectHomePage.php');
 		exit();
 	}
 }
+
+function getAllSurveys(){
+	$result = dbQuery("
+		SELECT *
+		FROM project_surveys
+	")->fetchAll();
+
+	return $result;
+}
+
+// function getAllSurveys(){
+// 	$result = dbQuery("
+// 		SELECT *
+// 		FROM project_surveys
+// 	")->fetchAll();
+//
+// 	return $result;
+// }
 
 function getQuestions(){
 	$result = dbQuery("
@@ -67,13 +85,13 @@ function getQuestions(){
 	return $result;
 }
 
-function listQuestions($Question){
+function getSurveyQuestions($surveyID){
 	$result = dbQuery("
 		SELECT *
-		FROM project_questions
-		WHERE Question = :Question
+		FROM project_questions_copy
+		WHERE surveyID = :surveyID
 	",
-		array('Question' => $Question)
+		array('surveyID' => $surveyID)
 	)->fetchAll();
 
 	return $result;
@@ -82,14 +100,36 @@ function listQuestions($Question){
 //function matchQuestions()
 
 
-function insertResponse($questionID, $projectUserID, $Answers){
+function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
 	$result = dbQuery("
-		INSERT INTO project_responses(questionID, projectUserID, Answers)
-		VALUES ( :questionID, :projectUserID, :Answers)
+		INSERT INTO project_responses( surveyID, questionID, projectUserID, Answers)
+		VALUES ( :surveyID, :questionID, :projectUserID, :Answers)
 	",
-		array('questionID' => $questionID,
+		array( 'surveyID' => $surveyID,
+		'questionID' => $questionID,
 		'projectUserID' => $projectUserID,
 		'Answers' => $Answers)
 	)->fetch();
 }
- ?>
+
+
+ function getAllAnswer(){
+	 $result = dbQuery("
+	 	SELECT *
+		FROM project_responses
+	 ")->fetchAll();
+
+	 return $result;
+ }
+
+ function getAnswers($projectUserID){
+	 $result = dbQuery("
+	 	SELECT *
+		FROM project_responses
+		WHERE projectUserID = :projectUserID
+	 ",
+	 	array('projectUserID' => $projectUserID)
+	 )->fetchAll();
+
+	 return $result;
+ }
