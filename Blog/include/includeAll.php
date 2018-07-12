@@ -1,13 +1,15 @@
 <?php
 
+session_start();
+
+include('Blog/config/config.php');
+include('Blog/include/db_query.php');
 include('Blog/include/functions.php');
-//include('Blog/include/websiteMasterStyle.css')
+
+include('Blog/include/loginFunctions.php');
+//
+// session_start();
+
  ?>
 
- <style type="text/css">
- <?php
-	include('Blog/include/websiteMasterStyle.css');
-	?>
- </style>
-
- <script src="jquery.js"></script>
+ <!-- <script src="jquery.js"></script> -->

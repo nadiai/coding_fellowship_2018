@@ -1,5 +1,6 @@
 <?php
 
+
 $Errors = array();
 if (isset($_REQUEST['submitComment'])) {
 	if ($_REQUEST['userName'] == '') {
@@ -34,6 +35,12 @@ if (isset($_REQUEST['submitComment'])) {
 	</head>
 
 	<body>
+		<a class="backButton" href="/index.php"> Back to main </a>
+		<?php
+			if (isset($_SESSION['userID'])) {
+				echo "<p class='loggedInMessage'> You are logged in as $_SESSION[firstName]</p>";
+			}
+		 ?>
 		<img alt='Background' src="/images/backdrop2.jpg" class="background">
 		<h1 class="searchenginepg"> Nadia's Blog Posts </h1>
 		<?php
@@ -51,10 +58,6 @@ if (isset($_REQUEST['submitComment'])) {
 			  ";
 
 				echo "<h1 style=' border-top: solid; border-color:#052455; background-color:#a1c1f4; font-size: 30px;color: #fff; margin-top: 0px;'> Comments </h1>";
-
-			// $postComments = getComments($_REQUEST['blogPostID']);
-
-			// $postComment = echoComment(@$_REQUEST['userID'], @$_REQUEST['commentTimeStamp'], @$_REQUEST['Comment']);
 
 			$Comments = getComments($_REQUEST['blogPostID']);
 
