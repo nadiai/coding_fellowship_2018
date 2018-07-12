@@ -21,6 +21,11 @@ printHeader();
 ?>
 		<title> Login Page </title>
 		<link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+		<style type="text/css">
+		<?php
+		 include('Project/include/projectStyle.css');
+		 ?>
+		</style>
 	</head>
 	<body class='loginPage'>
 <?php

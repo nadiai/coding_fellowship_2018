@@ -133,3 +133,45 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
 
 	 return $result;
  }
+
+ function getTitleAnswer($projectUserID){
+	 $result = dbQuery("
+	 	SELECT *
+		FROM project_responses
+		WHERE projectUserID = :projectUserID
+		AND surveyID = '0'
+		AND questionID = '1'
+	 ",
+	 	array('projectUserID' => $projectUserID)
+	 )->fetch();
+
+	 return $result;
+
+ }
+
+ function getSubTitleAnswer($projectUserID){
+	$result = dbQuery("
+	 SELECT *
+	 FROM project_responses
+	 WHERE projectUserID = :projectUserID
+	 AND surveyID = '0'
+	 AND questionID = '11'
+	",
+	 array('projectUserID' => $projectUserID)
+	)->fetch();
+
+	return $result;
+
+ }
+
+ function getUsers($projectUserID){
+ 	$result = dbQuery("
+ 		SELECT *
+ 		FROM project_users
+ 		WHERE projectUserID = :projectUserID
+ 	",
+ 	array('projectUserID' => $projectUserID)
+ 	)->fetch();
+
+ 	return $result;
+ }
