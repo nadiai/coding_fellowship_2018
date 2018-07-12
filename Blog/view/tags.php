@@ -1,24 +1,21 @@
 <?php
 
-include('Blog/include/includeAll.php');
-
-?>
+include('Blog/include/functions.php');
+printHeader();
+ ?>
 	<head>
-		<!-- <title> Sort by Tags </title> -->
+		<title> Sort by Tags </title>
+
 		<link rel='stylesheet' href="/Blog/include/websiteMasterStyle.css">
 	</head>
 	<body>
 
 		<?php
-		 if ($_REQUEST['tagID'] == 0) {
-			echo "<title class='tagTitle'> Life Updates</title>";
-		}
-		if ($_REQUEST['tagID'] == 1) {
-			echo "<title class='tagTitle'> Food </title>";
-		}
-		if ($_REQUEST['tagID'] == 2) {
-			echo "<title class='tagTitle'> Events </title>";
-		}
+
+		$tag = getTag($_REQUEST['tagID']);
+
+		echo "<title class='tagTitle'> $tag[tagName]</title>";
+
 		?>
 		<div class="tagTopNav">
 				<a href='events.php'> Events</a>
