@@ -136,8 +136,44 @@ display: block;
 }
 
 /* firstTest*/
+.firstTestContainer{
+	background-color: #fff;
+}
+
+.firstTestSection1{
+	background-color: #e9b000;
+	border-bottom: 4px solid;
+	border-color: #00303f;/*#a8943d;*/
+	height: 200px;
+}
+
+.firstTestSection1 h1{
+	font-family: 'Amatic SC';
+	font-size: 40px;
+
+}
+
+#firstTestBody{
+	background-color: #fff;
+}
+
+.firstTest{
+	margin: auto;
+	border: 2px solid;
+	border-color: #00303f;
+	width: 75%;
+	display: inline-block;
+	height: 200px;
+}
 
 
+#firstImage{
+	/* float: left; */
+}
+
+#secondImage{
+	/* float: right; */
+}
 
 /* Home Page */
 

@@ -175,3 +175,12 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
 
  	return $result;
  }
+
+ function firstTestObjects(){
+	 $result = dbQuery("
+  		SELECT *
+  		FROM project_categories
+			")->fetchAll();
+
+			return $result;
+ }
