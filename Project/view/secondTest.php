@@ -7,7 +7,6 @@ include('Project/include/headerPage.php');
 
 if(isset($_POST['submitRankings'])){
 	foreach ($_REQUEST['Ranking'] as $index => $value) { //running into a problem with the "Ranking" being an array but I dont know how to get inside the array
-		echo "Question $index: $value<br/>";
 		insertPersonalityTestResponse($_SESSION['projectUserID'], $_REQUEST['categoryID'], $index, $value);
 	}
 	 header('Location: /Project/view/projectHomePage.php');
