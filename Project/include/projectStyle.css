@@ -140,17 +140,16 @@ display: block;
 	background-color: #fff;
 }
 
-.firstTestSection1{
-	background-color: #e9b000;
-	border-bottom: 4px solid;
-	border-color: #00303f;/*#a8943d;*/
-	height: 200px;
-}
-
-.firstTestSection1 h1{
+.firstTitle h1{
 	font-family: 'Amatic SC';
+	border-top: 4px solid black;
+	border-bottom: 2px solid black;
 	font-size: 40px;
 
+}
+
+.firstTestBlurb{
+	text-align: center;
 }
 
 #firstTestBody{
@@ -159,13 +158,23 @@ display: block;
 
 .firstTest{
 	margin: auto;
-	border: 2px solid;
-	border-color: #00303f;
+	border: 2px solid black;
 	width: 75%;
-	display: inline-block;
-	height: 200px;
+	text-align: center;
 }
 
+.firstTest table{
+	font-size: 50px;
+	text-align: center;
+}
+
+.firstTest tr{
+	text-align: center;
+}
+
+.firstTest a{
+	color: black;
+}
 
 #firstImage{
 	/* float: left; */

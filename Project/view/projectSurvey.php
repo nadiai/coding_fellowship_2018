@@ -26,13 +26,13 @@ printHeader();
 		 include('Project/include/projectStyle.css');
 		 ?>
 		</style>
-		<script>
+		<!-- <script>
 		$(document).ready(function(){
 			$("#question").click(function(){
 	    $("#answer").slideToggle("easing");
 		});
 });
-		</script>
+		</script> -->
 
 	</head>
 	<body class='questionPageBody'>

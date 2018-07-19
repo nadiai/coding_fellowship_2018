@@ -184,3 +184,36 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
 
 			return $result;
  }
+
+ function testRankObjects(){
+	$result = dbQuery("
+		 SELECT *
+		 FROM project_rankings
+		 ")->fetchAll();
+
+		 return $result;
+ }
+
+ function testRankings($categoryID){
+  $result = dbQuery("
+ 		SELECT *
+ 		FROM project_rankings
+		WHERE categoryID = :categoryID
+ 		",
+		array('categoryID' => $categoryID))->fetchAll();
+
+ 		return $result;
+ }
+
+ function insertPersonalityTestResponse($projectUserID, $categoryID, $rankID, $Ranking){
+ 	$result = dbQuery("
+ 		INSERT INTO project_user_rankings( projectUserID, categoryID, rankID, Ranking)
+ 		VALUES ( :projectUserID, :categoryID, :rankID, :Ranking)
+ 	",
+ 		array(
+ 		'projectUserID' => $projectUserID,
+		'categoryID' => $categoryID,
+		'rankID' => $rankID,
+ 		'Ranking' => $Ranking)
+ 	)->fetch();
+ }

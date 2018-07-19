@@ -26,15 +26,15 @@ if(isset($_REQUEST['signUpSubmission'])){
 	}
 }
 
-$Errors = array();
+$Errors2 = array();
 if(isset($_REQUEST['loginSubmission'])){
 	if ($_REQUEST['p_UserName'] == '') {
-		$Errors['p_UserName'] = "required";
+		$Errors2['p_UserName'] = "required";
 	}
 	if ($_REQUEST['p_PassWord'] == '') {
-		$Errors['p_PassWord'] = "required";
+		$Errors2['p_PassWord'] = "required";
 	}
-	if (sizeof($Errors) == 0) {
+	if (sizeof($Errors2) == 0) {
 		 verifyUser( strtolower(@$_REQUEST['p_UserName']), @$_REQUEST['p_PassWord']);
 	} else {
 		echo "login Failed";
