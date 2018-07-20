@@ -36,7 +36,7 @@ printHeader();
 
 							foreach ($testObjects as $index => $test) {
 								$i++;
-								echo "<td> <div id='testItem'> <a href='/Project/view/secondTest.php?categoryID=$index'> $test[Category] <br/> </div><td>";
+								echo "<td> <div id='testItem'> <img class='itemImage' src='$test[Images]' alt='table data'/><div class='imageOverlay'><div class='imageText'>  <a href='/Project/view/secondTest.php?categoryID=$index'> $test[Category]</div></div></div></td>";
 
 								if($i == $i/2){
 									echo '</tr></tr>';

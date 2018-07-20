@@ -53,7 +53,7 @@ function verifyUser($p_UserName, $p_PassWord){
 
 	if ($p_UserName == $loginUserName && $p_PassWord == $loginPassWord) {
 		$_SESSION['projectUserID'] = $loginUserID;
-		header('Location: /Project/view/projectHomePage.php');
+		header('Location: /Project/view/firstTest.php');
 		exit();
 	}
 }
@@ -216,4 +216,48 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
 		'rankID' => $rankID,
  		'Ranking' => $Ranking)
  	)->fetch();
+ }
+
+ function getUserRankings($projectUserID){
+ 	$result = dbQuery("
+ 		SELECT *
+ 		FROM project_user_rankings
+ 		WHERE projectUserID = :projectUserID
+ 	",
+ 	array('projectUserID' => $projectUserID)
+ 	)->fetch();
+
+ 	return $result;
+ }
+
+ function getSpecialSurveys($surveyTrait){
+	 $result = dbQuery("
+		 SELECT *
+		 FROM project_surveys
+		 WHERE surveyTrait = :surveyTrait
+	 ",
+	 array('surveyTrait' => $surveyTrait)
+	 )->fetchAll();
+
+	 return $result;
+ }
+
+ function findRanking($categoryID, $rankID, $Ranking){
+	 $UserRanking = getUserRankings($_SESSION['projectUserID']);
+	 $findCategory = $UserRanking['categoryID'];
+	 $findRankID = $UserRanking['rankID'];
+	 $findRanking = $UserRanking['Ranking'];
+	 if($findCategory == '0' && $findRankID == '0' && $findRanking == '1'){
+		 $_SESSION['surveyTrait'] = 'self-discovery';
+		header('Location: /Project/view/projectHomePage.php');
+		exit();
+ 	}elseif ($findCategory == '1' && $findRankID == '3' && $findRanking == '1') {
+		$_SESSION['surveyTrait'] = 'self-expression';
+		header('Location: /Project/view/projectHomePage.php');
+		exit();
+ 	} else {
+		$_SESSION['surveyTrait'] = 'other';
+ 		header('Location: /Project/view/projectHomePage.php');
+		exit();
+ 	}
  }

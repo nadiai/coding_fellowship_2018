@@ -9,8 +9,8 @@ if(isset($_POST['submitRankings'])){
 	foreach ($_REQUEST['Ranking'] as $index => $value) { //running into a problem with the "Ranking" being an array but I dont know how to get inside the array
 		insertPersonalityTestResponse($_SESSION['projectUserID'], $_REQUEST['categoryID'], $index, $value);
 	}
-	 header('Location: /Project/view/projectHomePage.php');
-	 exit();
+	findRanking($_REQUEST['categoryID'], $index, $_REQUEST['Ranking']);
+	//var_dump($_REQUEST);
 }
 
 printHeader();
@@ -25,22 +25,29 @@ printHeader();
 			</style>
 			<script src="/Blog/include/jquery.js"></script>
 		</head>
+		<script type="text/javascript">
+
+		</script>
 		<body id='secondTestBody'>
 			<div id='secondTestContainer'>
 				<form action='' method="post">
 					<?php
+					var_dump($_SESSION['projectUserID']);
 
 					$rankings = testRankings($_REQUEST['categoryID']);
 
+					echo '<ul id="quiz" class="listGroup">';
 
 					foreach ($rankings as $index => $rank) {
 						$rankID = $rank['rankID'];
 
 						echo "
-							$rank[Options]
-							<input id='ranking' type='number' name='Ranking[$rank[rankID]]' value='".@$_REQUEST['Ranking_'.$rankID]."' min='1' max='3'/>
+								<p>$rank[Options]</p>
+								<input type='number' name='Ranking[$rank[rankID]]' value='".@$_REQUEST['Ranking_'.$rankID]."'
 						 ";
 					}
+
+						echo '</ul>';
 
 					?>
 					 <input type='submit' name='submitRankings' value='Submit'/>

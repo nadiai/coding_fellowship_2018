@@ -54,7 +54,7 @@ printheader();
 				</div>
 				<div class="listSurveys">
 					<?php
-						$Surveys = getAllSurveys();
+						$Surveys = getSpecialSurveys($_SESSION['surveyTrait']);
 						$i=0;
 						echo ' <table>
 										<tr>';
