@@ -17,7 +17,7 @@ printHeader();
 
 ?>
 		<title> Questionnaire </title>
-		<link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Bubbler One' rel='stylesheet'>
 		<link href='https://fonts.googleapis.com/css?family=Nothing You Could Do' rel='stylesheet'>
 		<script src="/Blog/include/jquery.js"></script>
 
@@ -37,9 +37,17 @@ printHeader();
 	</head>
 	<body class='questionPageBody'>
 		<!-- <img class='backgroundImageSurveyPage' src="/images/surveyPageBackground.jpg" alt="notebook"> -->
-		<div class='formContainer'>
-			<h1> Title of This Questionnaire </h1>
-			<h2>  Please answer these questions to the best of your ability </h2>
+			<div class='divider'></div>
+			<div class='divider2'></div>
+			<div class='surveyHeader'>
+				<?php
+					$Survey = getAllSurveys();
+					echo "<h1> $Survey[surveyName]</h1>";
+				?>
+				<h2>  Please answer these questions to the best of your ability </h2>
+			</div>
+			<hr style="width:100%; height:2px; background-color: #ff0000; border:none;" />
+			<div class='formContainer'>
 			<br/>
 			<br/>
 			<div class="questionDisplay">
@@ -55,7 +63,7 @@ printHeader();
 								echo "
 								<p id='question'>$question[Question] </p>
 								<br/>
-							  <input id='answer' type='text'  name='Answers[$question[questionID]]' value='".@$_REQUEST['Answers_'.$questionID]."' required> <br/> <br/>";
+							  <input id='answer' type='text'  name='Answers[$question[questionID]]' value='".@$_REQUEST['Answers_'.$questionID]."' placeholder='Answer Here' required> <br/> <br/>";
 							}
 
 					 ?>
@@ -66,6 +74,7 @@ printHeader();
 			</div>
 			<br/>
 			<br/>
+			<div class='footer'>
 			<?php
 				if (isset($_SESSION['projectUserID'])) {
 					echo "You're logged in.<a href='logOutPage.php'> Log Out Here";
@@ -73,4 +82,5 @@ printHeader();
 					echo "not logged in";
 				}
 			 ?>
+		 </div>
 		</div>

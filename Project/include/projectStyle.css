@@ -421,23 +421,73 @@ display: block;
 }
 
 .questionPageBody{
-	background-image: url('/images/notebookBackground.jpg');
+	/* background-image: url('/images/notebookBackground.jpg'); */
+	/* Set a font size */
+  font-size: 16px;
+
+  /* Begin The Redundancies */
+  background-image:
+    /* -webkit-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em), */
+    -webkit-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+  background-image:
+    -moz-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em),
+    -moz-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+  background-image:
+    /* -o-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em), */
+    -o-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+  background-image:
+    -ms-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em),
+    -ms-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+  -webkit-background-size: 100% 2em;
+  /* -moz-background-size: 100% 2em; */
+
+}
+
+.surveyHeader{
+	height:200px;
+	background-color: #fff;
+	margin-left: 94px;
+}
+.divider {
+	 content:"";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 100px;
+	border-left: 2px solid #ff0000;
+	transform: translate(-50%);
+	opacity: .7;
+	height: 100%;
+}
+.divider2 {
+	 content:"";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 96px;
+	border-left: 2px solid #ff0000;
+	transform: translate(-50%);
+	opacity: .7;
+	height: 100%;
 }
 .questionPageBody h1{
-	font-family: 'Paprika';
+	font-family: 'Bubbler One';
 	color: #2d1605;
 	font-weight: bolder;
-	font-size: 50px;
+	font-size: 80px;
 }
 
 .questionPageBody h2{
-	font-family: 'Paprika';
-	color: #634a38;;
+	font-family: 'Bubbler One';
+	color: #a3b3ce;
+	font-size: 40px;
 }
 
 .questionPageBody p{
-	font-family: 'Nothing You Could Do';
-	font-size: 22px;
+	font-family: 'Bubbler One';
+	font-size: 16px;
 }
 
 .questionDisplay{
@@ -454,6 +504,10 @@ display: block;
 	/*background-repeat: no-repeat;*/
 }
 
+.footer{
+	margin-left: 94px;
+}
+
 /* .questionDisplay p{
 	border-bottom: 2px solid;
 	border-color: #2d1605;
@@ -462,29 +516,28 @@ display: block;
 
 .questionDisplay input[type='text']{
 	border: none;
-	border-bottom: 2px solid;
-	border-color: #2d1605;
+	/* border-bottom: 2px solid;
+	border-color: #2d1605; */
 	background-color: none;
 	width: 80%;
 	line-height: 150%;
 	padding: 2px;
-	border-radius: 5px;
 }
 .questionDisplay input[type='text']:focus{
 	outline: none;
 }
 
 .questionDisplay input[type='submit']:hover{
-	background: #634a38;
+	background: #ff0000;
 	border: 2px solid;
-	border-color: #2d1605;
+	border-color: #a3b3ce;
 	color: #fff;
 }
 
 .questionDisplay input[type='submit']{
-	font-family: 'Nothing You Could Do';
+	font-family: 'Bubbler One';
 	border: 2px solid;
-	border-color: #2d1605;
+	border-color: #ff0000;
 	text-align: center;
 }
 
@@ -551,9 +604,9 @@ flex: 30%;
 }
 
 /*  */
-body {
+/* body {
 background: rgb(214, 187, 161);
-}
+} */
 h1, h2, h3 {
 font-family: georgia, serif;
 }

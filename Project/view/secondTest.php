@@ -32,7 +32,7 @@ printHeader();
 			<div id='secondTestContainer'>
 				<form action='' method="post">
 					<?php
-					var_dump($_SESSION['projectUserID']);
+					//var_dump($_SESSION['projectUserID']);
 
 					$rankings = testRankings($_REQUEST['categoryID']);
 

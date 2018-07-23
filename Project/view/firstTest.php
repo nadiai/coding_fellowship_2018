@@ -15,6 +15,9 @@ printHeader();
 			<script src="/Blog/include/jquery.js"></script>
 		</head>
 		<body id="firstTestBody" >
+			<?php
+			reSubmitTest($_SESSION['projectUserID']); //I wouldnt like to call this function EVERY time the page is loaded,
+			?>
 			<div class="firstTestContainer">
 				<div class="firstTitle">
 					<h1> This is The INTERVIEW </h1>

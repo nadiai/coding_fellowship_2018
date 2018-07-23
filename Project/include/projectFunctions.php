@@ -62,7 +62,7 @@ function getAllSurveys(){
 	$result = dbQuery("
 		SELECT *
 		FROM project_surveys
-	")->fetchAll();
+	")->fetch();
 
 	return $result;
 }
@@ -264,10 +264,10 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
 
  function reSubmitTest($projectUserID){
 	 $result = dbQuery("
-	 	DELETE *
+	 	DELETE
 		FROM project_user_rankings
 		WHERE projectUserID = :projectUserID
 	 ",
 	 array('projectUserID' => $projectUserID)
-	 )->fetch();
+	 )->fetchAll();
  }
