@@ -261,3 +261,13 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
 		exit();
  	}
  }
+
+ function reSubmitTest($projectUserID){
+	 $result = dbQuery("
+	 	DELETE *
+		FROM project_user_rankings
+		WHERE projectUserID = :projectUserID
+	 ",
+	 array('projectUserID' => $projectUserID)
+	 )->fetch();
+ }

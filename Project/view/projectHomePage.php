@@ -22,6 +22,26 @@ printheader();
 				});
 		});
 
+	// var callReset = document.getElementById('resetButton');
+	// callReset.onclick = reset;
+	//
+	// function reset(){
+	// 	alert('Do You Want to Retake the Personality test? Previous responses will be deleted.');
+	// 	document.location='/Project/view/firstTest.php';
+function reset() {
+	var x;
+	var r=confirm("Do you want ot retake the personality test? Previous responses will be deleted.")
+	if (r == true){
+			x = "Your responses have been deleted you may retake the test"; //need to create an ajax function to be able to call my php function to delete database values here
+			document.location.href="firstTest.php";
+	} else{
+			x = "You pressed Cancel! Please continue wiht your current forms";
+	}
+
+	document.getElementById("resetButton").innerHTML = x;
+	}
+
+
 		function myFunction() {
     document.getElementById("dropDown").style.display = "block";
 }
@@ -39,7 +59,7 @@ printheader();
 											<a class="dropDownItem" href="projectProfilePage.php">My Profile</a>
 										</div>
 									 <button onclick="showDropDown()"id="nav-dropdown" >My Account</button>
-									 <a href="projectHomePage.php">Surveys</a>
+									 <button id='resetButton' onclick='reset();' >Personality Test</button>
 									 <a href="projectHomePage.php">Home</a>
 
 						</nav>

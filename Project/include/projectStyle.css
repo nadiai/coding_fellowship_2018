@@ -274,6 +274,22 @@ display: block;
 	border: 1px solid white;
 	width: 100px;
 }
+#resetButton{
+	/* position: absolute; */
+  float: right;
+  background-color: #0f1626;
+	color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#resetButton:hover {
+  background-color: #ab9353;
+  color: black;
+	border: 1px solid white;
+}
 
 #nav-dropdown{
 	/* position: absolute; */
