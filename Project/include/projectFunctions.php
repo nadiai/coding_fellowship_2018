@@ -242,7 +242,7 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
 	 return $result;
  }
 
- function findRanking($categoryID, $rankID, $Ranking){
+ function findRanking(){
 	 $UserRanking = getUserRankings($_SESSION['projectUserID']);
 	 $findCategory = $UserRanking['categoryID'];
 	 $findRankID = $UserRanking['rankID'];

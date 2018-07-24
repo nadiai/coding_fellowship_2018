@@ -232,12 +232,13 @@ display: block;
 
 /* Second test */
 
-.buttonGroup{
-	display: inline-block;
+#secondTestContainer{
+	text-align: center;
 }
 
-.btn.active{
-	border-color: #00303f;
+
+#secondTestContainer p{
+	text-align: center;
 }
 
 

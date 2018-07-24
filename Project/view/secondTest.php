@@ -9,7 +9,7 @@ if(isset($_POST['submitRankings'])){
 	foreach ($_REQUEST['Ranking'] as $index => $value) { //running into a problem with the "Ranking" being an array but I dont know how to get inside the array
 		insertPersonalityTestResponse($_SESSION['projectUserID'], $_REQUEST['categoryID'], $index, $value);
 	}
-	findRanking($_REQUEST['categoryID'], $index, $_REQUEST['Ranking']);
+	findRanking();
 	//var_dump($_REQUEST);
 }
 
@@ -33,24 +33,31 @@ printHeader();
 				<form action='' method="post">
 					<?php
 					//var_dump($_SESSION['projectUserID']);
-
+					$i = 0;
 					$rankings = testRankings($_REQUEST['categoryID']);
 
-					echo '<ul id="quiz" class="listGroup">';
+					echo '<table>
+						<tr>';
 
 					foreach ($rankings as $index => $rank) {
 						$rankID = $rank['rankID'];
-
+						$i++;
 						echo "
-								<p>$rank[Options]</p>
-								<input type='number' name='Ranking[$rank[rankID]]' value='".@$_REQUEST['Ranking_'.$rankID]."'
-						 ";
-					}
+								<td><p>$rank[Options]</p>
+								<input type='number' name='Ranking[$rank[rankID]]' value='".@$_REQUEST['Ranking_'.$rankID]."'/></td>
+								<br/>
+							";
 
-						echo '</ul>';
+							If($i == $i/2){
+								echo "</tr><tr>";
+								$i=0;
+							}
+					}
+					echo "</tr>
+					</table>"
 
 					?>
-					 <input type='submit' name='submitRankings' value='Submit'/>
+					 <input id='secondTestSubmit' type='submit' name='submitRankings' value='Submit'/>
 			 	</form>
 
 			</div>
