@@ -74,22 +74,42 @@ function reset() {
 				</div>
 				<div class="listSurveys">
 					<?php
-						$Surveys = getSpecialSurveys($_SESSION['surveyTrait']);
-						$i=0;
-						echo ' <table>
-										<tr>';
-						foreach ($Surveys as $index => $Survey) {
-							$i++;
-							echo " <td> <div class='survey'><p> <a href='/Project/view/projectSurvey.php?surveyID=$index'> $Survey[surveyName] </a></p></div></td>";
-
-							if ($i == 3){
-								echo '</tr><tr>';
-								$i = 0;
+					$userRank = findRanks($_SESSION['projectUserID']);
+					$i = 0;
+					echo ' <table>
+									<tr>';
+						foreach($userRank as $index => $ranks){
+							$UserRanks = $ranks['rankID'];
+							$getSurveys = getSurveys();
+							foreach ($getSurveys as $index => $value) {
+								if($value['rankID'] == $UserRanks){
+									$i++;
+								echo " <td> <div class='survey'><p> <a href='/Project/view/projectSurvey.php?rankID=$index'> $value[Options] </a></p></div></td>";
+								}
+								if ($i == 3){
+									echo '</tr><tr>';
+									$i = 0;
+								}
 							}
-						}
+				 	 }
 
-						echo '		</tr>
-										</table>';
+
+					 echo '		</tr>
+									 </table>';
+
+						// getUserSurveys($_SESSION['projectUserID']);
+						// $i=0;
+						// echo ' <table>
+						// 				<tr>';
+						// // foreach ($Surveys as $index => $Survey) {
+						// 	$i++;
+						// 	echo " <td> <div class='survey'><p> <a href='/Project/view/projectSurvey.php?rankID=$index'> $Survey[surveyName] </a></p></div></td>";
+						//
+						// 	if ($i == 3){
+						// 		echo '</tr><tr>';
+						// 		$i = 0;
+						// 	}
+						// }
 
 					 ?>
 				</div>

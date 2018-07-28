@@ -175,7 +175,7 @@ display: block;
 	text-align: center;
 	vertical-align: middle;
 	border: 1px solid black;
-	width: 35%;
+	/* width: 35%; */
 }
 
 .firstTest a{
@@ -188,14 +188,13 @@ display: block;
 
 #testItem{
 	position:relative;
-	/* width: 75%; */
 }
 
 .itemImage{
 	opacity: 1;
 	display: block;
-	width: auto;
-	height: 400px;
+	width: 200px;
+	height:auto;
 	transition: .5s ease;
 	backface-visibility: hidden;
 }

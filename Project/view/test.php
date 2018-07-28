@@ -42,7 +42,7 @@ printHeader();
 			<div class='surveyHeader'>
 				<?php
 					$Survey = getAllSurveys();
-					echo "<h1> $Survey[Options]</h1>";
+					echo "<h1> $Survey[surveyName]</h1>";
 				?>
 				<h2>  Please answer these questions to the best of your ability </h2>
 			</div>
@@ -54,23 +54,18 @@ printHeader();
 				<form action='' method="post">
 
 					<?php
+						getUserQuestions($SESSION['projectUserID']);
 
-						$userQuestions = getUserQuestions($_SESSION['projectUserID'], $_REQUEST['rankID']);
-						foreach ($userQuestions as $key => $findQuestions) {
-							$qID = $findQuestions['questionID'];
-
-						$Displayquestions = getSurveyQuestions($_REQUEST['rankID']);
-							foreach ($Displayquestions as $index => $question) {
-								$questionID = $question['questionID'];
-								if ($qID == $questionID ) {
-									echo "
-									<p id='question'>$question[Question] </p>
-									<br/>
-									<input id='answer' type='text'  name='Answers[$question[questionID]]' value='".@$_REQUEST['Answers_'.$questionID]."' placeholder='Answer Here' required> <br/> <br/>";
-
-								}
-							}
-						}
+						// $Displayquestions = getSurveyQuestions($_REQUEST['surveyID']);
+						//
+						// 	foreach ($Displayquestions as $index => $question) {
+						// 		$questionID = $question['questionID'];
+						// 		//$questionID
+						// 		echo "
+						// 		<p id='question'>$question[Question] </p>
+						// 		<br/>
+						// 	  <input id='answer' type='text'  name='Answers[$question[questionID]]' value='".@$_REQUEST['Answers_'.$questionID]."' placeholder='Answer Here' required> <br/> <br/>";
+						// 	}
 
 					 ?>
 					 <br/>

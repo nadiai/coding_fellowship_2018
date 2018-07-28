@@ -16,7 +16,7 @@ printHeader();
 		</head>
 		<body id="firstTestBody" >
 			<?php
-			reSubmitTest($_SESSION['projectUserID']); //I wouldnt like to call this function EVERY time the page is loaded,
+			// reSubmitTest($_SESSION['projectUserID']); //I wouldnt like to call this function EVERY time the page is loaded,
 			?>
 			<div class="firstTestContainer">
 				<div class="firstTitle">

@@ -61,8 +61,17 @@ function verifyUser($p_UserName, $p_PassWord){
 function getAllSurveys(){
 	$result = dbQuery("
 		SELECT *
-		FROM project_surveys
+		FROM project_rankings
 	")->fetch();
+
+	return $result;
+}
+
+function getSurveys(){
+	$result = dbQuery("
+		SELECT *
+		FROM project_rankings
+	")->fetchAll();
 
 	return $result;
 }
@@ -76,22 +85,29 @@ function getAllSurveys(){
 // 	return $result;
 // }
 
-function getQuestions(){
+function getUserQuestions($projectUserID, $rankID){
 	$result = dbQuery("
 		SELECT *
-		FROM project_questions_copy
-	")->fetchAll();
+		FROM project_responses
+		WHERE projectUserID = :projectUserID
+		AND rankID = :rankID
+	",
+	 array(
+		 'projectUserID' => $projectUserID,
+		 'rankID' => $rankID
+	 	)
+		 )->fetchAll();
 
 	return $result;
 }
 
-function getSurveyQuestions($surveyID){
+function getSurveyQuestions($rankID){
 	$result = dbQuery("
 		SELECT *
-		FROM project_questions_copy
-		WHERE surveyID = :surveyID
+		FROM project_questions
+		WHERE rankID = :rankID
 	",
-		array('surveyID' => $surveyID)
+		array('rankID' => $rankID)
 	)->fetchAll();
 
 	return $result;
@@ -217,57 +233,187 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
  		'Ranking' => $Ranking)
  	)->fetch();
  }
+ //
+ // function getUserRankings($projectUserID){
+ // 	$result = dbQuery("
+ // 		SELECT *
+ // 		FROM project_user_rankings
+ // 		WHERE projectUserID = :projectUserID
+ // 	",
+ // 	array('projectUserID' => $projectUserID)
+ // 	)->fetch();
+ //
+ // 	return $result;
+ // }
 
- function getUserRankings($projectUserID){
- 	$result = dbQuery("
- 		SELECT *
- 		FROM project_user_rankings
- 		WHERE projectUserID = :projectUserID
- 	",
- 	array('projectUserID' => $projectUserID)
- 	)->fetch();
+ // function getSpecialSurveys($surveyTrait){
+	//  $result = dbQuery("
+	// 	 SELECT *
+	// 	 FROM project_surveys
+	// 	 WHERE surveyTrait = :surveyTrait
+	//  ",
+	//  array('surveyTrait' => $surveyTrait)
+	//  )->fetchAll();
+ //
+	//  return $result;
+ // }
 
- 	return $result;
+ // function findRanking(){
+	//  $UserRanking = getUserRankings($_SESSION['projectUserID']);
+	//  $findCategory = $UserRanking['categoryID'];
+	//  $findRankID = $UserRanking['rankID'];
+	//  $findRanking = $UserRanking['Ranking'];
+	//  if($findCategory == '0' && $findRankID == '0' && $findRanking == '1'){
+	// 	 $_SESSION['surveyTrait'] = 'self-discovery';
+	// 	header('Location: /Project/view/projectHomePage.php');
+	// 	exit();
+ // 	}elseif ($findCategory == '1' && $findRankID == '3' && $findRanking == '1') {
+	// 	$_SESSION['surveyTrait'] = 'self-expression';
+	// 	header('Location: /Project/view/projectHomePage.php');
+	// 	exit();
+ // 	} else {
+	// 	$_SESSION['surveyTrait'] = 'other';
+ // 		header('Location: /Project/view/projectHomePage.php');
+	// 	exit();
+ // 	}
+ // }
+
+ function insertUserPlaceholders($responseID, $rankID, $questionID, $projectUserID, $Answers){
+	 $result = dbQuery("
+	 	INSERT INTO project_responses(responseID, rankID, questionID, projectUserID, Answers)
+		VALUES (:responseID, :rankID, :questionID, :projectUserID, :Answers)
+		",
+		array(
+		'responseID' => $responseID,
+		'rankID' => $rankID,
+		'questionID' => $questionID,
+		'projectUserID' => $projectUserID,
+		'Answers' => $Answers)
+		)->fetch();
  }
 
- function getSpecialSurveys($surveyTrait){
+ function getPrimarySurveys($rankID){
 	 $result = dbQuery("
-		 SELECT *
-		 FROM project_surveys
-		 WHERE surveyTrait = :surveyTrait
+		SELECT *
+		FROM project_questions
+		WHERE rankID = :rankID
+		ORDER BY RAND()
+		LIMIT 10
 	 ",
-	 array('surveyTrait' => $surveyTrait)
+	 array('rankID' => $rankID)
 	 )->fetchAll();
 
 	 return $result;
+
  }
 
- function findRanking(){
-	 $UserRanking = getUserRankings($_SESSION['projectUserID']);
-	 $findCategory = $UserRanking['categoryID'];
-	 $findRankID = $UserRanking['rankID'];
-	 $findRanking = $UserRanking['Ranking'];
-	 if($findCategory == '0' && $findRankID == '0' && $findRanking == '1'){
-		 $_SESSION['surveyTrait'] = 'self-discovery';
-		header('Location: /Project/view/projectHomePage.php');
-		exit();
- 	}elseif ($findCategory == '1' && $findRankID == '3' && $findRanking == '1') {
-		$_SESSION['surveyTrait'] = 'self-expression';
-		header('Location: /Project/view/projectHomePage.php');
-		exit();
- 	} else {
-		$_SESSION['surveyTrait'] = 'other';
- 		header('Location: /Project/view/projectHomePage.php');
-		exit();
- 	}
+ function getSecondarySurveys($rankID){
+	$result = dbQuery("
+	 SELECT *
+	 FROM project_questions
+	 WHERE rankID = :rankID
+	 ORDER BY RAND()
+	 LIMIT 5
+	",
+	array('rankID' => $rankID)
+	)->fetchAll();
+
+	return $result;
+
  }
 
- function reSubmitTest($projectUserID){
+ function getTertiarySurveys($rankID){
+	$result = dbQuery("
+	 SELECT *
+	 FROM project_questions
+	 WHERE rankID = :rankID
+	 ORDER BY RAND()
+	 LIMIT 2
+	",
+	array('rankID' => $rankID)
+	)->fetchAll();
+
+	return $result;
+
+ }
+
+ function generateUserResponseOptions($rankID, $Ranking){
+
+	 if( $Ranking == '1'){
+		 $getResult = getPrimarySurveys($rankID);
+
+		 foreach($getResult as $index => $question){
+			 insertUserPlaceholders(null, $question['rankID'], $question['questionID'], $_SESSION['projectUserID'], null);
+		 }
+	 }
+	 if( $Ranking == '2'){
+		$getResult2 = getSecondarySurveys($rankID);
+
+		foreach($getResult2 as $index => $question){
+			insertUserPlaceholders(null, $question['rankID'], $question['questionID'], $_SESSION['projectUserID'], null);
+		}
+	}
+	if($Ranking == '3'){
+	 $getResult3 = getTertiarySurveys($rankID);
+
+	 foreach($getResult3 as $index => $question){
+		 insertUserPlaceholders(null, $question['rankID'], $question['questionID'], $_SESSION['projectUserID'], null);
+	 }
+ }
+ 	//header('Location: /Project/view/projectHomePage.php');
+	exit();
+
+
+ }
+
+
+ function findRanks($projectUserID){
 	 $result = dbQuery("
-	 	DELETE
-		FROM project_user_rankings
-		WHERE projectUserID = :projectUserID
+ 	 SELECT DISTINCT rankID
+ 	 FROM project_responses
+	 WHERE projectUserID = :projectUserID
 	 ",
 	 array('projectUserID' => $projectUserID)
 	 )->fetchAll();
+
+ 	 return $result;
+
  }
+
+
+
+ function getUserSurveys($projectUserID){
+	 $userOptions = findUserOptions();
+	 foreach($userOptions as $index => $userOption){
+
+	 }
+
+ }
+
+
+
+function updateUserResponses($rankID, $questionID, $projectUserID, $Answers){
+	$result = dbQuery("
+		UPDATE project_responses
+		SET Answers = :Answers
+		WHERE rankID = :rankID
+		AND questionID =:questionID,
+		AND projectUserID = :projectUserID
+	",
+	array('rankID' => $rankID,
+	'questionID' => $questionID,
+	'projectUserID'=> $projectUserID,
+	'Answers' => $Answers)
+	)->fetchAll();
+}
+
+
+ // function reSubmitTest($projectUserID){
+	//  $result = dbQuery("
+	//  	DELETE
+	// 	FROM project_user_rankings
+	// 	WHERE projectUserID = :projectUserID
+	//  ",
+	//  array('projectUserID' => $projectUserID)
+	//  )->fetchAll();
+ // }

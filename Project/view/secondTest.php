@@ -6,11 +6,10 @@ include('Project/include/headerPage.php');
 //The problem was because of how I had the form set up... i didnt use form tags just the imputs so it wasnt working
 
 if(isset($_POST['submitRankings'])){
-	foreach ($_REQUEST['Ranking'] as $index => $value) { //running into a problem with the "Ranking" being an array but I dont know how to get inside the array
-		insertPersonalityTestResponse($_SESSION['projectUserID'], $_REQUEST['categoryID'], $index, $value);
+	foreach ($_REQUEST['Ranking'] as $index => $value) {
+		var_dump($value);//running into a problem with the "Ranking" being an array but I dont know how to get inside the array
+		generateUserResponseOptions($index, $value);
 	}
-	findRanking();
-	//var_dump($_REQUEST);
 }
 
 printHeader();
