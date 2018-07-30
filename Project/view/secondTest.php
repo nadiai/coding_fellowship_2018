@@ -7,7 +7,7 @@ include('Project/include/headerPage.php');
 
 if(isset($_POST['submitRankings'])){
 	foreach ($_REQUEST['Ranking'] as $index => $value) {
-		var_dump($value);//running into a problem with the "Ranking" being an array but I dont know how to get inside the array
+//running into a problem with the "Ranking" being an array but I dont know how to get inside the array
 		generateUserResponseOptions($index, $value);
 	}
 }
@@ -47,7 +47,7 @@ printHeader();
 								<br/>
 							";
 
-							If($i == $i/2){
+							if($i == $i/2){
 								echo "</tr><tr>";
 								$i=0;
 							}

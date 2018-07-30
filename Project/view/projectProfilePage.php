@@ -94,7 +94,7 @@ printheader();
 
 	<?php
 		$getUsersName = getUsers($_SESSION['projectUserID']);
-		echo "<div class='byline'>$getUsersName[p_UserName]<br/><span>Energy editor</span></div>";
+		echo "<div class='byline'>$getUsersName[p_UserName]<br/><span>The Interview Editor</span></div>";
 
 	 ?>
 

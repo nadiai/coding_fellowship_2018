@@ -155,7 +155,7 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
 	 	SELECT *
 		FROM project_responses
 		WHERE projectUserID = :projectUserID
-		AND surveyID = '0'
+		AND rankID = '0'
 		AND questionID = '1'
 	 ",
 	 	array('projectUserID' => $projectUserID)
@@ -170,7 +170,7 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
 	 SELECT *
 	 FROM project_responses
 	 WHERE projectUserID = :projectUserID
-	 AND surveyID = '0'
+	 AND rankID = '0'
 	 AND questionID = '11'
 	",
 	 array('projectUserID' => $projectUserID)
@@ -345,23 +345,21 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
 		 foreach($getResult as $index => $question){
 			 insertUserPlaceholders(null, $question['rankID'], $question['questionID'], $_SESSION['projectUserID'], null);
 		 }
-	 }
-	 if( $Ranking == '2'){
+	 }elseif( $Ranking == '2'){
 		$getResult2 = getSecondarySurveys($rankID);
 
 		foreach($getResult2 as $index => $question){
 			insertUserPlaceholders(null, $question['rankID'], $question['questionID'], $_SESSION['projectUserID'], null);
 		}
-	}
-	if($Ranking == '3'){
+	}	else{
 	 $getResult3 = getTertiarySurveys($rankID);
 
 	 foreach($getResult3 as $index => $question){
 		 insertUserPlaceholders(null, $question['rankID'], $question['questionID'], $_SESSION['projectUserID'], null);
 	 }
  }
- 	//header('Location: /Project/view/projectHomePage.php');
-	exit();
+ 	header('Location: /Project/view/projectHomePage.php');
+	//exit();
 
 
  }
@@ -381,23 +379,12 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
  }
 
 
-
- function getUserSurveys($projectUserID){
-	 $userOptions = findUserOptions();
-	 foreach($userOptions as $index => $userOption){
-
-	 }
-
- }
-
-
-
 function updateUserResponses($rankID, $questionID, $projectUserID, $Answers){
 	$result = dbQuery("
 		UPDATE project_responses
 		SET Answers = :Answers
 		WHERE rankID = :rankID
-		AND questionID =:questionID,
+		AND questionID =:questionID
 		AND projectUserID = :projectUserID
 	",
 	array('rankID' => $rankID,

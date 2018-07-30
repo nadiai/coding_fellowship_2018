@@ -7,7 +7,7 @@ if (isset($_REQUEST['formSubmitButton'])) {
 	//var_dump($_REQUEST);
 	foreach($_REQUEST['Answers'] as $index => $value){
 		echo "Question $index: $value<br/>";
-		updateUserResponses($rankID, $index, $_SESSION['projectUserID'], $value);
+		updateUserResponses($_REQUEST['rankID'], $index, $_SESSION['projectUserID'], $value);
 	}
 	header('Location: /Project/view/projectProfilePage.php');
 	exit();
