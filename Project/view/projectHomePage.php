@@ -5,9 +5,9 @@ include('Project/include/headerPage.php');
 printheader();
  ?>
  			<title> The Interview </title>
-			<link href='https://fonts.googleapis.com/css?family=Give You Glory' rel='stylesheet'>
-			<link href='https://fonts.googleapis.com/css?family=The Girl Next Door' rel='stylesheet'>
-			<script src="/Blog/include/jquery.js"></script>
+			<link href='https://fonts.googleapis.com/css?family=Marcellus SC' rel='stylesheet'>
+			<link href='https://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet'>
+		<script src="/Blog/include/jquery.js"></script>
 			<style type="text/css">
 			<?php
 			 include('Project/include/projectStyle.css');
@@ -48,45 +48,51 @@ function reset() {
 		</script>
 		<body class='homePageBody'>
 			<div class='homePageContainer'>
-				<div>
-					<img class="homePageBackground"src='/images/homePageBackground3.jpg' alt=" A Coffeeshop"/>
-				</div>
+
 				<section class="navigation">
 					<div class="nav-container">
 						<nav>
-										<div id="dropDown">
+									<div class='dropDown'>
+										<div class='dropdown-Content'>
 											<a class="dropDownItem" href="logOutPage.php">Log Out</a>
 											<a class="dropDownItem" href="projectProfilePage.php">My Profile</a>
 										</div>
-									 <button onclick="showDropDown()"id="nav-dropdown" >My Account</button>
-									 <button id='resetButton' onclick='reset();' >Personality Test</button>
-									 <a href="projectHomePage.php">Home</a>
+										<button onclick="showDropDown()"id="nav-dropdown" >My Account
+											<i class="fa fa-caret-down"></i>
+										</button>
+									</div>
+									<a href='projectUserAccounts.php'> Find Users</a>
+									<a href='projectHomePage.php'> Surveys</a>
+								 <div class='nav-logo'>
+									 <img src='/images/logoImage.png' alt='logo'/>
+								</div>
 
 						</nav>
-						<div class="brand">
-							<a href="#!">Logo</a>
-						</div>
 					</div>
 				</section>
-				<div class="homePageHead">
-					<h1> THE INTERVIEW </h1>
-					<h2> Welcome to my website, that is a source of alternative social media that is meant to foster deeper meaningful interactions </h2>
+				<div>
+					<img class="homePageBackground"src='/images/homePageBackground3.jpg' alt=" A Coffeeshop"/>
 				</div>
+				<div class="homePageHead">
+					<h1> Your Personalized Surveys</h1>
+					<h2> These surveys & subsequent questions were specially selected for you based on your responses to the personality test you took in the beginning. </h2>
+				</div>
+				<br/>
 				<div class="listSurveys">
 					<?php
 					$userRank = findRanks($_SESSION['projectUserID']);
-					$i = 0;
 					echo ' <table>
 									<tr>';
+									$i = 0;
 						foreach($userRank as $index => $ranks){
 							$UserRanks = $ranks['rankID'];
-							$getSurveys = getSurveys();
+							$getSurveys = getAllSurveys();
 							foreach ($getSurveys as $index => $value) {
 								if($value['rankID'] == $UserRanks){
-									$i++;
 								echo " <td> <div class='survey'><p> <a href='/Project/view/projectSurvey.php?rankID=$index'> $value[Options] </a></p></div></td>";
+									$i++;
 								}
-								if ($i == 3){
+								if ($i == 4){
 									echo '</tr><tr>';
 									$i = 0;
 								}

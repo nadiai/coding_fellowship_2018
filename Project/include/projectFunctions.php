@@ -58,16 +58,29 @@ function verifyUser($p_UserName, $p_PassWord){
 	}
 }
 
-function getAllSurveys(){
+function insertProfilePic($projectUserID, $p_ProfilePic){
+	$result = dbQuery("
+		UPDATE project_users
+		SET p_ProfilePic = :p_ProfilePic
+		WHERE projectUserID =:projectUserID
+	",
+	array('projectUserID' => $projectUserID)
+	)->fetchAll();
+}
+
+function getSurveys($rankID){
 	$result = dbQuery("
 		SELECT *
 		FROM project_rankings
-	")->fetch();
+		WHERE rankID = :rankID
+	",
+	array('rankID' => $rankID)
+	)->fetch();
 
 	return $result;
 }
 
-function getSurveys(){
+function getAllSurveys(){
 	$result = dbQuery("
 		SELECT *
 		FROM project_rankings
@@ -76,14 +89,6 @@ function getSurveys(){
 	return $result;
 }
 
-// function getAllSurveys(){
-// 	$result = dbQuery("
-// 		SELECT *
-// 		FROM project_surveys
-// 	")->fetchAll();
-//
-// 	return $result;
-// }
 
 function getUserQuestions($projectUserID, $rankID){
 	$result = dbQuery("
@@ -150,6 +155,15 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
 	 return $result;
  }
 
+ function getProfileAnswers(){
+	$result = dbQuery("
+	 SELECT *
+	 FROM project_responses
+	")->fetch();
+
+	return $result;
+ }
+
  function getTitleAnswer($projectUserID){
 	 $result = dbQuery("
 	 	SELECT *
@@ -178,6 +192,15 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
 
 	return $result;
 
+ }
+
+ function getAllUsers(){
+	 $result = dbQuery("
+	 	SELECT *
+		FROM project_users
+	 ")->fetchAll();
+
+	 return $result;
  }
 
  function getUsers($projectUserID){
@@ -337,6 +360,19 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
 
  }
 
+ function getRandomSurveyOptions(){
+	 $result = dbQuery("
+ 	 SELECT *
+ 	 FROM project_questions
+ 	 WHERE rankID = 0
+ 	 ORDER BY RAND()
+ 	 LIMIT 10
+ 	")->fetchAll();
+
+ 	return $result;
+
+ }
+
  function generateUserResponseOptions($rankID, $Ranking){
 
 	 if( $Ranking == '1'){
@@ -361,7 +397,28 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
  	header('Location: /Project/view/projectHomePage.php');
 	//exit();
 
+ }
 
+ function randomQuestions(){
+	 $getRandomQuestions = getRandomSurveyOptions();
+
+	 foreach ($getRandomQuestions as $index => $value) {
+		 insertUserPlaceholders(null, $value['rankID'], $value['questionID'], $_SESSION['projectUserID'], null);
+	 }
+
+	 header('Location: /Project/view/projectHomePage.php');
+	 exit();
+
+ }
+
+ function findSurveyRandom(){
+	 $result = dbQuery("
+	 	SELECT *
+		FROM project_rankings
+		WHERE rankID = '0'
+	 ")->fetch();
+
+	 return $result;
  }
 
 
