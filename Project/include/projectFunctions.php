@@ -159,7 +159,7 @@ function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
 	$result = dbQuery("
 	 SELECT *
 	 FROM project_responses
-	")->fetch();
+	")->fetchAll();
 
 	return $result;
  }
@@ -449,6 +449,20 @@ function updateUserResponses($rankID, $questionID, $projectUserID, $Answers){
 	'projectUserID'=> $projectUserID,
 	'Answers' => $Answers)
 	)->fetchAll();
+}
+
+function getQuestions($projectUserID){
+	$result = dbQuery("
+		SELECT Answers, Question
+		FROM project_responses
+		INNER JOIN project_questions
+		ON project_questions.questionID = project_responses.questionID
+		WHERE projectUserID = :projectUserID
+	",
+	array('projectUserID' => $projectUserID)
+	)-> fetchAll();
+
+	return $result;
 }
 
 

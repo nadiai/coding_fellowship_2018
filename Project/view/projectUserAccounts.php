@@ -50,7 +50,7 @@ printheader();
 				foreach ($Users as $index => $user) {
 					echo "<td>
 
-					<img src='$user[p_ProfilePic]' alt='Avatar' class='avatar'><p>  <a href='/Project/view/projectUser.php?projectUserID=$index'> $user[p_FirstName] $user[p_LastName] </a></p></td> <br/>";
+					<img src='$user[p_ProfilePic]' alt='Avatar' class='avatar'/><p>  <a href='/Project/view/projectUser.php?projectUserID=$index'> $user[p_FirstName] $user[p_LastName] </a></p></td> <br/>";
 					$i++;
 					if ($i == 2) {
 						echo "</tr><tr>";

@@ -32,50 +32,49 @@ printheader();
 
 	<div class="teaser-block">
 	<div class="student teasers">
-	<h1>World's most influential teenager?</h1>
-	<h2>Exeter student on fame and the web</h2>
+	<h1>So what about GDPR?</h1>
+	<h2>Let's see if Europe wins</h2>
 	<figure class="background"><img src="https://static.guim.co.uk/sys-images/Guardian/About/General/2013/11/25/1385391990499/Beth-Reekles-009.jpg"></figure>
 
 	</div>
 	<div class="pop teasers">
-	<h1>40 great facts about 1,000 No 1s</h1>
-	<h2>Peter Robinson's pop trivia special</h2>
+	<h1>The latest News on CRM trends</h1>
+	<h2>I bet you don't even know what a CRM is</h2>
 	<figure><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/124874/pop.png"></figure>
 	</div>
 	<div class="borgen teasers">
-	<h1>Life after borgen</h1>
+	<h1>Life after LACRM :(</h1>
 	<h2>Brigette Sørenson interview</h2>
 	<figure><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/124874/30BRIDGET0811.png"></figure>
 	<figure class="background"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/124874/cast.png"></figure></div>
 	<div class="break"></div>
 	</div>
 
-
 	<div class="columns2">
 		<?php
-			$getTitle = getTitleAnswer($_REQUEST['projectUserID']);
-			echo "<h1 class='headline'>$getTitle[Answers]</h1>";
+			//$getTitle = getTitleAnswer($_REQUEST['projectUserID']);
+			echo "<h1 class='headline'>ShipWrecked</h1>";
 
-			$getSubTitle = getSubTitleAnswer($_REQUEST['projectUserID']);
-			echo "<h2 class='subhead'> $getSubTitle[Answers]</h2>";
+			//$getSubTitle = getSubTitleAnswer($_REQUEST['projectUserID']);
+			echo "<h2 class='subhead'> A tale of the little fish who just kept swimming</h2>";
 		 ?>
 
 	<article class="cols2 just">
 
 		<?php
 			$userInfo = getUsers($_REQUEST['projectUserID']); //this only finds the first participants info
-			echo "<div class='byline'>$userInfo[p_UserName]<br/><span>The Interview Editor</span></div>";
+			echo "<img src='$userInfo[p_ProfilePic]' alt='Avatar' class='avatar'/><div class='byline'>$userInfo[p_UserName]<br/><span>The Interview Editor</span></div>";
 
 		 ?>
 
 
 	<?php
-
-		$UserResponses = getProfileAnswers($_REQUEST['projectUserID']); //this only finds the first participants info
-
-		foreach ($UserResponses as $key => $Responses) {
-			echo "<p> $Responses[Answers]</p>
-			";
+	$questions = getQuestions($_REQUEST['projectUserID']);
+	foreach ($questions as $key => $responses) {
+			echo "<p><strong>Q: $responses[Question]</strong>
+			<br/>
+			A: $responses[Answers]
+			<br/></p>";
 		}
 	 ?>
 

@@ -45,7 +45,8 @@ printHeader();
 ?>
 
 		<title> Login Page </title>
-		<link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Marcellus SC' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet'>
 		<style type="text/css">
 		<?php
 		 include('Project/include/projectStyle.css');
@@ -56,27 +57,46 @@ printHeader();
 
 <script type="text/javascript">
 	console.log("I'm here");
-		$(document).ready(function(){
-			$("#signUpTitle").click(function(){
-	    $("#formValues").slideToggle("easing");
-		});
-});
-$(document).ready(function(){
-	$("#logInTitle").click(function(){
-	$("#loginFormValues").slideToggle("easing");
-});
-});
+			$(document).ready(function(){
+				$("#title").click(function(){
+		    $(".formValues").slideToggle("easing");
+				$(".loginFormValues").slideUp("easing");
+			});
+	});
+	$(document).ready(function(){
+		$("#loginTitle").click(function(){
+		$(".loginFormValues").slideToggle("easing");
+		$(".formValues").slideUp("easing");
+	});
+	});
 </script>
 		<body class='signUpPage'>
+			<section class="navigation">
+				<div class="nav-container">
+					<nav>
+								<a href='projectUserAccounts.php'> Find Users</a>
+							 <div class='nav-logo'>
+								 <img src='/images/logoImage.png' alt='logo'/>
+							</div>
+
+					</nav>
+				</div>
+			</section>
+			<br/>
+
+		<div class='welcomePageContainer'>
+	<div class="or-spacer-vertical left"><div class="mask"></div></div>
 <?php
 			echo "
 				<div class='Login-SignUp-Page'>
 					<div class='signUp'>
 						<form action='' method='post'>
-							<div id='signUpTitle'>
-									<h1> Sign Up! </h1>
+							<p> Click to</p>
+							<div id='title'>
+									<h1> Sign Up Here </h1>
 							</div>
-									<div id='formValues'>
+									<div class='formValues'>
+										<hr class='style14'>
 										<input type='text' placeholder='First name' name='p_FirstName' value='".@$_REQUEST['p_FirstName']."'/>
 										<br/>
 										<input type='text' placeholder='Last name' name='p_LastName' value='".@$_REQUEST['p_LastName']."'/>
@@ -90,17 +110,19 @@ $(document).ready(function(){
 										<input type='submit' name='signUpSubmission' value='Sign Up' />
 										<br/>
 									</div>
-							</div>
-						</form>
+								</form>
+						</div>
 
 
 							<br/>
-							<div id='login'>
+							<p> or </p>
+							<div class='login'>
 							<form action='' method='post'>
-							<div id='logInTitle'>
-								<h1> or Login! </h1>
+							<div id='loginTitle'>
+								<h1> Login Here </h1>
 							</div>
-								<div id='loginFormValues'>
+								<div class='loginFormValues'>
+									<hr class='style14'>
 									<br/>
 									<input type='text' placeholder='Username' name='p_UserName' value='".@$_REQUEST['p_UserName']."'/>
 									<br/>
@@ -111,10 +133,13 @@ $(document).ready(function(){
 					</div>
 					</form>
 					</div>
-				</div>
 
 
 						";
+						?>
+						<div class="or-spacer-vertical right"><div class="mask"></div></div>
+		</div>
+<?php
 
 printFooter();
 

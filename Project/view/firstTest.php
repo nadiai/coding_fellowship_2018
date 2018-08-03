@@ -64,7 +64,7 @@ printHeader();
 				</section>
 				<hr class="style12">
 				<div class='firstTestBlurb'>
-					<!-- <h2> This is More text</h2> -->
+					 <h2> This is the first portion of the Interview. Select the picture for the activity you'd find most interesting.</h2> 
 				</div>
 			</div>
 				<div class="firstTest">
