@@ -1,0 +1,74 @@
+#mainTextContainer{
+	/* text-align: center; */
+
+}
+
+#textHeadContainer{
+	/* margin-top: 10px; */
+	text-align: center;
+}
+
+#textHeadContainer h1{
+	font-family: 'Italiana';
+	font-size: 55px;
+	border: 5px solid #a68428;
+	display: inline-block; /* makes the border fit the text */
+	/* margin-left: auto;
+	margin-right: auto; */
+	margin-bottom: auto;
+	/* padding-left: 5px;
+	padding-right: 5px; */
+	/* border-radius: 5px; */
+}
+
+
+#textBodyContainer{
+	font-family: 'Julius Sans One';
+	margin-top: 10px;
+}
+
+.navContent{
+	text-align: right;
+	background-color: #9bb5c4;
+	/* position: sticky;
+	top: 0; */
+}
+#textBodyContainer p{
+	font-family: 'Gruppo';
+}
+
+article{
+	display: block;
+	height: 50px;
+	margin: 20px;
+}
+article h2{
+	margin: auto;
+	padding: auto;
+	text-align: right;
+	float: left;
+	width: 45%;
+}
+
+article p{
+	text-align: center;
+	margin: auto;
+	float: right;
+	width: 55%;
+}
+
+.outer {
+  width: 1px;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+.inner {
+  position: absolute;
+  width:100%;
+  height: 40%;
+  background: grey;
+  top: 30%;
+  box-shadow: 0px 0px 30px 20px grey;
+}
