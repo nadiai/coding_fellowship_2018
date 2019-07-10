@@ -21,241 +21,247 @@ function printFooter(){
 	";
 }
 
-function insertUser($p_FirstName, $p_LastName, $p_UserEmail, $p_UserName, $p_PassWord){
-	$result = dbQuery("
-		INSERT INTO project_users(p_FirstName, p_LastName, p_UserEmail, p_UserName, p_PassWord)
-		VALUES (:p_FirstName, :p_LastName, :p_UserEmail, :p_UserName, :p_PassWord)",
-		array('p_FirstName' => $p_FirstName,
-		'p_LastName' => $p_LastName,
-		'p_UserEmail' => $p_UserEmail,
-		'p_UserName' => $p_UserName,
-		'p_PassWord' => $p_PassWord)
-		)->fetch();
-}
-
-function getUser($p_UserName){
+function getAllContent(){
 	$result = dbQuery("
 		SELECT *
-		FROM project_users
-		WHERE p_UserName = :p_UserName
-	",
-	array('p_UserName' => $p_UserName)
-	)->fetch();
-
-	return $result;
-}
-
-function verifyUser($p_UserName, $p_PassWord){
-	$findUser = getuser($p_UserName);
-	$loginUserName = $findUser['p_UserName'];
-	$loginPassWord = $findUser['p_PassWord'];
-	$loginUserID = $findUser['projectUserID'];
-
-	if ($p_UserName == $loginUserName && $p_PassWord == $loginPassWord) {
-		$_SESSION['projectUserID'] = $loginUserID;
-		header('Location: /Project/view/firstTest.php');
-		exit();
-	}
-}
-
-function insertProfilePic($projectUserID, $p_ProfilePic){
-	$result = dbQuery("
-		UPDATE project_users
-		SET p_ProfilePic = :p_ProfilePic
-		WHERE projectUserID =:projectUserID
-	",
-	array('projectUserID' => $projectUserID)
-	)->fetchAll();
-}
-
-function getSurveys($rankID){
-	$result = dbQuery("
-		SELECT *
-		FROM project_rankings
-		WHERE rankID = :rankID
-	",
-	array('rankID' => $rankID)
-	)->fetch();
-
-	return $result;
-}
-
-function getAllSurveys(){
-	$result = dbQuery("
-		SELECT *
-		FROM project_rankings
+		FROM Resume_Content
 	")->fetchAll();
 
 	return $result;
 }
 
-
-function getUserQuestions($projectUserID, $rankID){
+function getSpecificContent(){
 	$result = dbQuery("
 		SELECT *
-		FROM project_responses
-		WHERE projectUserID = :projectUserID
-		AND rankID = :rankID
-	",
-	 array(
-		 'projectUserID' => $projectUserID,
-		 'rankID' => $rankID
-	 	)
-		 )->fetchAll();
-
-	return $result;
-}
-
-function getSurveyQuestions($rankID){
-	$result = dbQuery("
-		SELECT *
-		FROM project_questions
-		WHERE rankID = :rankID
-	",
-		array('rankID' => $rankID)
-	)->fetchAll();
-
-	return $result;
-}
-
-//function matchQuestions()
-
-
-function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
-	$result = dbQuery("
-		INSERT INTO project_responses( surveyID, questionID, projectUserID, Answers)
-		VALUES ( :surveyID, :questionID, :projectUserID, :Answers)
-	",
-		array( 'surveyID' => $surveyID,
-		'questionID' => $questionID,
-		'projectUserID' => $projectUserID,
-		'Answers' => $Answers)
-	)->fetch();
+		FROM Resume_Content
+		WHERE
+	")
 }
 
 
- function getAllAnswer(){
-	 $result = dbQuery("
-	 	SELECT *
-		FROM project_responses
-	 ")->fetchAll();
-
-	 return $result;
- }
-
- function getAnswers($projectUserID){
-	 $result = dbQuery("
-	 	SELECT *
-		FROM project_responses
-		WHERE projectUserID = :projectUserID
-	 ",
-	 	array('projectUserID' => $projectUserID)
-	 )->fetchAll();
-
-	 return $result;
- }
-
- function getProfileAnswers(){
-	$result = dbQuery("
-	 SELECT *
-	 FROM project_responses
-	")->fetchAll();
-
-	return $result;
- }
-
- function getTitleAnswer($projectUserID){
-	 $result = dbQuery("
-	 	SELECT *
-		FROM project_responses
-		WHERE projectUserID = :projectUserID
-		AND rankID = '0'
-		AND questionID = '1'
-	 ",
-	 	array('projectUserID' => $projectUserID)
-	 )->fetch();
-
-	 return $result;
-
- }
-
- function getSubTitleAnswer($projectUserID){
-	$result = dbQuery("
-	 SELECT *
-	 FROM project_responses
-	 WHERE projectUserID = :projectUserID
-	 AND rankID = '0'
-	 AND questionID = '11'
-	",
-	 array('projectUserID' => $projectUserID)
-	)->fetch();
-
-	return $result;
-
- }
-
- function getAllUsers(){
-	 $result = dbQuery("
-	 	SELECT *
-		FROM project_users
-	 ")->fetchAll();
-
-	 return $result;
- }
-
- function getUsers($projectUserID){
- 	$result = dbQuery("
- 		SELECT *
- 		FROM project_users
- 		WHERE projectUserID = :projectUserID
- 	",
- 	array('projectUserID' => $projectUserID)
- 	)->fetch();
-
- 	return $result;
- }
-
- function firstTestObjects(){
-	 $result = dbQuery("
-  		SELECT *
-  		FROM project_categories
-			")->fetchAll();
-
-			return $result;
- }
-
- function testRankObjects(){
-	$result = dbQuery("
-		 SELECT *
-		 FROM project_rankings
-		 ")->fetchAll();
-
-		 return $result;
- }
-
- function testRankings($categoryID){
-  $result = dbQuery("
- 		SELECT *
- 		FROM project_rankings
-		WHERE categoryID = :categoryID
- 		",
-		array('categoryID' => $categoryID))->fetchAll();
-
- 		return $result;
- }
-
- function insertPersonalityTestResponse($projectUserID, $categoryID, $rankID, $Ranking){
- 	$result = dbQuery("
- 		INSERT INTO project_user_rankings( projectUserID, categoryID, rankID, Ranking)
- 		VALUES ( :projectUserID, :categoryID, :rankID, :Ranking)
- 	",
- 		array(
- 		'projectUserID' => $projectUserID,
-		'categoryID' => $categoryID,
-		'rankID' => $rankID,
- 		'Ranking' => $Ranking)
- 	)->fetch();
- }
+// function insertUser($p_FirstName, $p_LastName, $p_UserEmail, $p_UserName, $p_PassWord){
+// 	$result = dbQuery("
+// 		INSERT INTO project_users(p_FirstName, p_LastName, p_UserEmail, p_UserName, p_PassWord)
+// 		VALUES (:p_FirstName, :p_LastName, :p_UserEmail, :p_UserName, :p_PassWord)",
+// 		array('p_FirstName' => $p_FirstName,
+// 		'p_LastName' => $p_LastName,
+// 		'p_UserEmail' => $p_UserEmail,
+// 		'p_UserName' => $p_UserName,
+// 		'p_PassWord' => $p_PassWord)
+// 		)->fetch();
+// }
+//
+// function verifyUser($p_UserName, $p_PassWord){
+// 	$findUser = getuser($p_UserName);
+// 	$loginUserName = $findUser['p_UserName'];
+// 	$loginPassWord = $findUser['p_PassWord'];
+// 	$loginUserID = $findUser['projectUserID'];
+//
+// 	if ($p_UserName == $loginUserName && $p_PassWord == $loginPassWord) {
+// 		$_SESSION['projectUserID'] = $loginUserID;
+// 		header('Location: /Project/view/firstTest.php');
+// 		exit();
+// 	}
+// }
+//
+// function insertProfilePic($projectUserID, $p_ProfilePic){
+// 	$result = dbQuery("
+// 		UPDATE project_users
+// 		SET p_ProfilePic = :p_ProfilePic
+// 		WHERE projectUserID =:projectUserID
+// 	",
+// 	array('projectUserID' => $projectUserID)
+// 	)->fetchAll();
+// }
+//
+// function getSurveys($rankID){
+// 	$result = dbQuery("
+// 		SELECT *
+// 		FROM project_rankings
+// 		WHERE rankID = :rankID
+// 	",
+// 	array('rankID' => $rankID)
+// 	)->fetch();
+//
+// 	return $result;
+// }
+//
+// function getAllSurveys(){
+// 	$result = dbQuery("
+// 		SELECT *
+// 		FROM project_rankings
+// 	")->fetchAll();
+//
+// 	return $result;
+// }
+//
+//
+// function getUserQuestions($projectUserID, $rankID){
+// 	$result = dbQuery("
+// 		SELECT *
+// 		FROM project_responses
+// 		WHERE projectUserID = :projectUserID
+// 		AND rankID = :rankID
+// 	",
+// 	 array(
+// 		 'projectUserID' => $projectUserID,
+// 		 'rankID' => $rankID
+// 	 	)
+// 		 )->fetchAll();
+//
+// 	return $result;
+// }
+//
+// function getSurveyQuestions($rankID){
+// 	$result = dbQuery("
+// 		SELECT *
+// 		FROM project_questions
+// 		WHERE rankID = :rankID
+// 	",
+// 		array('rankID' => $rankID)
+// 	)->fetchAll();
+//
+// 	return $result;
+// }
+//
+// //function matchQuestions()
+//
+//
+// function insertResponse($surveyID, $questionID, $projectUserID, $Answers){
+// 	$result = dbQuery("
+// 		INSERT INTO project_responses( surveyID, questionID, projectUserID, Answers)
+// 		VALUES ( :surveyID, :questionID, :projectUserID, :Answers)
+// 	",
+// 		array( 'surveyID' => $surveyID,
+// 		'questionID' => $questionID,
+// 		'projectUserID' => $projectUserID,
+// 		'Answers' => $Answers)
+// 	)->fetch();
+// }
+//
+//
+//  function getAllAnswer(){
+// 	 $result = dbQuery("
+// 	 	SELECT *
+// 		FROM project_responses
+// 	 ")->fetchAll();
+//
+// 	 return $result;
+//  }
+//
+//  function getAnswers($projectUserID){
+// 	 $result = dbQuery("
+// 	 	SELECT *
+// 		FROM project_responses
+// 		WHERE projectUserID = :projectUserID
+// 	 ",
+// 	 	array('projectUserID' => $projectUserID)
+// 	 )->fetchAll();
+//
+// 	 return $result;
+//  }
+//
+//  function getProfileAnswers(){
+// 	$result = dbQuery("
+// 	 SELECT *
+// 	 FROM project_responses
+// 	")->fetchAll();
+//
+// 	return $result;
+//  }
+//
+//  function getTitleAnswer($projectUserID){
+// 	 $result = dbQuery("
+// 	 	SELECT *
+// 		FROM project_responses
+// 		WHERE projectUserID = :projectUserID
+// 		AND rankID = '0'
+// 		AND questionID = '1'
+// 	 ",
+// 	 	array('projectUserID' => $projectUserID)
+// 	 )->fetch();
+//
+// 	 return $result;
+//
+//  }
+//
+//  function getSubTitleAnswer($projectUserID){
+// 	$result = dbQuery("
+// 	 SELECT *
+// 	 FROM project_responses
+// 	 WHERE projectUserID = :projectUserID
+// 	 AND rankID = '0'
+// 	 AND questionID = '11'
+// 	",
+// 	 array('projectUserID' => $projectUserID)
+// 	)->fetch();
+//
+// 	return $result;
+//
+//  }
+//
+//  function getAllUsers(){
+// 	 $result = dbQuery("
+// 	 	SELECT *
+// 		FROM project_users
+// 	 ")->fetchAll();
+//
+// 	 return $result;
+//  }
+//
+//  function getUsers($projectUserID){
+//  	$result = dbQuery("
+//  		SELECT *
+//  		FROM project_users
+//  		WHERE projectUserID = :projectUserID
+//  	",
+//  	array('projectUserID' => $projectUserID)
+//  	)->fetch();
+//
+//  	return $result;
+//  }
+//
+//  function firstTestObjects(){
+// 	 $result = dbQuery("
+//   		SELECT *
+//   		FROM project_categories
+// 			")->fetchAll();
+//
+// 			return $result;
+//  }
+//
+//  function testRankObjects(){
+// 	$result = dbQuery("
+// 		 SELECT *
+// 		 FROM project_rankings
+// 		 ")->fetchAll();
+//
+// 		 return $result;
+//  }
+//
+//  function testRankings($categoryID){
+//   $result = dbQuery("
+//  		SELECT *
+//  		FROM project_rankings
+// 		WHERE categoryID = :categoryID
+//  		",
+// 		array('categoryID' => $categoryID))->fetchAll();
+//
+//  		return $result;
+//  }
+//
+//  function insertPersonalityTestResponse($projectUserID, $categoryID, $rankID, $Ranking){
+//  	$result = dbQuery("
+//  		INSERT INTO project_user_rankings( projectUserID, categoryID, rankID, Ranking)
+//  		VALUES ( :projectUserID, :categoryID, :rankID, :Ranking)
+//  	",
+//  		array(
+//  		'projectUserID' => $projectUserID,
+// 		'categoryID' => $categoryID,
+// 		'rankID' => $rankID,
+//  		'Ranking' => $Ranking)
+//  	)->fetch();
+//}
  //
  // function getUserRankings($projectUserID){
  // 	$result = dbQuery("
