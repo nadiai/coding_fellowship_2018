@@ -21,6 +21,15 @@ function printFooter(){
 	";
 }
 
+function getSpecificContent(){
+	$result = dbQuery("
+		SELECT *
+		FROM Resume_Sections
+	")->fetchAll();
+
+	return $result;
+}
+
 function getAllContent(){
 	$result = dbQuery("
 		SELECT *
@@ -30,13 +39,6 @@ function getAllContent(){
 	return $result;
 }
 
-function getSpecificContent(){
-	$result = dbQuery("
-		SELECT *
-		FROM Resume_Content
-		WHERE
-	")
-}
 
 
 // function insertUser($p_FirstName, $p_LastName, $p_UserEmail, $p_UserName, $p_PassWord){

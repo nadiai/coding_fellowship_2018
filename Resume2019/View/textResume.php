@@ -23,13 +23,13 @@
 				<h1> Nadia's Resume</h1>
 				<nav>
 					<div class="navContent">
-							<a href=''> Find Users</a>
-							<a href=''> Surveys</a>
+							<a href='#education'> Education</a> <!-- This formatting of the href takes you to the properly identified page elements yayyy -->
+							<a href='#experience'> My Experience</a>
 					</div>
 				</nav>
 			</div>
 			<div id="textBodyContainer">
-				<article>
+				<article id="education">
 					<h2> Education </h2>
 					<p> resume content here </p>
 					<p> resume content here </p>
@@ -38,7 +38,10 @@
 					<p> resume content here </p>
 				</article>
 				</br>
-				<article>
+				<div class="outer">
+					<div class="inner"></div>
+				</div>
+				<article id="experience">
 					<h2> Experience </h2>
 					<p> resume content here </p>
 					<p> resume content here </p>
@@ -47,7 +50,7 @@
 					<p> resume content here </p>
 				</article>
 			</br>
-				<article>
+				<article id="extracurriculars">
 					<h2> Extracurriculars </h2>
 						<p> resume content here </p>
 						<p> resume content here </p>
@@ -55,9 +58,7 @@
 						<p> resume content here </p>
 						<p> resume content here </p>
 				</article>
-				<div class="outer">
-					<div class="inner"></div>
-				</div>
+
 			</div>
 		</body>
 	</div>

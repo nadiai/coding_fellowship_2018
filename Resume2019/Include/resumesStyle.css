@@ -1,60 +1,23 @@
-#mainTextContainer{
-	/* text-align: center; */
-
-}
 
 #textHeadContainer{
 	/* margin-top: 10px; */
-	text-align: center;
+	/* text-align: center; */
 }
 
 #textHeadContainer h1{
+	color: #fff;
 	font-family: 'Italiana';
 	font-size: 55px;
-	border: 5px solid #a68428;
-	display: inline-block; /* makes the border fit the text */
+	padding: 20px;
+	border-top: 5px inset #dfe4e8;
+	border-left: 5px inset #dfe4e8;
+	/* display: inline-block; /* makes the border fit the text */ */
 	/* margin-left: auto;
 	margin-right: auto; */
 	margin-bottom: auto;
 	/* padding-left: 5px;
 	padding-right: 5px; */
 	/* border-radius: 5px; */
-}
-
-
-#textBodyContainer{
-	font-family: 'Julius Sans One';
-	margin-top: 10px;
-}
-
-.navContent{
-	text-align: right;
-	background-color: #9bb5c4;
-	/* position: sticky;
-	top: 0; */
-}
-#textBodyContainer p{
-	font-family: 'Gruppo';
-}
-
-article{
-	display: block;
-	height: 50px;
-	margin: 20px;
-}
-article h2{
-	margin: auto;
-	padding: auto;
-	text-align: right;
-	float: left;
-	width: 45%;
-}
-
-article p{
-	text-align: center;
-	margin: auto;
-	float: right;
-	width: 55%;
 }
 
 .outer {
@@ -71,4 +34,79 @@ article p{
   background: grey;
   top: 30%;
   box-shadow: 0px 0px 30px 20px grey;
+}
+
+/* startResume Style specifics */
+
+body {
+  background: #dfe4e8;
+}
+
+.leftColumn{
+	float: left;
+  width: 24%;
+}
+
+.leftColumn h2{
+		font-family: 'Julius Sans One';
+		margin-top: 10px;
+		border-bottom: 5px solid #dfe4e8;
+}
+
+.leftColumn .card{
+	border-style: outset;
+}
+
+.rightcolumn {
+  float: right;
+  width: 75%;
+  /* padding-left: 20px; */
+}
+
+.rightcolumn h2{
+		font-family: 'Julius Sans One';
+		margin-top: 10px;
+		border-bottom: 5px solid #dfe4e8;
+
+}
+
+.rightcolumn .card{
+		border-style: outset;
+
+}
+
+h3{
+	font-family: 'Julius Sans One';
+}
+
+li{
+	font-family: 'Gruppo';
+}
+
+p{
+	font-family: 'Gruppo';
+}
+
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* .card p{
+	padding-right: 10px;
+} */
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
 }
